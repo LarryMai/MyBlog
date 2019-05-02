@@ -79,7 +79,8 @@ theme: suka
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:oomusou/oomusou.github.io.git
 
 suka_theme:
   search:
