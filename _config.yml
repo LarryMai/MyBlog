@@ -74,7 +74,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: akina
+theme: suka
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -90,3 +90,15 @@ suka_theme:
     enable: false
     line_number: true
     theme: default  
+
+## RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
