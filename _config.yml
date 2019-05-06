@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 點燈坊
 subtitle:
 description:
 keywords:
-author: John Doe
+author: Sam Xiao
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://oomusou.io
 root: /
 permalink: :title/
 permalink_defaults:
@@ -39,10 +39,10 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
-  tab_replace:
+  tab_replace: false
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -88,9 +88,9 @@ suka_theme:
     path: search.json
     field: post # Page | Post | All. Default post
   prism:
-    enable: false
+    enable: true
     line_number: true
-    theme: default  
+    theme: darcula 
 
 ## RSS
 feed:

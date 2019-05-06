@@ -5,8 +5,6 @@ tags:
   - Ramda/slice
   - Ramda/without
 feature: images/feature/ramda.png
-description: 直接指定 Array 中不要的部分擷取部分 Array
-toc: true
 date: 2019-05-02 11:23:43
 ---
 若要從 Array 擷取其中一部分，但我們無法如 `slice()` 指定要的部分，只能指定不要的部分，此時我們可使用 Ramda 的 `remove()`。
@@ -14,7 +12,7 @@ date: 2019-05-02 11:23:43
 <!-- more -->
 
 ## Functional
----
+
 ```javascript
 import { slice, without } from 'ramda';
 
@@ -32,7 +30,7 @@ console.dir(remove(1, 3, data));
 ![remove000](/images/ramda/remove/remove000.png)
 
 ## remove()
----
+
 ### Value
 
 ```javascript
@@ -57,6 +55,8 @@ console.dir(remove(1, 3, data));
 
 `[a]`：所截取的 array
 
+![remove002](/images/ramda/remove/remove002.png)
+
 ### Object
 
 ```javascript
@@ -78,11 +78,11 @@ console.dir(remove(1, 3, data));
 ![remove001](/images/ramda/remove/remove001.png)
 
 ## Conclusion
----
+
 * `remove()` 是與 `slice()` 相對的 function：`slice()` 是指定要的部分，而 `remove()` 是指定不要的部分
 
 ## Reference
----
+
 [Ramda](https://ramdajs.com), [remove()](https://ramdajs.com/docs/#remove)
 [Ramda](https://ramdajs.com), [slice()](https://ramdajs.com/docs/#slice)
 [Ramda](https://ramdajs.com), [without()](https://ramdajs.com/docs/#without)
