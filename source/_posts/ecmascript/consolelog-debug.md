@@ -65,7 +65,7 @@ console.dir(fn(data));
 
 可將 `console.log()` 搭配 `||`，接上 `inc()`，如此不需 `{}`，也不需要 `return`，還能繼續使用 arrow function。
 
-因為 `console.log()` 會回傳 `undefined`，視為 falsy value，而 `||` 是 `false` 才會繼續執行，所以一定會繼續執行 `x * 2`。
+因為 `console.log()` 會回傳 `undefined`，視為 falsy value，而 `||` 是 `false` 才繼續執行，所以一定會繼續執行 `x * 2`。
 
 ![log005](/images/ecmascript/consolelog-debug/log005.png)
 
@@ -120,13 +120,14 @@ console.log(result);
 
 可將 `console.log()` 搭配 `||`，接上 `inc()`，如此不需 `{}`，也不需要 `return`，還能繼續使用 arrow function。
 
-因為 `console.log()` 會回傳 `undefined`，視為 falsy value，而 `||` 是 `false` 才會繼續執行，所以一定會繼續執行 `inc()`。
+因為 `console.log()` 會回傳 `undefined`，視為 falsy value，而 `||` 是 `false` 才繼續執行，所以一定會繼續執行 `inc()`。
 
 ![log002](/images/ecmascript/consolelog-debug/log002.png)
 
 ## Conclusion
 
-* Arrow function 優美之處就是不需要 `{}` 與 `return`，卻又能優雅地表現語意，一旦加入 `console.log()` debug 後，卻又打回原形；巧妙地善用 `console.log()` 回傳 `undefined` 搭配 `||` 特性，就能繼續優雅的使用 arrow function
+* Arrow function 優美之處就是不需要 `{}` 與 `return`，卻又能優雅地表現語意，一旦加入 `console.log()` debug 後，卻又打回原形
+* 巧妙地善用 `console.log()` 回傳 `undefined` 視為 falsy value 特性，搭配 `||` 就能繼續優雅地使用 arrow function
 
 ## Reference
 
