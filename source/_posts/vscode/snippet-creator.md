@@ -61,7 +61,7 @@ VS Code 預設的 user snippet 如上圖所示，必須在 `body` 內每一行�
 ![snippet002](/images/vscode/snippet-creator/snippet002.gif)
 
 * `⌘A` 全選 Bootstrap starter template
-* `⌘⇧P` 啟動 command palette，輸入 `create`，選擇 `Create Snipper`
+* `⌘⇧P` 啟動 command palette，輸入 `snippet`，選擇 `Create Snipper`
 * 輸入 `html` 選擇建立 HTML template
 * 輸入 `bs4` 為 snippet name，為 key 必須為一不重複
 * 輸入 `bs4` 為 prefix，也就是實際要輸入的文字
