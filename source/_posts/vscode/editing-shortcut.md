@@ -16,11 +16,11 @@ VS Code 1.33.1
 
 **Select Word**
 
-`⌘D`
+`⌘ D`
 
 **Delete Word**
 
-`⌘T`
+`⌘ T`
 
 > 需要 `Macros` extension 自訂 shortcut
 
@@ -28,119 +28,119 @@ VS Code 1.33.1
 
 **Select Line**
 
-`⌘L`
+`⌘ L`
 
 **Copy Line**
 
-`⌘C`
+`⌘ C`
 
 **Cut Line**
 
-`⌘X`
+`⌘ X`
 
 **Delete Line**
 
-`⌘⌫`
+`⌘ ⌫`
 
 **Delete to Beginning / End of Line**
 
-`⌃⌫` / `⌥⌫`
+`⌃ ⌫` / `⌥ ⌫`
 
 > 需要 `Macros` extension 自訂 shortcut
 
 **Duplicate Line**
 
-`⌘U`
+`⌘ U`
 
 **Move Line Up / Down**
 
-`⌥⌘↑` / `⌥⌘↓`
+`⌥ ⌘ ↑` / `⌥ ⌘ ↓`
 
 **Join Line**
 
-`⌘J`
+`⌘ J`
 
 ## Position
 
 **Go to Beginning / End of Line**
 
-`⌘←` / `⌘→` 
+`⌘ ←` / `⌘ →` 
 
-`fn←` / `fn→` 
+`fn ←` / `fn →` 
 
 **Go to Beginning / End of File**
 
-`⌘↑` / `⌘↓`
+`⌘ ↑` / `⌘ ↓`
 
 **Go to PgUp / PgDn of File**
 
-`fn↑` / `fn↓`
+`fn ↑` / `fn ↓`
 
 **Scroll Line Up / Down**
 
-`fn⌃↑` / `fn⌃↓` 
+`fn ⌃ ↑` / `fn ⌃ ↓` 
 
 **Scroll PageUp / PgDn**
 
-`fn⌘↑` / `fn⌘↓` 
+`fn ⌘ ↑` / `fn ⌘ ↓` 
 
 **Jump to Matching Bracket**
 
-`⇧⌘\`	
+`⇧ ⌘ \`	
 
 
 ## Selection
 
 **Expand / Shrink Selection**
 
-`⌥↑` / `⌥↓`
+`⌥ ↑` / `⌥ ↓`
 
 > 可用於 select word
 
 **Select to Bracket**
 
-`⇧⌥\`
+`⇧ ⌥ \`
 
 **Select All Occurrences**
 
-`⇧⌘L`
+`⇧ ⌘ L`
 
 **Select All Occurrences of Current Word**
 
-`⇧⌘W`
+`⇧ ⌘ W`
 
 ## Column Selection
 
 **By Mouse**
 
-`⌥⇧` + mouse drag
+`⌥ ⇧` + mouse drag
 
 **Keyboard Up / Down / Left / Right**
 
-`⇧⌥⌘↑` / `⇧⌥⌘↓` / `⇧⌥⌘←` / `⇧⌥⌘→` 
+`⇧ ⌥ ⌘ ↑` / `⇧ ⌥ ⌘ ↓` / `⇧ ⌥ ⌘ ←` / `⇧ ⌥ ⌘ →` 
 
 ## Region
 
 **Fold / Unfold Region**
 
-`⌥⌘[` / `⌥⌘]` 
+`⌥ ⌘ [` / `⌥ ⌘ ]` 
 
 **Fold / Unfold All Subregions**
 
-`⌘K ⌘[` / `⌘K ⌘]`
+`⌘ K ⌘ [` / `⌘ K ⌘ ]`
 
 **Fold / Unfold All Regions**
 
-`⌘K ⌘0` / `⌘K ⌘J`
+`⌘ K ⌘ 0` / `⌘ K ⌘ J`
 
 ## Toggle
 
 **Toggle Line Comment**
 
-`⌥/`
+`⌥ /`
 **Toggle Word Wrap**
 
-`⌥Z`
+`⌥ Z`
 
 ## Multi-cursor
 
@@ -150,33 +150,33 @@ VS Code 1.33.1
 
 **Insert Cursor Above**
 
-`⌃↑`
+`⌃ ↑`
 
 **Insert Cursor Below**
 
-`⌃↓`
+`⌃ ↓`
 
 **Undo Cursor**
 
-`⌃U`
+`⌃ U`
 
 **Insert Cursor at Each Selected Line**
 
-`⇧⌥I`
+`⇧ ⌥ I`
 
-> 常搭配 `⌘L` 先 select line
+> 常搭配 `⌘ L` 先 select line
 
 ## Misc
 
 **Copy All**
 
-`⌥A`
+`⌥ A`
 
 > 需要 `Macros` extension 自訂 shortcut
 
 **Cut All**
 
-`⌃A`
+`⌃ A`
 
 > 需要 `Macros` extension 自訂 shortcut
 
