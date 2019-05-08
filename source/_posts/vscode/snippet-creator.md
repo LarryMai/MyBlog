@@ -63,9 +63,9 @@ VS Code 預設的 user snippet 如上圖所示，必須在 `body` 內每一行�
 * `⌘A` 全選 Bootstrap starter template
 * `⌘⇧P` 啟動 command palette，輸入 `snippet`，選擇 `Create Snipper`
 * 輸入 `html` 選擇建立 HTML template
-* 輸入 `bs4` 為 snippet name，為 key 必須為一不重複
+* 輸入 `bs4` 為 snippet name，唯 key 必須唯一不重複
 * 輸入 `bs4` 為 prefix，也就是實際要輸入的文字
-* Description 輸入空白，也可稍後再補上
+* Description 輸入空白，可稍後再補上
 * `⌘⇧P` 啟動 command palette，輸入 `user snippet`，選擇 `Preferences: Configure User Snippets`
 * 已自動建立 user snippet 在 `~/Library/Application Support/Code/User/snippets/html.json`
 
@@ -106,8 +106,10 @@ VS Code 預設的 user snippet 如上圖所示，必須在 `body` 內每一行�
 }
 ```
 
-- `prefix` ：定義 snippet 名稱，也是我們要在 VS Code 要輸入的文字
-- `body`：將原本的 startup template 貼到 `body` 下，為 array，每一行為 string
+以上為 Snippet Creator 自動建立。
+
+- `prefix` ：我們在 VS Code 要輸入的文字
+- `body`：將原本的 starter template 貼到 `body` 下，為 string array
 - `description`：輸入 prefix 時，在 VS Code 會顯示的註解
 
 17 行
@@ -141,4 +143,3 @@ VS Code 預設的 user snippet 如上圖所示，必須在 `body` 內每一行�
 ## Reference
 
 [Nikita Kunevich](https://marketplace.visualstudio.com/publishers/nikitaKunevich), [Snippet-creator](https://marketplace.visualstudio.com/items?itemName=nikitaKunevich.snippet-creator)
-
