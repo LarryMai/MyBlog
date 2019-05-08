@@ -53,7 +53,7 @@ console.dir(remove(1, 3, data));
 
 `[a]`：Data 為 array
 
-`[a]`：所截取的 array
+`[a]`：回傳所截取的 array
 
 ![remove002](/images/ramda/remove/remove002.png)
 
