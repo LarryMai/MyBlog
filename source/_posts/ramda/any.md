@@ -55,7 +55,7 @@ console.log(data.some(x => x.price === 400));
 
 `Array.prototype` 有內建 `some()`，可直接傳入 arrow function 即可。
 
-> `some()` 就功能上相當於 `any()`，但 `some()` 屬於 OOP 風格，為 data 的 method，而 `any()` 為 FP 風格，data 以參數傳入 function，且為最後一個參數，方便 point-free
+> `some()` 就功能上相當於 `any()`，但 `some()` 屬於 OOP 風格，為 data 的 method，而 `any()` 為 FP 風格，data 以 argument 傳入 function，且為最後一個 argument，方便 point-free
 
 ![any001](/images/ramda/any/any001.png)
 
@@ -79,9 +79,9 @@ console.log(any(propEq('price', 400))(data));
 > **any()**
 > `(a -> Boolean) -> [a] -> Boolean`
 >
-> 判斷符合條件的值是否存在於 array 
+> 判斷符合條件的 data 是否存在於 array 
 
-`(a -> Boolean)`： 判斷條件
+`(a -> Boolean)`： 判斷條件 predicate
 
 `[a]`：data 為 array
 
@@ -98,3 +98,5 @@ console.log(any(propEq('price', 400))(data));
 
 [Ramda](https://ramdajs.com), [any()](https://ramdajs.com/docs/#any)
 [Ramda](https://ramdajs.com), [propEq()](https://ramdajs.com/docs/#propEq)
+
+
