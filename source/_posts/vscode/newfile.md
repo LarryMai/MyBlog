@@ -30,7 +30,7 @@ VS Code 1.33.1
 
 ![newfile003](/images/vscode/newfile/newfile003.png)
 
- `⌘ N` 重新綁定到 `explorer.newFile`。
+將 `⌘ N` 重新綁定到 `explorer.newFile`。
 
 ![newfile004](/images/vscode/newfile/newfile004.gif)
 
