@@ -24,7 +24,7 @@ $ npm install ramda
 
 使用 npm 安裝 `ramda`。
 
-## Type Definition for Ramda
+## Type Definition
 
 ```
 $ npm install types/npm-ramda --save-dev
@@ -83,7 +83,7 @@ const classyGreeting = (firstName, lastName) =>
 const yellGreeting = compose(toUpper, classyGreeting);
 ```
 
-為了將 `classyGreeting()` 的所有回傳值都變成大寫，使用了 Ramda 的 `toUpper()`，並將 `classyGreeting()` 與 `toUpper()` 兩者 `compose()` 成 `yellGreeting()` 。
+為了將 `classyGreeting()` 所有回傳值都轉成大寫，使用了 Ramda 的 `toUpper()`，並將 `classyGreeting()` 與 `toUpper()` 兩者 `compose()` 成 `yellGreeting()` 。
 
 > 對於 function composition，ECMAScript 並不像 Haskell 提供 `.` ，或 F# 的 `>>` 來組合 function，因此借助 Ramda 的 `compose()` 將 `toUpper()` 與 `classyGreeting()` 組合成 `yellGreeting()`
 
@@ -93,11 +93,11 @@ const yellGreeting = compose(toUpper, classyGreeting);
 
 ![ramda001](/images/ramda/angular/ramda001.png)
 
-由於 TypeScript 的 type inference 的限制，目前經過 Ramda 所 compose 的 function，在 TypeScript 只能顯示 `any`，無法如 Haskell 或 F# 能完整顯示 compose 後 function 的型別，是比較遺憾的地方。
+由於 TypeScript 的 type inference 限制，目前經過 Ramda 所 compose 的 function，在 TypeScript 只能顯示 `any`，無法如 Haskell 或 F# 能完整顯示 compose 後 function 的 signature 型別，這是比較遺憾之處。
 
 ## Conclusion
 
-* 除了在 Angular 使用 OOP 外，有了 Ramda，我們就可以將很多 FP 技巧用在 Angular，同時發揮 OOP 與 FP 的優點
+* 除了在 Angular 使用 OOP 外，有了 Ramda，我們就可以將很多 FP 技巧用在 Angular，同時發揮 OOP 與 FP 優點
 
 ## Sample Code
 
