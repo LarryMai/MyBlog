@@ -55,7 +55,7 @@ console.log(add(...data));
 
 ES2015 支援 spread operator，可將 array 展開成為多 argument。
 
-> ES2015 的 spread operator 會比 ES5 的 `apply()` 容易理解，且語義更為清
+> ES2015 的 spread operator 會比 ES5 的 `apply()` 容易理解，且語義更為清楚
 
 ![apply005](/images/ramda/apply/apply005.png)
 
@@ -80,7 +80,7 @@ ES5 與 ES2015 都是以不改變 function signature 前提下，從 data 角度
 let apply = fn => args => fn.apply(null, args);
 ```
 
-利用 higher order function 技巧，回傳新的 function 為 `args => fn.apply(null, args);`，其背後依然使用 ES5 的 `apply()` 達成。
+利用 higher order function 技巧，回傳新的 function 為 `args => fn.apply(null, args);`，其背後依舊使用 ES5 的 `apply()` 達成。
 
 第 4 行
 
@@ -88,7 +88,7 @@ let apply = fn => args => fn.apply(null, args);
 apply(add)(data)
 ```
 
-`add()` 先透過 `apply()` 產生新 function，其 signature 已經從原本多 argument 變成以 array 為單一 argument 的 function，因此可直接傳入單一 array。
+`add()` 先透過 `apply()` 產生新 function，其 signature 已經從原本多 argument 變成單一 argument function，因此可直接傳入單一 array。
 
 ![apply003](/images/ramda/apply/apply003.png)
 
@@ -106,7 +106,7 @@ console.log(apply(add)(data));
 
 > **apply()**
 > `(*… → a) → [*] → a`
-> 將 argument function 變成以 array 為單一 argument function
+> 將 argument function 變成以 array 為輸入的單一 argument function
 
 `(*… → a)`：原本多 argument function
 
@@ -117,7 +117,7 @@ console.log(apply(add)(data));
 ## Conclusion
 
 * ES5 的 `apply()`  與 ES205 的 spread operator，都是以 data 角度思考，在 signature 不變的前提下，將 array 轉成多 argument
-* Ramda 是以 function 角度思考，直接將 signature 多 argument 轉成單一 argument 的 array
+* Ramda 是以 function 角度思考，直接將 signature 由多 argument 轉成單一 argument 的 array
 * `apply()` 因為有 `a`，所以參數為 array，這樣聯想可以幫助記憶
 
 ## Reference
