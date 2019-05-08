@@ -38,7 +38,7 @@ let add = (x, y, z) => x + y + z;
 console.log(add.apply(null, data));
 ```
 
-ES5 的 `Function.prototype.apply()` 允許我們對 function 以 array 提供 argument，其中 `apply()` 第一個 argument 可提供 object 取代 function 中的 `this`，因為 `add()` 沒使用 `this`，且我們也沒有要取代 `this`，因此傳入 `null`。
+ES5 的 `Function.prototype.apply()` 允許我們對 function 以 array 提供單一 argument，其中 `apply()` 第一個 argument 可提供 object 取代 function 中的 `this`，因為 `add()` 沒使用 `this`，且我們也沒有要取代 `this`，因此傳入 `null`。
 
 > 換成 array 後，argument 從 3 個變成 1 個 array
 
@@ -53,7 +53,7 @@ let add = (x, y, z) => x + y + z;
 console.log(add(...data));
 ```
 
-ES2015 支援 spread operator，可將 array 展開成為多 argument。
+ES2015 支援 spread operator，可將單一 array 展開成為多 argument。
 
 > ES2015 的 spread operator 會比 ES5 的 `apply()` 容易理解，且語義更為清楚
 
