@@ -46,7 +46,6 @@ console.log(isGoodPrice(data));
 
 `(*… → Boolean)`：組合成單一 predicate
 
-
 ![anypass000](/images/ramda/anypass/anypass000.png)
 
 ```javascript
@@ -69,15 +68,15 @@ console.log(any(isGoodPrice)(data));
 
 `any()` 接受的是單一 predicate，data 為 array，結果為 boolean。
 
-`anyPass()` 接受的是多個 predicate，data 為 object，結果還是 predicate。
+`anyPass()`  能接受的是多個 predicate，data 為 object，結果還是 predicate。
 
-因此若要 array 能接受多個 predicate，就必須組合 `any()` 與 `anyPass()`。
+因此若要 array 接受多個 predicate，就必須組合 `any()` 與 `anyPass()`。
 
 ![anypass001](/images/ramda/anypass/anypass001.png)
 
 ## Conclusion
 
-* `any()` 的結果是 boolean；而 `anyPass()` 的結果是 predicate
+* `any()` 結果是 boolean；而 `anyPass()` 結果是 predicate
 * `anyPass()` 是 `any()` 的昇華：`any()` 的對象是 array，只能使用單一 predicate；而 `anyPass()` 的對象是 object，能使用多個 predicate
 * 若要 array 適用於多個 predicate，就必須組合 `any()` 與 `anyPass()`
 
@@ -85,3 +84,4 @@ console.log(any(isGoodPrice)(data));
 
 [Ramda](https://ramdajs.com), [any()](https://ramdajs.com/docs/#any)
 [Ramda](https://ramdajs.com), [anyPass()](https://ramdajs.com/docs/#anyPass)
+[Ramda](https://ramdajs.com), [propEq()](https://ramdajs.com/docs/#propEq)
