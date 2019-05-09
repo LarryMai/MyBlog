@@ -88,6 +88,17 @@ console.log(finalPrice(product));
 
 首先將 `finalPrice()` point-free。
 
+第 9 行
+
+```javascript
+let finalPrice = converge(
+  calPrice, [
+    prop('discount'),
+    prop('price')
+  ]
+);
+```
+
 `finalPrice()` 的 argument 為 `product` object，包含 `discount` 與 `price` property，分別傳入 `折扣` 與 `價錢`。
 
 最後要執行的是 `calPrice()`，分別有 `discount` 與 `price` 兩個 argument。
