@@ -73,7 +73,7 @@ Suka 的 CSS 主要放在 `suka/src/css/style.css` 下，我將之重構如下�
 
 但 Suka 使用了 Gulp 處理，最後都會壓縮成為單一 `style.min.css`，因此這裡使用 `@import` 不會影響效能，依然只有一個 HTTP request。
 
-## Device margin
+## Device Margin
 
 Suka 是以 mobile first 設計，從其 CSS 也可發現其 defualt value 都是 mobile phone，其次才使用 media query 考慮 tablet 與 desktop。
 
@@ -213,7 +213,7 @@ TOC 是很好的設計，我過去很愛用，但有些限制：
 
 目前 desktop 與 iPad landscape 依然共用 media query。
 
-## Device font size
+## Device Font Size
 
 Suka 對於 mobile phone 的 font size 調整得很好，但 tablet 與 desktop 對我而言，font size 稍微小了些，因此稍作調整。
 
