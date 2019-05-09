@@ -60,7 +60,7 @@ Bootstrap 的 CSS class 出現了。
 
 ## Conclusion
 
-* 加上 HTML CSS Support 之後，就可以在 VS Code 很開心地使用 CSS class 了
+* 加上 HTML CSS Support 之後，就可以在 VS Code 很開心地使用 CSS class
 
 ## Reference
 
