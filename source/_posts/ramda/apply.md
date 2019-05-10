@@ -5,7 +5,7 @@ tags:
 feature: images/feature/ramda.png
 date: 2019-05-07 15:23:43
 ---
-讓原本多 Argument Function，透過 Ramda 的 `apply()` 成為單一 Argument Function。
+將原本多 Argument Function，透過 Ramda 的 `apply()` 成為單一 Argument Function。
 
 <!-- more -->
 
