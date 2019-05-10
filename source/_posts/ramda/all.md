@@ -25,9 +25,9 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-let all = cb => data => {
-  for (let item of data) {
-    if (!cb(item)) return false;
+let all = cb => arr => {
+  for (let elem of arr) {
+    if (!cb(elem)) return false;
   }
   return true;
 };
@@ -53,9 +53,9 @@ console.log(data.every(x => x.price >= 300));
 console.log(data.every(x => x.price >= 100));
 ```
 
-`Array.prototype` 有內建 `every()`，可直接傳入 arrow function 即可。
+`Array.prototype` 有內建 `every()`，直接傳入 arrow function 即可。
 
-> `every()` 就功能上相當於 `all()`，但 `every()` 屬於 OOP 風格，為 data 的 method，而 `all()` 為 FP 風格，data 以參數傳入 function，且為最後一個參數，方便 point-free
+> `every()` 就功能上相當於 `all()`，但 `every()` 屬 OOP 風格，為 data 的 method，而 `all()` 為 FP 風格，data 以 argument 傳入 function，且為最後一個 argument，方便 point-free
 
 ![all001](/images/ramda/all/all001.png)
 
