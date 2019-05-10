@@ -26,7 +26,7 @@ Ramda 0.26.1
 ```javascript
 let data = ['a', 'e', 'd'];
 
-let hasAllTags = (rules, tags) => {
+let hasAllTags = rules => tags => {
   let result = true;
 
   for (let x of rules) {
@@ -36,8 +36,8 @@ let hasAllTags = (rules, tags) => {
   return result;
 };
 
-console.log(hasAllTags(['a', 'd'], data));
-console.log(hasAllTags(['a', 'g'], data));
+console.log(hasAllTags(['a', 'd'])(data));
+console.log(hasAllTags(['a', 'g'])(data));
 ```
 
 條件為 array 必須包含所有 element，若符合條件則回傳 `true`，否則回傳 `false`。
