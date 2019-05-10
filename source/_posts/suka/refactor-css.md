@@ -5,7 +5,7 @@ tags:
 feature: images/feature/suka.png
 date: 2019-05-09 14:56:37
 ---
-Suka 本身已經支援 RWD，唯在視覺要求方面，可能與原作者稍有差異，本文總結自己重構其 CSS 心得。
+Suka 已經支援 RWD，唯在視覺要求方面，可能與原作者稍有差異，本文總結自己重構其 CSS 心得。
 
 <!-- more -->
 
@@ -67,7 +67,7 @@ Suka 的 CSS 主要放在 `suka/src/css/style.css` 下，我將之重構如下�
 
 其實在 `style.css` 最上方，原作者已經加上註解，我只是根據這些註解拆成獨立 CSS module 而已，然後全部改用 `@import` 。
 
-> Q：使用 `import` 會每個檔案都有 HTTP request，會增加 server loading 嗎 ?
+> Q：使用 `import` 會每個檔案都有 HTTP request，這會增加 server loading 嗎 ?
 
 若是一般 CSS，的確會如此沒錯。
 
@@ -75,7 +75,7 @@ Suka 的 CSS 主要放在 `suka/src/css/style.css` 下，我將之重構如下�
 
 ## Device Margin
 
-Suka 是以 mobile first 設計，從其 CSS 也可發現其 defualt value 都是 mobile phone，其次才使用 media query 考慮 tablet 與 desktop。
+Suka 是以 mobile first 設計，從其 CSS 也可發現 defualt value 都是 mobile phone，其次才使用 media query 考慮 tablet 與 desktop。
 
 ### Home
 
@@ -87,7 +87,7 @@ Suka 原本在 home 的上下左右 margin 保留了較多的空白。
 
 我仍然維持其留白設計，但上下左右 margin 皆減少。
 
-> 這這牽涉到視覺美感，每個人喜好不同，我只是以自己的喜好去調整
+> 這這牽涉到視覺美感，每個人喜好不同，我只是以自己的喜好調整
 
 **main-layout.css**
 
@@ -136,14 +136,14 @@ Suka 原本在 home 的上下左右 margin 保留了較多的空白。
 
 調整  `.main-container` 的 `max-width`，即可改變左右 margin。
 
-我們發現了 desktop 與 iPad landscape 共用相同的 media query，主要因爲 iPad landscape 為 `1024 x 768`，而 Macbook Pro 15 Retina 最低解析度為 `1024 x 640`，而 home 的 margin 在此剛好 iPad landscape 與 desktop 剛好相同，故可共用。
+我們發現了 desktop 與 iPad landscape 共用相同 media query，主因爲 iPad landscape 為 `1024 x 768`，而 Macbook Pro 15 Retina 最低解析度為 `1024 x 640`，而 iPad landscape 與 desktop 在 home margin 剛好相同，故可共用。
 
 
 ### Post
 
 ![css002](/images/suka/refactor-css/css002.png)
 
-Post 部分 Suka 仍保持左右有較寬的 margin，且右側支援 TOC。
+Post 部分 Suka 仍保持左右有較寬 margin，且右側支援 TOC。
 
 ![css003](/images/suka/refactor-css/css003.png)
 
@@ -152,11 +152,11 @@ TOC 是很好的設計，我過去很愛用，但有些限制：
 * Heading 若太長，會影響版面呈現
 * Heading 層數若過深，也會影響版面呈現
 
-所以過去常常為了畫面美觀，最後放棄 markdown 的 heading 架構，所以這次我沒使用 TOC。
+所以之前常常為了畫面美觀，最後放棄 markdown 的 heading 架構，所以這次我沒使用 TOC。
 
 也因為不使用 TOC，因此左右 margin 稍嫌累贅，因此也調整了左右 margin。
 
-> Suka 原本 home 與 post 的 margin 也不相同，因此從 home 切到 post，會有視覺跳動的感覺，也予以修正
+> Suka 原本 home 與 post 的 margin 也不相同，若從 home 切到 post，會有視覺跳動感覺，也予以修正
 
 **post.css**
 ```css
@@ -215,9 +215,9 @@ TOC 是很好的設計，我過去很愛用，但有些限制：
 
 ## Device Font Size
 
-Suka 對於 mobile phone 的 font size 調整得很好，但 tablet 與 desktop 對我而言，font size 稍微小了些，因此稍作調整。
+Suka 對於 mobile phone 的 font size 調整很好，但 tablet 與 desktop 對我而言，font size 稍微小了些，因此稍作調整。
 
-此次調整 RWD，遇到最大的難點在於 iPad landscape 與 desktop 的 font size 要不一樣，偏偏 iPad landscape 為 `1024 x 768`，而 desktop 為 `1024 x 640`，因此無法單純使用 `min-width` 分辨出 iPad landscape 或 desktop。
+此次調整 RWD，遇到最大難點在於 iPad landscape 與 desktop 的 font size 要不一樣，偏偏 iPad landscape 為 `1024 x 768`，而 desktop 為 `1024 x 640`，因此無法單純使用 `min-width` 分辨出 iPad landscape 或 desktop。
 
 `width` 雖然相同，但 `height` 不同，因此直覺會想到改用 `min-height`，但有趣的是：Ｍobile Safari 並不理會 `height`，但 Safari 則會，因此使用了以下 hack：
 
@@ -387,4 +387,3 @@ Suka 對於 mobile phone 的 font size 調整得很好，但 tablet 與 desktop 
 
 [Viz Devices](https://vizdevices.yesviz.com/devices/macbookpro-2018-15/), [Macbook Pro 15" 2018 Spec](https://vizdevices.yesviz.com/devices/macbookpro-2018-15/)
 [EmranAhmed](https://gist.github.com/EmranAhmed), [CSS Responsive breakpoint, Media Query break point](https://gist.github.com/EmranAhmed/8044351)
-
