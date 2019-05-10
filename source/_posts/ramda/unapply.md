@@ -23,7 +23,7 @@ let add = arr => arr[0] + arr[1] + arr[2];
 console.log(add([1, 2, 3]));
 ```
 
-`add()` 為普通 funciton，只有 1 個 array 為 argument。
+`add()` 為普通 function，只有 1 個 array 為 argument。
 
 ![unapply000](/images/ramda/unapply/unapply000.png)
 
