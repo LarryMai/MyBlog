@@ -11,7 +11,7 @@ tags:
 feature: images/feature/ramda.png
 date: 2019-05-08 12:23:43
 ---
-Ramda 的 `call()` 乍看之下很不起眼，但若搭配 `converge()` 之後，就能動態產生 Converging Function。
+Ramda 的 `call()` 乍看很不起眼，但若搭配 `converge()` 之後，就能動態產生 Converging Function。
 
 <!-- more -->
 
@@ -107,7 +107,7 @@ let finalPrice = converge(
 
 這正是使用 `converge()` 時機，將 `calPrice()` 當作 converging function，將 `prop()` 當作 branching function。
 
-目前就功能而言沒問題，唯 `calPrice()` 並非 point-free，是否有繼續優化的空間呢 ?
+目前就功能而言沒問題，唯 `calPrice()` 並非 point-free，是否有繼續優化空間呢 ?
 
 ![call001](/images/ramda/call/call001.png)
 
