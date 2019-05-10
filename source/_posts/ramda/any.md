@@ -36,7 +36,7 @@ console.log(any(x => x.price === 100)(data));
 console.log(any(x => x.price === 400)(data));
 ```
 
-建立 `any()`，imperative 會使用 `for` loop 搭配 `if` 判斷，若找到資料就直接回傳  `true` 結束，若都找不到則回傳 `false`。
+建立 `any()`，imperative 會使用 `for` loop 搭配 `if` 判斷，若找到就直接回傳  `true` 結束，若都找不到則回傳 `false`。
 
 ![any000](/images/ramda/any/any000.png)
 
@@ -53,9 +53,9 @@ console.log(data.some(x => x.price === 100));
 console.log(data.some(x => x.price === 400));
 ```
 
-`Array.prototype` 有內建 `some()`，可直接傳入 arrow function 即可。
+`Array.prototype` 有內建 `some()`，直接傳入 arrow function 即可。
 
-> `some()` 就功能上相當於 `any()`，但 `some()` 屬於 OOP 風格，為 data 的 method，而 `any()` 為 FP 風格，data 以 argument 傳入 function，且為最後一個 argument，方便 point-free
+> `some()` 就功能上相當於 `any()`，但 `some()` 屬 OOP 風格，為 data 的 method，而 `any()` 為 FP 風格，data 以 argument 傳入 function，且為最後一個 argument，方便 point-free
 
 ![any001](/images/ramda/any/any001.png)
 
