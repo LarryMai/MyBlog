@@ -61,7 +61,7 @@ let includes = arg => any(x => x === arg);
 console.log(includes(1)(data));
 ```
 
-其實我們大可不必自己寫 `for` loop，可藉助 Ramda 的 `any()` 實現出 `includes()`。
+其實我們大可不必自己寫 `for` loop，可藉助 Ramda 的 `any()` 組合出 `includes()`。
 
 > **any()**
 > `(a -> Boolean) -> [a] -> Boolean`
