@@ -24,7 +24,7 @@ let fn = n => inc(n);
 console.log(fn(2));
 ```
 
-很簡單的 `inc()`，當輸入為 number `2` 時，毫無懸念結果為 `3`。
+很簡單的 `inc()`，當輸入為 `number` `2` 時，毫無懸念結果為 `3`。
 
 ![maybe000](/images/crocks/maybe/maybe000.png)
 
@@ -37,9 +37,9 @@ let fn = n => inc(n);
 console.log(fn('8'));
 ```
 
-但傳入改為 string `'8'` 時，結果為 `81`，且 `81` 為 string，並不是預期的 `number`。
+但傳入改為 `string` `8` 時，結果為 `81`，且 `81` 為 `string`，並不是預期的 `number`。
 
-> 由於 ECMAScript 為 dynamic type language，因此可以傳入任何 type，而當 `+` 遇到 `string` 時，會將兩個 operand 都轉成 `string`，`+` 從原本的 `add()` 變成 `concat()`，因此最後結果為 string `81`
+> 由於 ECMAScript 為 dynamic type language，因此可以傳入任何 type，而當 `+` 遇到 `string` 時，會將兩個 operand 都轉成 `string`，`+` 從原本的 `add()` 變成 `concat()`，因此最後結果為 `string` `81`
 
 ![maybe001](/images/crocks/maybe/maybe001.png)
 
@@ -54,7 +54,7 @@ console.log(fn(undefined));
 
 當傳入為 `undefined` 時，結果為 `NaN`。
 
-> `81` 與 `NaN` 都不是我們預期結果，要避免這些情形發生，唯一的方法就是確認輸入只能是 `number`，其他 type 都不可輸入
+> `81` 與 `NaN` 都不是我們預期結果，要避免這些情形發生，唯一的方法就是確認輸入只能是 `number` 才能使用 `inc()` 運算，其他 type 都不執行 `inc()`
 
 ![maybe002](/images/crocks/maybe/maybe002.png)
 
@@ -77,7 +77,7 @@ console.log(fn(undefined));
 >
 > * 每個 function 都必須檢查其 parameter type，弄髒了原本邏輯
 > * 無法在一般情況就發現錯誤
-> * 必須考驗 coder 的細心程度，只要不夠細心，unit test 一樣測不到
+> * 必須考驗 coder 細心程度，只要不夠細心，unit test 一樣測不到
 
 ![maybe003](/images/crocks/maybe/maybe003.png)
 
@@ -99,6 +99,8 @@ console.log(fn(Maybe.Just(2)));
 
 以本例而言，我們預期 type 是 `number`，是故為 `Just`；而 `string` 與 `undefined` 都不是我們預期 type，是故為 `Nothing`。
 
+第 1 行
+
 ```javascript
 import { Maybe } from 'crocks';
 ```
@@ -117,7 +119,7 @@ Argument `n` 為 `Maybe`，而 `Maybe` 自帶 `map()`，可傳入 function，`ma
 
 由於 `fn()` 回傳為 `Maybe`，因此印出 `Just 3`，而非原本的 `3`。
 
-> 目前我們已經將 number 包進 `Maybe`，但印出也是 `Maybe`，而非原本的 number `3`，稍後會從 `Maybe` 萃取出 number
+> 目前我們已經將 `number` 包進 `Maybe`，但印出也是 `Maybe`，而非原本的` number` `3`，稍後會從 `Maybe` 萃取出來
 
 ## Just
 
@@ -146,7 +148,7 @@ let fn = n => n.map(x => console.log('calling inc()') || inc(x));
 
 ![maybe005](/images/crocks/maybe/maybe005.png)
 
-印出了 `calling inc()`，顯示了若輸入為 `Just`， 真的有執行 `Mapbe.map()` 的 callback。
+印出了 `calling inc()`，表示若輸入為 `Just`， 真的有執行 `Mapbe.map()` 的 callback。
 
 ## Nothing
 
@@ -165,7 +167,7 @@ console.log(fn(Maybe.Nothing()));
 
 沒顯示 `calling inc()`，表示 `inc()` 根本沒執行，直接回傳 `Nothing`。
 
-> 只有 `Just` 才會執行我們 `map()` 的 function，`Nothing` 完全不執行，這確保了只有正確 type 才會執行 function，不需要我們自己做 `typeof` 檢查，也不會產生不是預期結果
+> 只有 `Just` 才會執行 `map()` 的 callback，`Nothing` 完全不執行，這確保了只有正確 type 才會執行 function，不需要我們自己做 `typeof` 檢查，也不會產生不預期結果
 
 ## safeNum()
 
@@ -187,7 +189,7 @@ console.log(fn(undefined));
 let fn = n => safeNum(n).map(inc);
 ```
 
-由 `Just` 與 `Nothing` 我們可發現，只要我們能將 value 包進 `Maybe`，儘管不做 `typeof` 檢查，也能確保不會有不預期結果，所以我們需要 `safeNum()` 將任何值包進 `Maybe`。
+由 `Just` 與 `Nothing` 我們可發現，只要我們能將 value 包進 `Maybe`，儘管不做 `typeof` 檢查，也能確保沒有不預期結果，所以我們需要 `safeNum()` 將任何 value 包進 `Maybe`。
 
 第 4 行
 
@@ -233,7 +235,7 @@ let isNumber = v => typeof v === 'number';
 let safe = pred => v => pred(v) ? Maybe.Just(v) : Maybe.Nothing();
 ```
 
-將 `safeNum()` 重構成更一般性的 `safe()` higher order function，可透過傳入 predicate 組合出能將各種 type 包進 `Maybe` 的 function。
+將 `safeNum()` 重構成更一般性的 `safe()` higher order function，可透過傳入 predicate，組合出能將各種 type 包進 `Maybe` 的 function。
 
 第 7 行
 
@@ -241,7 +243,7 @@ let safe = pred => v => pred(v) ? Maybe.Just(v) : Maybe.Nothing();
 let fn = n => safe(isNumber)(n).map(inc);
 ```
 
-由 `safe(isNumber)` 組合出 `safeNum()`，如此可安全將任何值包進 `Maybe`。
+由 `safe(isNumber)` 組合出 `safeNum()`，如此可安全將任何 value 包進 `Maybe`。
 
 ![maybe008](/images/crocks/maybe/maybe008.png)
 
@@ -258,11 +260,11 @@ console.log(fn('8'));
 console.log(fn(undefined));
 ```
 
-事實上 `safe()` 與 `isNumber()`，Crocks 都提供了，可直接使用。
+事實上 Crocks 已經提供了 `safe()` 與 `isNumber()`，可直接使用。
 
-連 `inc()` 以順便使用 Ramda 版本。
+連 `inc()` 也順便使用 Ramda 版本。
 
-> 目前只剩下最後一哩路： `fn()` 回傳為 `Maybe` 需要解決
+> 目前只剩下最後一哩路： `fn()` 回傳 `Maybe`，所以印出結果是錯的，因此我們需要能從 `Maybe` 萃取出 value
 
 ![maybe009](/images/crocks/maybe/maybe009.png)
 
@@ -279,7 +281,7 @@ console.log(fn('8'));
 console.log(fn(undefined));
 ```
 
-Crocks 提供了 `Maybe.options()`，讓我們提供當 `Maybe` 為 `Nothing` 時該如何處理，因為 `Nothing` 完全不會經過 `inc()` 運算。
+Crocks 提供了 `Maybe.options()`，讓我們提供當 `Maybe` 為 `Nothing` 時該回傳的 default value，因為 `Nothing` 完全不會經過 `inc()` 運算。
 
 ![maybe010](/images/crocks/maybe/maybe010.png)
 
@@ -305,23 +307,22 @@ let fn = n => safe(isNumber)(n).map(inc).option(0);
 
 若使用 FP 的 `Maybe`，思維就不一樣了：
 
-* 先組合出能包進 Maybe 的 function，因此會先寫出 `safe(isNumber)`，就算你很粗心也被逼的要寫出來，否則無法繼續
+* 先組合出能包進 `Maybe` 的 function，因此會先寫出 `safe(isNumber)`，就算你很粗心也被逼的要寫出來，否則無法繼續
 * 接下來要使 `Maybe` 能經過運算，一定得使用 `map()` 傳入 function
 * 若很粗心忘記寫 `option()`，一般情況顯示 `Maybe` 就是錯的，一定會回來補上 `option(0)`
 
 也就是每個步驟都被逼著走，且在 `一般情況` 就會發現錯誤，不像 imperative 的 `typeof` 在一般情況不會錯，只有在特殊狀況才會出錯，這就是 bug 來源。
 
-`Maybe` 還可讓你在寫 unit test 時不用想很奇怪的 test case，因為 `Maybe` 會確保不會產生不預期結果。
+`Maybe` 還可讓你在寫 unit test 時不用想很奇怪的 test case，因為 `Maybe` 會確保沒有不預期結果。
 
 ## Conclusion
 
 * `Maybe` 事實上就是 FP 的 Monad，但不知道 Monad 也沒關係
-* `Maybe` 在 ECMAScript 的重要性遠高過其他語言，它可避免 dynamic type language 產生不預期結果，大幅降低 bug 產生
-* Crocks 已經提供了 Maybe 所需要的 helper function，可直接使用
+* `Maybe` 在 ECMAScript 的重要性遠超過其他語言，可避免 dynamic type language 產生不預期結果，大幅降低 bug 產生，使 ECMAScript 更安全
+* Crocks 已經提供了 `Maybe` 所需要的 helper function，可直接使用
 
 ## Reference
 
 [Egghead.io](https://egghead.io), [Understanding the Maybe Data Type](https://egghead.io/lessons/javascript-understand-the-maybe-data-type)
-[Egghead.io](https://egghead.io), [Create a Maybe with a Safe Unitity Function](https://egghead.io/lessons/javascript-create-a-maybe-with-a-safe-utility-function)
+[Egghead.io](https://egghead.io), [Create a Maybe with a Safe Utility Function](https://egghead.io/lessons/javascript-create-a-maybe-with-a-safe-utility-function)
 [Egghead.io](https://egghead.io), [Unwrap Values from a Maybe](https://egghead.io/lessons/javascript-unwrap-values-from-a-maybe)
-
