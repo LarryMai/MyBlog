@@ -251,7 +251,7 @@ let fn = n => safe(isNumber)(n).map(inc);
 
 ```javascript
 import { inc } from 'ramda';
-import { Maybe, safe, isNumber } from 'crocks';
+import { safe, isNumber } from 'crocks';
 
 let fn = n => safe(isNumber)(n).map(inc);
 
@@ -272,7 +272,7 @@ console.log(fn(undefined));
 
 ```javascript
 import { inc } from 'ramda';
-import { Maybe, safe, isNumber } from 'crocks';
+import { safe, isNumber } from 'crocks';
 
 let fn = n => safe(isNumber)(n).map(inc).option(0);
 
