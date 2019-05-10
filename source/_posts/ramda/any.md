@@ -25,9 +25,9 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-let any = cb => data => {
-  for (let item of data) {
-    if (cb(item)) return true;
+let any = cb => arr => {
+  for (let elem of arr) {
+    if (cb(elem)) return true;
   }
   return false;
 };
