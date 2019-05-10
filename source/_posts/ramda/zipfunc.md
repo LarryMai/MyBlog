@@ -9,7 +9,7 @@ tags:
 feature: images/feature/ramda.png
 date: 2019-05-10 11:07:02
 ---
-若想將 Array 中一系列 Function，套用到另一 Array 中一系列的 Element，Ramda 並沒有提供適當 Function，此時我們可以自行組合出 `zipFunc()`。
+若想將 Array 中一系列 Function，套用到另一 Array，Ramda 並沒有提供適當 Function，此時我們可以自行組合出 `zipFunc()`。
 
 <!-- more -->
 
@@ -27,7 +27,7 @@ import { inc, dec, negate } from 'ramda';
 let fns = [inc, dec, negate];
 let data = [1, 2, 3];
 
-let zipFunc = (args, arr) => {
+let zipFunc = args => arr => {
   let result = [];
 
   for (let i = 0; i < arr.length; i++) {
@@ -37,10 +37,10 @@ let zipFunc = (args, arr) => {
   return result;
 };
 
-console.log(zipFunc(fns, data));
+console.log(zipFunc(fns)(data));
 ```
 
-`fns` array 有一系列 function，將會依序套用到 `data` array 中所有 element 成為新 array。
+`fns` array 有一系列 function，會依序套用到 `data` array。
 
 `inc()`、`dec()` 與 `negate()` 只是借用 Ramda 的 function，這不是重點，你也可以使用自己的 function。
 
@@ -57,7 +57,7 @@ let fns = [inc, dec, negate];
 let data = [1, 2, 3];
 
 let zipFunc = zipWith(call);
-console.log(zipFunc(fns, data));
+console.log(zipFunc(fns)(data));
 ```
 
 Ramda 並沒有提供 `zipFunc()`，但我們可以自行組合。
@@ -76,7 +76,7 @@ Ramda 並沒有提供 `zipFunc()`，但我們可以自行組合。
 let zipFunc = zipWith(call);
 ```
 
-因此 `zipWith()` 的 callback 並不是傳入 arrow function，而是傳入 Ramda 的 `call()`，它將會執行 array 中的 function，至於第二個 argument 的 array 已經被 point-free，因此不用提供。
+因此 `zipWith()` 的 callback 並不是傳入 arrow function，而是傳入 Ramda 的 `call()`，它將會執行 array 中的 function，至於第二個 argument 已經被 point-free，因此不用提供。
 
 > **call()**
 > `(*… → a),*… → a`
