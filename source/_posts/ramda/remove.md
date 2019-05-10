@@ -31,7 +31,7 @@ console.dir(remove(1, 3, data));
 
 ## remove()
 
-### Value
+### Primitive
 
 ```javascript
 import { remove } from 'ramda';
