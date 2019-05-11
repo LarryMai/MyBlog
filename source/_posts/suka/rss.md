@@ -71,4 +71,4 @@ Menu 出現 `RSS`。
 
 ## Reference
 
-[Hexo](https://github.com/hexojs), [hexes/hexo-generator-feed](hexes/hexo-generator-feed)
+[Hexo](https://github.com/hexojs), [hexes/hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
