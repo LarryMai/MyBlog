@@ -5,7 +5,7 @@ tags:
 feature: images/feature/ramda.png
 date: 2019-05-10 23:26:20
 ---
-ECMAScript 的 `Array.prototype` 並沒有內建處理不重複的 Method，在 ECMAScript 2015 可使用 `Set` ，但僅限於 Primitive；Ramda 的 `uniq()` 可同時處理 Primitive 與 Object。
+ECMAScript 的 `Array.prototype` 並沒有內建 `uniq()`，在 ECMAScript 2015 可使用 `Set` 時實現，但僅限於 Primitive；Ramda 的 `uniq()` 可同時處理 Primitive 與 Object。
 
 <!-- more -->
 
@@ -77,7 +77,7 @@ console.dir(uniq(data));
 
 ![uniq001](/images/ramda/uniq/uniq001.png)
 
-我們可發現 array 內無論是 premitive 或是 object，`uniq()` 都能勝任，若使用 ECMAScript 2015 的 `Set`，則只能處理 premitive，無法處理 object，因為其用的是 `===`，只能比較 object reference。
+我們可發現 array 內無論是 primitive 或是 object，`uniq()` 都能勝任，若使用 ECMAScript 2015 的 `Set`，則只能處理 primitive，無法處理 object，因為其用的是 `===`，只能比較 object reference。
 
 ## Conclusion
 
@@ -87,4 +87,3 @@ console.dir(uniq(data));
 ## Reference
 
 [Ramda](https://ramdajs.com), [uniq()](https://ramdajs.com/docs/#uniq)
-
