@@ -109,14 +109,7 @@ Suka 原本在 home 的上下左右 margin 保留了較多的空白。
 /* desktop, iPad landscape */
 @media only screen and (min-width: 961px) {
   .main-container {
-    max-width: 48rem;
-  }
-}
-
-/* iPad Pro  */
-@media only screen and (min-width: 1335px) {
-  .main-container {
-    max-width: 66rem;
+    max-width: 96%;
   }
 }
 ```
@@ -129,7 +122,7 @@ Suka 原本在 home 的上下左右 margin 保留了較多的空白。
 /* desktop, iPad landscape */
 @media only screen and (min-width: 961px) {
   .main-container {
-    max-width: 48rem;
+    max-width: 96%;
   }
 }
 ```
@@ -160,10 +153,10 @@ TOC 是很好的設計，我過去很愛用，但有些限制：
 
 **post.css**
 ```css
-/* iPhne portrait */
-@media screen and (min-width: 400px) {
+/* iPhone SE landscape */
+@media screen and (min-width: 480px) {
   .post-container {
-    max-width: 20rem;
+    max-width: 27rem;
   }
 }
 
@@ -174,7 +167,7 @@ TOC 是很好的設計，我過去很愛用，但有些限制：
   }
 }
 
-/* iPhone landscape  */
+/* iPhone XS-Max landscape  */
 @media screen and (min-width: 800px) {
   .post-container {
     max-width: 37.5rem;
@@ -184,14 +177,7 @@ TOC 是很好的設計，我過去很愛用，但有些限制：
 /* desktop, iPad landscape */
 @media screen and (min-width: 961px) {
   .post-container {
-    max-width: 48rem;
-  }
-}
-
-/* iPad Pro */
-@media screen and (min-width: 1281px) {
-  .post-container {
-    max-width: 66rem;
+    max-width: 94.5%;
   }
 }
 ```
@@ -204,7 +190,7 @@ TOC 是很好的設計，我過去很愛用，但有些限制：
 /* desktop, iPad landscape */
 @media screen and (min-width: 961px) {
   .post-container {
-    max-width: 48rem;
+    max-width: 94.5%;
   }
 }
 ```
@@ -226,6 +212,17 @@ Suka 對於 mobile phone 的 font size 調整很好，但 tablet 與 desktop 對
 **post-entry.css**
 
 ```css
+/* iPad portrait */
+@media only screen and (min-width: 721px) {
+  .post-entry a.card-title {
+    font-size: 1.1rem;
+  }
+
+  .post-entry .card-body {
+    font-size: 1.0rem;
+  }
+}
+
 /* iPad landscape */
 @media only screen and (min-width: 961px) {
   .post-entry a.card-title {
@@ -250,18 +247,17 @@ Suka 對於 mobile phone 的 font size 調整很好，但 tablet 與 desktop 對
 
   .post-entry .post-thumbnail {
     min-height: 6.5rem;
-    margin-top: 15px;
   }
 }
 ```
 
 調整 home 的 font-size 主要在 `post-entry.css`。
 
-第 1 行
+12 行
 
 ```css
-/* iPad landscape */
-@media only screen and (min-width: 961px) {
+/* iPad portrait */
+@media only screen and (min-width: 721px) {
   .post-entry a.card-title {
     font-size: 1.1rem;
   }
@@ -274,7 +270,7 @@ Suka 對於 mobile phone 的 font size 調整很好，但 tablet 與 desktop 對
 
 既然 Mobile Safari 吃不到 `height`，那 `min-width: 961px` 就讓給 iPad landscape。
 
-12 行
+23 行
 
 ```css
 /* desktop */
@@ -290,7 +286,6 @@ Suka 對於 mobile phone 的 font size 調整很好，但 tablet 與 desktop 對
 
   .post-entry .post-thumbnail {
     min-height: 6.5rem;
-    margin-top: 15px;
   }
 }
 ```
@@ -304,6 +299,20 @@ Suka 對於 mobile phone 的 font size 調整很好，但 tablet 與 desktop 對
 **post-content.css**
 
 ```css
+/* Fix for Prettify */
+#post-content .prettyprint ol {
+  margin: 0;
+}
+
+/* iPhone portrait */
+#post-content {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: .95rem;
+  word-wrap: break-word;
+  padding-top: 0;
+}
+
 /* iPad portrait */
 @media only screen and (min-width: 721px) {
   #post-content {
@@ -335,7 +344,7 @@ Suka 對於 mobile phone 的 font size 調整很好，但 tablet 與 desktop 對
 
 調整 post 的 font-size 主要在 `post-content.css`。
 
-15 行
+29 行
 
 ```css
 /* iPad landscape */
