@@ -11,7 +11,6 @@ RSS 為 Blog 常見的功能，讓讀者只要透過 RSS Reader，就能追蹤�
 
 ## Version
 
-Node 10.15.3
 Hexo 3.8.0
 
 ## Hexo-generator-feed
@@ -46,7 +45,7 @@ feed:
   path: atom.xml
   limit: 20
   hub:
-  content:
+  content: true
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date
@@ -54,6 +53,13 @@ feed:
 ```
 
 在 blog 的 `_config.yml` 最下方貼上以上設定。
+
+第 7 行
+
+```
+content: true
+```
+預設 `content` 為空白，也就是 RSS 不包含 post 內容，只有 overview 部分，這裡改成 `true`。
 
 ![rss002](/images/suka/rss/rss002.png)
 
