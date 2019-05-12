@@ -50,7 +50,7 @@ console.log(uniq(data));
 > 回傳 element 不重複的 array
 
 * `[a]`：data 為 array
-* `[a]`：element 不重複的 array
+* `[a]`：回傳 element 不重複的 array
 
 ![uniq000](/images/ramda/uniq/uniq000.png)
 
