@@ -7,7 +7,7 @@ tags:
 feature: images/feature/ramda.png
 date: 2019-05-12 15:53:53
 ---
-對於一般需求，`uniq()` 即可勝任，但若 Unique 條件太特殊，則要使用 `uniqBy()`，自行傳入 Callback。
+對於一般需求，`uniq()` 即可勝任，但若需經過 Function 轉換後才比較，則要使用 `uniqBy()`，自行傳入 Callback。
 
 <!-- more -->
 
@@ -102,7 +102,7 @@ let data = [
 console.dir(uniqBy(x => x.title)(data));
 ```
 
-若 `data` 為 object，只要 `title` 相同就視為相同，也就是第一筆與第四筆，雖然 `price` 不同，但仍視為相同，我們希望結果只顯示不重複的前三筆。
+若 element 為 object，只要 `title` 相同就視為相同，也就是第一筆與第四筆，雖然 `price` 不同，但仍視為相同，我們希望結果只顯示不重複的前三筆。
 
 此時就不能再使用 `uniq()`，因為條件太特殊，只能使用 `uniqBy()`。
 
