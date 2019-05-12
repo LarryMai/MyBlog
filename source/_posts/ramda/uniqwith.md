@@ -24,12 +24,12 @@ Ramda 0.26.1
 ```javascript
 import { uniqBy } from 'ramda';
 
-let data = [1, 2, 3, '1'];
+let data = [1, 2, 3, -1];
 
-console.log(uniqBy(x => String(x))(data));
+console.log(uniqBy(x => Math.abs(x))(data));
 ```
 
-`data` 中包含 `number` `1` 與 `string` `1`，若 `number` `1` 與 `string` `1` 均視為相同而不想重複顯示，也就是我們希望結果只顯示 `[1, 2, 3]`。
+`data` 中包含 `1` 與 `-1`，若`1` 與  `-1` 均視為相同而不想重複顯示，也就是我們希望結果只顯示 `[1, 2, 3]`。
 
 > **uniqBy()**
 > `(a -> b) -> [a] -> [a]`
@@ -40,11 +40,11 @@ console.log(uniqBy(x => String(x))(data));
 ## uniqWith()
 
 ```javascript
-import { uniqWith } from 'ramda';
+import { uniqWith, eqBy } from 'ramda';
 
-let data = [1, 2, 3, '1'];
+let data = [1, 2, 3, -1]
 
-console.log(uniqWith((x, y) => x === String(y))(data));
+console.log(uniqWith((x, y) => Math.abs(x) === y)(data));
 ```
 
 我們也可以使用 `uniqWith()` 完成。
@@ -68,12 +68,12 @@ console.log(uniqWith((x, y) => x === String(y))(data));
 ```javascript
 import { uniqWith, eqBy } from 'ramda';
 
-let data = [100, 200, 300, '100'];
+let data = [1, 2, 3, -1]
 
-console.log(uniqWith(eqBy(String))(data));
+console.log(uniqWith(eqBy(Math.abs))(data));
 ```
 
-`(x, y) => x === String(y)` 可進一步由 `eqBy(String)` 化簡成 point-free。
+`(x, y) => Math.abs(x) === y` 可進一步由 `eqBy(Math.abs)` 化簡成 point-free。
 
 > **eqBy()**
 > `(a → b) → a → a → Boolean`
@@ -142,4 +142,3 @@ console.dir(uniqWith(anyPass([
 [Ramda](https://ramdajs.com), [eqBy()](https://ramdajs.com/docs/#eqBy)
 [Ramda](https://ramdajs.com), [anyPass()](https://ramdajs.com/docs/#anyPass)
 [Ramda](https://ramdajs.com), [eqProps()](https://ramdajs.com/docs/#eqProps)
-
