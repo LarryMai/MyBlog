@@ -69,7 +69,7 @@ let data = [
 console.dir(uniq(data));
 ```
 
-`data` 很明顯第四筆是重複的，我們希望結果只顯示不重複的前三筆。
+若 element 為 object，`data` 很明顯第四筆是重複的，我們希望結果只顯示不重複的前三筆。
 
 > Q：`===` 是比較 object reference，第一筆與第四筆的 object reference 顯然不同，為什麼 `uniq()` 可以視為重複 ?
 
