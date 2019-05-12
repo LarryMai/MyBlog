@@ -116,6 +116,8 @@ console.dir(uniqBy(x => x.title)(data));
 
 ![uniq002](/images/ramda/uniqby/uniqby000.png)
 
+## Point-free
+
 ```javascript
 import { uniqBy, prop } from 'ramda';
 
