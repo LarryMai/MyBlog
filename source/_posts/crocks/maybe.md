@@ -3,9 +3,9 @@ tags:
   - Crocks
   - Maybe
 feature: images/feature/crocks.png
-date: 2019-05-09 17:42:16
+date: 2019-05-13 17:42:16
 ---
-ECMAScript 為 Dynamic Type Language，Function 的 Parameter 並不用指定 Type Hint，因此可以傳入任何 Type，理論上必須在 Runtime 使用 `typeof` 做 Type Check，否則依賴 Type Coercion 很容易產生 Bug；`Mabye` 提供了另外一種方式：只會將正確 Type 進行運算，而不需使用 `typeof` 檢查。
+ECMAScript 為 Dynamic Type Language，Function 的 Parameter 並不必指定 Type Hint，因此可以傳入任何 Type，理論上必須在 Runtime 使用 `typeof` 做 Type Check，否則依賴 Type Coercion 很容易產生 Bug；`Mabye` 提供了另外一種方式：只會將正確 Type 進行運算，而不需使用 `typeof` 檢查。
 
 <!-- more -->
 
@@ -18,35 +18,44 @@ Croks 0.11.1
 ## Number
 
 ```javascript
+// inc :: Number -> Number
 let inc = x => x + 1;
+
+// fn :: Number -> Number
 let fn = n => inc(n);
 
 console.log(fn(2));
 ```
 
-很簡單的 `inc()`，當輸入為 `number` `2` 時，毫無懸念結果為 `3`。
+很簡單的 `inc()`，當輸入為 `Number` `2` 時，毫無懸念結果為 `3`。
 
 ![maybe000](/images/crocks/maybe/maybe000.png)
 
 ## String
 
 ```javascript
+// inc :: Number -> Number
 let inc = x => x + 1;
+
+// fn :: Number -> Number
 let fn = n => inc(n);
 
 console.log(fn('8'));
 ```
 
-但傳入改為 `string` `8` 時，結果為 `81`，且 `81` 為 `string`，並不是預期的 `number`。
+但傳入改為 `String` `8` 時，結果為 `81`，且 `81` 為 `String`，並不是預期的 `Number`。
 
-> 由於 ECMAScript 為 dynamic type language，因此可以傳入任何 type，而當 `+` 遇到 `string` 時，會將兩個 operand 都轉成 `string`，`+` 從原本的 `add()` 變成 `concat()`，因此最後結果為 `string` `81`
+> 由於 ECMAScript 為 dynamic type language，因此可以傳入任何 type，而當 `+` 遇到 `String` 時，會將兩個 operand 都轉成 `String`，`+` 從原本的 `add()` 變成 `concat()`，因此最後結果為 `String` `81`
 
 ![maybe001](/images/crocks/maybe/maybe001.png)
 
 ## Undefined
 
 ```javascript
+// inc :: Number -> Number
 let inc = x => x + 1;
+
+// fn :: Number -> Number
 let fn = n => inc(n);
 
 console.log(fn(undefined));
@@ -54,14 +63,17 @@ console.log(fn(undefined));
 
 當傳入為 `undefined` 時，結果為 `NaN`。
 
-> `81` 與 `NaN` 都不是我們預期結果，要避免這些情形發生，唯一的方法就是確認輸入只能是 `number` 才能使用 `inc()` 運算，其他 type 都不執行 `inc()`
+> `81` 與 `NaN` 都不是我們預期結果，要避免這些情形發生，唯一的方法就是確認輸入只能是 `Number` 才能使用 `inc()` 運算，其他 type 都不執行 `inc()`
 
 ![maybe002](/images/crocks/maybe/maybe002.png)
 
 ## typeof
 
 ```javascript
+// inc :: Number -> Number
 let inc = x => x + 1;
+
+// fn :: Number -> Number
 let fn = n => typeof n === 'number' ? inc(n) : 0;
 
 console.log(fn(2));
@@ -69,9 +81,9 @@ console.log(fn('8'));
 console.log(fn(undefined));
 ```
 
-為了確保輸入一定是 `number`，我們當然可以在 `fn()` 加上 `typeof` 判斷，確定是 `number` 才執行 `inc()`，否則傳回 default 值 `0`。
+為了確保輸入一定是 `Number`，我們當然可以在 `fn()` 加上 `typeof` 判斷，確定是 `Number` 才執行 `inc()`，否則傳回 default 值 `0`。
 
-如此結果就不會是 `string` 或 `NaN` 這些不是我們預期結果。
+如此結果就不會是 `String` 或 `NaN` 這些不是我們預期結果。
 
 > 但這種寫法只能算是 short term solution：
 >
@@ -86,18 +98,27 @@ console.log(fn(undefined));
 ```javascript
 import { Maybe } from 'crocks';
 
+let { Just } = Maybe;
+
+// inc :: Number -> Number
 let inc = x => x + 1;
+
+// fn :: Maybe Number -> Maybe Number
 let fn = n => n.map(inc);
 
-console.log(fn(Maybe.Just(2)));
+console.log(fn(Just(2)));
 ```
 
-引進了 `Maybe` type，它只有兩種值：`Just` 與 `Nothing`：
+引進了 `Maybe`，它包含兩種 type：`Just` 與 `Nothing`：
 
-* `Just`：我們所預期 type 的 value
-* `Nothing`：我們不預期 type 的 value
+```javascript
+Maybe a = Nothing | Just a
+```
 
-以本例而言，我們預期 type 是 `number`，是故為 `Just`；而 `string` 與 `undefined` 都不是我們預期 type，是故為 `Nothing`。
+* `Just`：我們所預期 type，將會執行運算
+* `Nothing`：我們不預期 type，不會執行運算
+
+以本例而言，我們預期 type 是 `Number`，是故為 `Just`；而 `String` 與 `undefined` 都不是我們預期 type，是故為 `Nothing`。
 
 第 1 行
 
@@ -105,11 +126,20 @@ console.log(fn(Maybe.Just(2)));
 import { Maybe } from 'crocks';
 ```
 
-由 `crocks` import 進 `Maybe` object，它提供了我們使用 `Maybe` 所需要的 function。
+由 `crocks` import 進 `Maybe`，它提供了我們使用 `Maybe` 所需要的 function。
 
-第 4 行
+第 3 行
 
 ```javascript
+let { Just } = Maybe;
+```
+
+從 `Maybe` destructure 出 `Just`，將來不必再使用 `Maybe.Just`。
+
+第 7 行
+
+```javascript
+// fn :: Maybe Number -> Maybe Number
 let fn = n => n.map(inc);
 ```
 
@@ -119,24 +149,30 @@ Argument `n` 為 `Maybe`，而 `Maybe` 自帶 `map()`，可傳入 function，`ma
 
 由於 `fn()` 回傳為 `Maybe`，因此印出 `Just 3`，而非原本的 `3`。
 
-> 目前我們已經將 `number` 包進 `Maybe`，但印出也是 `Maybe`，而非原本的` number` `3`，稍後會從 `Maybe` 萃取出來
+> 目前我們已經將 `Number` 包進 `Maybe`，但印出也是 `Maybe`，而非原本的` number` `3`，稍後會從 `Maybe` 萃取出來
 
 ## Just
 
 ```javascript
 import { Maybe } from 'crocks';
 
+let { Just } = Maybe;
+
+// inc :: Number -> Number
 let inc = x => x + 1;
+
+// fn :: Maybe Number -> Maybe Number
 let fn = n => n.map(x => console.log('calling inc()') || inc(x));
 
-console.log(fn(Maybe.Just(2)));
+console.log(fn(Just(2)));
 ```
 
 我們雖然將 `inc()` 傳入 `Maybe.map()`，但 `inc()` 真的有被執行嗎 ?
 
-第 4 行
+第 8 行
 
 ```javascript
+// fn :: Maybe Number -> Maybe Number
 let fn = n => n.map(x => console.log('calling inc()') || inc(x));
 ```
 
@@ -155,10 +191,15 @@ let fn = n => n.map(x => console.log('calling inc()') || inc(x));
 ```javascript
 import { Maybe } from 'crocks';
 
+let { Nothing } = Maybe;
+
+// inc :: Number -> Number
 let inc = x => x + 1;
+
+// let fn :: Maybe Number -> Maybe Number
 let fn = n => n.map(x => console.log('calling inc()') || inc(x));
 
-console.log(fn(Maybe.Nothing()));
+console.log(fn(Nothing()));
 ```
 
 `inc()` 與 `fn()` 完全不變，只是改將 `Nothing` 傳入 `fn()`。
@@ -167,15 +208,22 @@ console.log(fn(Maybe.Nothing()));
 
 沒顯示 `calling inc()`，表示 `inc()` 根本沒執行，直接回傳 `Nothing`。
 
-> 只有 `Just` 才會執行 `map()` 的 callback，`Nothing` 完全不執行，這確保了只有正確 type 才會執行 function，不需要我們自己做 `typeof` 檢查，也不會產生不預期結果
+> 只有 `Just` 才會執行 `Maybe` 自帶的 function： `map()`，`Nothing` 完全不執行，這確保了只有正確 type 才會執行 `inc()`，不需要我們自己做 `typeof` 檢查，也不會產生不預期結果
 
 ## safeNum()
 
 ```javascript
 import { Maybe } from 'crocks';
 
-let inc = x => x + 1
-let safeNum = v => typeof v === 'number' ? Maybe.Just(v) : Maybe.Nothing();
+let { Just, Nothing } = Maybe;
+
+// inc :: Number -> Number
+let inc = x => x + 1;
+
+// safeNum :: x -> Maybe Number
+let safeNum = v => typeof v === 'number' ? Just(v) : Nothing();
+
+// fn :: * -> Maybe Number
 let fn = n => safeNum(n).map(inc);
 
 console.log(fn(2));
@@ -183,21 +231,23 @@ console.log(fn('8'));
 console.log(fn(undefined));
 ```
 
-第 5 行
+第 11 行
 
 ```javascript
+// fn :: * -> Maybe Number
 let fn = n => safeNum(n).map(inc);
 ```
 
 由 `Just` 與 `Nothing` 我們可發現，只要我們能將 value 包進 `Maybe`，儘管不做 `typeof` 檢查，也能確保沒有不預期結果，所以我們需要 `safeNum()` 將任何 value 包進 `Maybe`。
 
-第 4 行
+第 8 行
 
 ```javascript
-let safeNum = v => typeof v === 'number' ? Maybe.Just(v) : Maybe.Nothing();
+// safeNum :: x -> Maybe Number
+let safeNum = v => typeof v === 'number' ? Just(v) : Nothing();
 ```
 
-使用 `typeof` 判斷是否為 `number`，若是 `number`，則包成 `Just`，否則包成 `Nothing`。
+使用 `typeof` 判斷是否為 `Number`，若是 `Number`，則包成 `Just`，否則包成 `Nothing`。
 
 > Ｑ：到底還是使用了 `typeof` ?
 
@@ -210,10 +260,18 @@ let safeNum = v => typeof v === 'number' ? Maybe.Just(v) : Maybe.Nothing();
 ```javascript
 import { Maybe } from 'crocks';
 
-let inc = x => x + 1
-let isNumber = v => typeof v === 'number';
-let safe = pred => v => pred(v) ? Maybe.Just(v) : Maybe.Nothing();
+let { Just, Nothing } = Maybe;
 
+// inc :: Number -> Number
+let inc = x => x + 1
+
+// isNumber :: * -> Boolean
+let isNumber = v => typeof v === 'number';
+
+// safe :: (a -> Boolean) -> a -> Maybe a
+let safe = pred => v => pred(v) ? Just(v) : Nothing();
+
+// fn :: * -> Maybe Number
 let fn = n => safe(isNumber)(n).map(inc);
 
 console.log(fn(2));
@@ -221,25 +279,28 @@ console.log(fn('8'));
 console.log(fn(undefined));
 ```
 
-第 4 行
+第 8 行
 
 ```javascript
+// isNumber :: * -> Boolean
 let isNumber = v => typeof v === 'number';
 ```
 
-將 `number` 寫死在 `safeNum()` 當然不好，可將此部分抽成 higher order function，將來可透過 function compostion 組合出 `safeNum()`，重複使用程度更高。
+將 `Number` 寫死在 `safeNum()` 當然不好，可將此部分抽成 `isNumber()`，將來可透過 function compostion 由 `safe(isNumber)` 組合出 `safeNum()`，重複使用程度更高。
 
-第 5 行
+11 行
 
 ```javascript
-let safe = pred => v => pred(v) ? Maybe.Just(v) : Maybe.Nothing();
+// safe :: (a -> Boolean) -> a -> Maybe a
+let safe = pred => v => pred(v) ? Just(v) : Nothing();
 ```
 
-將 `safeNum()` 重構成更一般性的 `safe()` higher order function，可透過傳入 predicate，組合出能將各種 type 包進 `Maybe` 的 function。
+將 `safeNum()` 重構成更一般性的 `safe()` higher order function，可透過傳入 predicate，組合出能將任何 value 包進 `Maybe` 的 function。
 
-第 7 行
+14 行
 
 ```javascript
+// fn :: * -> Number
 let fn = n => safe(isNumber)(n).map(inc);
 ```
 
@@ -253,6 +314,7 @@ let fn = n => safe(isNumber)(n).map(inc);
 import { inc } from 'ramda';
 import { safe, isNumber } from 'crocks';
 
+// fn :: * -> Maybe Number
 let fn = n => safe(isNumber)(n).map(inc);
 
 console.log(fn(2));
@@ -264,7 +326,7 @@ console.log(fn(undefined));
 
 連 `inc()` 也順便使用 Ramda 版本。
 
-> 目前只剩下最後一哩路： `fn()` 回傳 `Maybe`，所以印出結果是錯的，因此我們需要能從 `Maybe` 萃取出 value
+> 目前只剩下最後一哩路： `fn()` 回傳 `Maybe`，所以印出結果是錯的，不過也因為能在一般狀況下就發現錯誤，我們很容易修正
 
 ![maybe009](/images/crocks/maybe/maybe009.png)
 
@@ -274,6 +336,7 @@ console.log(fn(undefined));
 import { inc } from 'ramda';
 import { safe, isNumber } from 'crocks';
 
+// fn :: * -> Number
 let fn = n => safe(isNumber)(n).map(inc).option(0);
 
 console.log(fn(2));
@@ -294,6 +357,7 @@ Crocks 提供了 `Maybe.options()`，讓我們提供當 `Maybe` 為 `Nothing` �
 ### Imperative
 
 ```javascript
+// fn :: * -> Number
 let fn = v => typeof v === 'number' ? inc(v) : 0;
 ```
 
@@ -302,6 +366,7 @@ let fn = v => typeof v === 'number' ? inc(v) : 0;
 ### Functional
 
 ```javascript
+// fn :: * -> Number
 let fn = n => safe(isNumber)(n).map(inc).option(0);
 ```
 
@@ -326,3 +391,4 @@ let fn = n => safe(isNumber)(n).map(inc).option(0);
 [Egghead.io](https://egghead.io), [Understanding the Maybe Data Type](https://egghead.io/lessons/javascript-understand-the-maybe-data-type)
 [Egghead.io](https://egghead.io), [Create a Maybe with a Safe Utility Function](https://egghead.io/lessons/javascript-create-a-maybe-with-a-safe-utility-function)
 [Egghead.io](https://egghead.io), [Unwrap Values from a Maybe](https://egghead.io/lessons/javascript-unwrap-values-from-a-maybe)
+[Gilad Shoham](https://blog.bitsrc.io/@giladshoham), [Get Better Type Checking in JavaScript with the Maybe Type](https://blog.bitsrc.io/get-better-type-checking-in-javascript-with-the-maybe-type-e7f70b23b505)
