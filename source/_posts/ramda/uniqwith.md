@@ -7,7 +7,7 @@ tags:
   - Ramda/anyPass
   - Ramda/eqProps
 feature: images/feature/ramda.png
-date: 2019-05-12 21:28:27
+date: 2019-05-13 20:28:27
 ---
 對於一般需求，`uniq()` 即可勝任，但若需自行提供特殊比較方式，則要使用 `uniqWith()`，自行傳入 Callback。
 
@@ -26,7 +26,10 @@ import { uniqBy } from 'ramda';
 
 let data = [1, 2, 3, -1];
 
-console.log(uniqBy(x => Math.abs(x))(data));
+// fn :: (a -> b) -> [a] -> [a]
+let fn = pred => uniqBy(pred);
+
+console.log(fn(x => Math.abs(x))(data));
 ```
 
 `data` 中包含 `1` 與 `-1`，若`1` 與  `-1` 均視為相同而不想重複顯示，也就是我們希望結果只顯示 `[1, 2, 3]`。
@@ -44,7 +47,10 @@ import { uniqWith, eqBy } from 'ramda';
 
 let data = [1, 2, 3, -1]
 
-console.log(uniqWith((x, y) => Math.abs(x) === y)(data));
+// fn :: ((a, a) -> Boolean) -> [a] -> [a]
+let fn = pred => uniqWith(pred);
+
+console.log(fn((x, y) => Math.abs(x) === Math.abs(y))(data));
 ```
 
 我們也可以使用 `uniqWith()` 完成。
@@ -70,7 +76,10 @@ import { uniqWith, eqBy } from 'ramda';
 
 let data = [1, 2, 3, -1]
 
-console.log(uniqWith(eqBy(Math.abs))(data));
+// fn :: ((a, a) -> Boolean) -> [a] -> [a]
+let fn = pred => uniqWith(pred);
+
+console.log(fn(eqBy(Math.abs))(data));
 ```
 
 `(x, y) => Math.abs(x) === y` 可進一步由 `eqBy(Math.abs)` 化簡成 point-free。
@@ -94,7 +103,10 @@ let data = [
   { title: 'Exploring ReasonML', price: 200 },
 ];
 
-console.dir(uniqWith((x, y) => x.title === y.title || x.price === y.price)(data));
+// fn :: ((a, a) -> Boolean) -> [a] -> [a]
+let fn = pred => uniqWith(pred);
+
+console.dir(fn((x, y) => x.title === y.title || x.price === y.price)(data));
 ```
 
 若 element 為 object，只要 `title` 或 `price` 相等就視為相同，也就是第四筆與第一筆相同，第五筆與第二筆相同，我們希望結果只顯示不重複的前三筆。
@@ -116,7 +128,10 @@ let data = [
   { title: 'Exploring ReasonML', price: 200 },
 ];
 
-console.dir(uniqWith(anyPass([
+// fn :: ((a, a) -> Boolean) -> [a] -> [a]
+let fn = pred => uniqWith(pred);
+
+console.dir(fn(anyPass([
   eqProps('title'),
   eqProps('price')
 ]))(data));
@@ -142,3 +157,4 @@ console.dir(uniqWith(anyPass([
 [Ramda](https://ramdajs.com), [eqBy()](https://ramdajs.com/docs/#eqBy)
 [Ramda](https://ramdajs.com), [anyPass()](https://ramdajs.com/docs/#anyPass)
 [Ramda](https://ramdajs.com), [eqProps()](https://ramdajs.com/docs/#eqProps)
+
