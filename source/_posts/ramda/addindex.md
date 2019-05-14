@@ -4,7 +4,7 @@ tags:
   - Ramda/addIndex
   - Ramda/map
 feature: images/feature/ramda.png
-date: 2019-04-27 17:23:43
+date: 2019-05-15 04:23:43
 ---
 若想在 `Array.prototype.map()` 的 Callback 得知目前 Element 的 Index，其 Callback 的第二個參數就是 Index，但 Ramda 的 `map()` 並沒有提供如此功能，該如何解決呢 ?
 
@@ -25,15 +25,16 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-let getBooks = arr => arr.map((x, i) => `${i}.${x.title}`);
-
-console.dir(getBooks(data));
+// fn :: [a] -> [b]
+let fn = arr => arr.map((x, i) => `${i}.${x.title}`);
+console.dir(fn(data));
 ```
 
 第 7 行
 
 ```javascript
-let getBooks = arr => arr.map((x, i) => `${i}.${x.title}`);
+// fn :: [a] -> [b]
+let fn = arr => arr.map((x, i) => `${i}.${x.title}`);
 ```
 
 第二個參數 `i` 就是 index，可直接使用。
@@ -50,15 +51,18 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
+// mapIndex :: (a -> b) -> [a] -> [b]
 let mapIndex = addIndex(map);
-let getBooks = mapIndex((x, i) => `${i}.${x.title}`);
 
-console.dir(getBooks(data));
+// fn : (a -> b) -> [a] -> [b]
+let fn = mapIndex((x, i) => `${i}.${x.title}`);
+console.dir(fn(data));
 ```
 
 第 8 行
 
 ```javascript
+// mapIndex :: (a -> b) -> [a] -> [b]
 let mapIndex = addIndex(map);
 ```
 
@@ -81,14 +85,20 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
+// mapIndex :: (a -> b) -> [a] -> [b]
 let mapIndex = addIndex(map);
+
+// title :: Object -> String
 let title = pipe(prop('title'), concat('.'));
+
+// index :: Object -> String
 let index = pipe(identity, String);
-let getBooks = mapIndex(useWith(
+
+// fn :: (a -> b) -> [a] -> [b]
+let fn = mapIndex(useWith(
   flip(concat), [title, index])
 );
-
-console.dir(getBooks(data));
+console.dir(fn(data));
 ```
 
 也可以將 callback 部分進一步 point-free。
