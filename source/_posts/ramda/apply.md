@@ -3,7 +3,7 @@ tags:
   - Ramda
   - Ramda/apply
 feature: images/feature/ramda.png
-date: 2019-05-07 15:23:43
+date: 2019-05-15 02:23:43
 ---
 將原本多 Argument Function，透過 Ramda 的 `apply()` 成為單一 Argument Function。
 
@@ -20,8 +20,8 @@ ECMAScript 2015
 ## Function
 
 ```javascript
+// add :: (Number, Number, Number) -> Number
 let add = (x, y, z) => x + y + z;
-
 console.log(add(1, 2, 3));
 ```
 
@@ -33,8 +33,9 @@ console.log(add(1, 2, 3));
 
 ```javascript
 let data = [1, 2, 3];
-let add = (x, y, z) => x + y + z;
 
+// add :: (Number, Number, Number) -> Number
+let add = (x, y, z) => x + y + z;
 console.log(add.apply(null, data));
 ```
 
@@ -48,8 +49,9 @@ ES5 的 `Function.prototype.apply()` 允許我們對 function 以 array 提供�
 
 ```javascript
 let data = [1, 2, 3];
-let add = (x, y, z) => x + y + z;
 
+// add :: (Number, Number, Number) -> Number
+let add = (x, y, z) => x + y + z;
 console.log(add(...data));
 ```
 
@@ -64,28 +66,35 @@ ES2015 支援 spread operator，可將單一 array 展開成為多 argument。
 ```javascript
 let data = [1, 2, 3];
 
+// add :: (Number, Number, Number) -> Number
 let add = (x, y, z) => x + y + z;
-let apply = fn => args => fn.apply(null, args);
 
-console.log(apply(add)(data));
+// apply :: pred -> [*] -> a
+let apply = pred => args => pred.apply(null, args);
+
+// fn :: [Number] -> Number 
+let fn = apply(add);
+console.log(fn(data));
 ```
 
 ES5 與 ES2015 都是以不改變 function signature 前提下，從 data 角度思考，將 array 轉成多 argument。
 
 能否以 function 角度思考，希望提供 `apply()` 直接改變 signature，從多 argument function 轉成單一 argument function 呢 ?
 
-第 2 行
+第 6 行
 
 ```javascript
-let apply = fn => args => fn.apply(null, args);
+// apply :: pred -> [*] -> a
+let apply = pred => args => pred.apply(null, args);
 ```
 
-利用 higher order function 技巧，回傳新的 function 為 `args => fn.apply(null, args);`，其背後依舊使用 ES5 的 `apply()` 達成。
+利用 higher order function 技巧，回傳新的 function 為 `args => pred.apply(null, args);`，其背後依舊使用 ES5 的 `apply()` 達成。
 
-第 4 行
+第 9 行
 
 ```javascript
-apply(add)(data)
+// fn :: [Number] -> Number 
+let fn = apply(add);
 ```
 
 `add()` 先透過 `apply()` 產生新 function，其 signature 已經從原本多 argument 變成單一 argument function，因此可直接傳入單一 array。
@@ -97,9 +106,12 @@ import { apply } from 'ramda';
 
 let data = [1, 2, 3];
 
+// add :: (Number, Number, Number) -> Number
 let add = (x, y, z) => x + y + z;
 
-console.log(apply(add)(data));
+// fn :: [Number] -> Number 
+let fn = apply(add);
+console.log(fn(data));
 ```
 
 事實上 Ramda 已經提供了 `apply()`，可直接使用。
