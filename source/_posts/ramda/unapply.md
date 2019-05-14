@@ -3,9 +3,9 @@ tags:
   - Ramda
   - Ramda/unapply
 feature: images/feature/ramda.png
-date: 2019-05-10 11:28:26
+date: 2019-05-14 20:28:26
 ---
-將原本 Argument 為 Array 的 Function，透過 Ramda 的 `unapply()` 成為多參數的 Function。
+將原本單一 Argument  Function，透過 Ramda 的 `unapply()` 成為多 Argument  Function。
 
 <!-- more -->
 
@@ -18,9 +18,12 @@ Ramda 0.26.1
 ## Function
 
 ```javascript
+// add :: [a] -> a
 let add = arr => arr[0] + arr[1] + arr[2];
 
-console.log(add([1, 2, 3]));
+// fn :: [a] -> a
+let fn = add;
+console.log(fn([1, 2, 3]));
 ```
 
 `add()` 為普通 function，只有 1 個 array 為 argument。
@@ -32,9 +35,12 @@ console.log(add([1, 2, 3]));
 ```javascript
 import { unapply } from 'ramda';
 
+// add :: [a] -> a
 let add = arr => arr[0] + arr[1] + arr[2];
 
-console.log(unapply(add)(1, 2, 3));
+// fn :: (*...) -> a
+let fn = unapply(add);
+console.log(fn(1, 2, 3));
 ```
 
 若想將原本 `add()` 的 argument 從 1 個 array，變成 3 個 argument，可使用 Ramda 的 `unapply()` 加以轉換。
