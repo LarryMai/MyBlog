@@ -7,7 +7,7 @@ tags:
   - Ramda/dec
   - Ramda/negate
 feature: images/feature/ramda.png
-date: 2019-05-10 11:07:02
+date: 2019-05-14 21:07:02
 ---
 若想將 Array 中一系列 Function，套用到另一 Array，Ramda 並沒有提供適當 Function，此時我們可以自行組合出 `zipFunc()`。
 
@@ -27,6 +27,7 @@ import { inc, dec, negate } from 'ramda';
 let fns = [inc, dec, negate];
 let data = [1, 2, 3];
 
+// zipFunc :: [a] -> [b] -> [c]
 let zipFunc = args => arr => {
   let result = [];
 
@@ -37,7 +38,9 @@ let zipFunc = args => arr => {
   return result;
 };
 
-console.log(zipFunc(fns)(data));
+// fn :: [a] -> [b] -> [c]
+let fn = zipFunc;
+console.log(fn(fns)(data));
 ```
 
 `fns` array 有一系列 function，會依序套用到 `data` array。
@@ -56,8 +59,12 @@ import { zipWith, call, inc, dec, negate } from 'ramda';
 let fns = [inc, dec, negate];
 let data = [1, 2, 3];
 
+// zipFunc :: [a] -> [b] -> [c]
 let zipFunc = zipWith(call);
-console.log(zipFunc(fns)(data));
+
+// fn :: [a] -> [b] -> [c]
+let fn = zipFunc;
+console.log(fn(fns)(data));
 ```
 
 Ramda 並沒有提供 `zipFunc()`，但我們可以自行組合。
@@ -70,9 +77,10 @@ Ramda 並沒有提供 `zipFunc()`，但我們可以自行組合。
 
 `zipＷith()` 原意是要我們傳入兩個 array 經過 callback 運算，但有趣的是目前 function 已經在  array 中了，根本不需要 callback，所以 callback 只剩下一個目的：執行 array 中的 function。
 
-第 8 行
+第 6 行
 
 ```javascript
+// zipFunc :: [a] -> [b] -> [c]
 let zipFunc = zipWith(call);
 ```
 
