@@ -9,7 +9,7 @@ tags:
   - Ramda/subtract
   - Ramda/flip
 feature: images/feature/ramda.png
-date: 2019-05-08 12:23:43
+date: 2019-05-14 22:23:43
 ---
 Ramda 的 `call()` 乍看很不起眼，但若搭配 `converge()` 之後，就能動態產生 Converging Function。
 
@@ -53,15 +53,17 @@ let product = {
   price: 30000
 };
 
+// calPrice :: (Number, Number) -> Number
 let calPrice = (discount, price) => price - discount - 1000;
-let finalPrice = product => calPrice(product.discount, product.price);
 
-console.log(finalPrice(product));
+// fn :: Number -> Number
+let fn = product => calPrice(product.discount, product.price);
+console.log(fn(product));
 ```
 
 `calPrice()` 傳入 `discount` 與 `price` argument，會計算出折扣後價錢。
 
-`finalPrice()` 則傳入 `product` object，再呼叫 `calPrice()`。
+`fn()` 則傳入 `product` object，再呼叫 `calPrice()`。
 
 ![call003](/images/ramda/call/call003.png)
 
@@ -75,37 +77,43 @@ let product = {
   price: 30000
 };
 
+// calPrice :: (Number, Number) -> Number
 let calPrice = (discount, price) => price - discount - 1000;
-let finalPrice = converge(
+
+// fn :: Object -> Number
+let fn = converge(
   calPrice, [
     prop('discount'),
     prop('price')
   ]
 );
 
-console.log(finalPrice(product));
+console.log(fn(product));
 ```
 
-首先將 `finalPrice()` point-free。
+首先將 `fn()` point-free。
 
-第 9 行
+11 行
 
 ```javascript
-let finalPrice = converge(
+// fn :: Object -> Number
+let fn = converge(
   calPrice, [
     prop('discount'),
     prop('price')
   ]
 );
+
+console.log(fn(product));
 ```
 
-`finalPrice()` 的 argument 為 `product` object，包含 `discount` 與 `price` property，分別傳入 `折扣` 與 `價錢`。
+`fn()` 的 argument 為 `product` object，包含 `discount` 與 `price` property，分別傳入 `折扣` 與 `價錢`。
 
 最後要執行的是 `calPrice()`，分別有 `discount` 與 `price` 兩個 argument。
 
-由於傳入 `finalPrice()` 的是 object，因此勢必要先使用 `prop()` 拆解後才能傳給 `calPrice()` 執行。
+由於傳入 `fn()` 的是 object，因此勢必要先使用 `prop()` 拆解後才能傳給 `calPrice()` 執行。
 
-這正是使用 `converge()` 時機，將 `calPrice()` 當作 converging function，將 `prop()` 當作 branching function。
+這正是使用 `fn()` 時機，將 `calPrice()` 當作 converging function，將 `prop()` 當作 branching function。
 
 目前就功能而言沒問題，唯 `calPrice()` 並非 point-free，是否有繼續優化空間呢 ?
 
@@ -119,20 +127,21 @@ let product = {
   price: 30000
 };
 
+// calPrice :: (Number, Number) -> Number
 let calPrice = pipe(
   add(1000),
   flip(subtract)
 );
 
-let finalPrice = converge(
+// fn :: Object -> Number
+let fn = converge(
   call, [
     pipe(prop('discount'), calPrice),
     prop('price')
   ]
 );
 
-let result = finalPrice(product);
-console.log(result);
+console.log(fn(product));
 ```
 
 由於 `calPrice()` 有兩個 argument：`discount` 與 `price`，基於 currying 特性，可將 `calPrice()` 視為由 `discount` 產生的 function，其 argument 只剩下 `price`。
@@ -140,6 +149,7 @@ console.log(result);
 第 8 行
 
 ```javascript
+// calPrice :: (Number, Number) -> Number
 let calPrice = pipe(
   add(1000),
   flip(subtract)
@@ -152,10 +162,11 @@ let calPrice = pipe(
 
 我們發現 `calPrice()` 已經 point-free 了。
 
-13 行
+14 行
 
 ```javascript
-let finalPrice = converge(
+// fn :: Object -> Number
+let fn = converge(
   call, [
     pipe(prop('discount'), calPrice),
     prop('price')
