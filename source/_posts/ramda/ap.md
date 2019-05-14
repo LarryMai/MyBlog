@@ -9,7 +9,7 @@ tags:
   - Ramda/includes
   - Ramda/identity
 feature: images/feature/ramda.png
-date: 2019-05-08 11:23:43
+date: 2019-05-15 01:23:43
 ---
 實務上常遇到一個 Array 中所有 Function，必須對另外一個 Array 中所有 Data 都執行過一次，此時 Ramda 的 `ap()` 就是我們的好幫手。
 
@@ -26,18 +26,19 @@ Ramda 0.26.1
 ```javascript
 let data = ['a', 'e', 'd'];
 
-let hasAllTags = rules => tags => {
+// fn :: [a] -> [a]
+let fn = args => arr => {
   let result = true;
 
-  for (let x of rules) {
-    result = result && tags.some(y => y === x);
+  for (let x of arr) {
+    result = result && arr.some(y => y === x);
   }
 
   return result;
 };
 
-console.log(hasAllTags(['a', 'd'])(data));
-console.log(hasAllTags(['a', 'g'])(data));
+console.log(fn(['a', 'd'])(data));
+console.log(fn(['a', 'g'])(data));
 ```
 
 條件為 array 必須包含所有 element，若符合條件則回傳 `true`，否則回傳 `false`。
@@ -57,14 +58,15 @@ import { pipe, all, ap, map, includes, of, identity } from 'ramda';
 
 let data = ['a', 'e', 'd'];
 
-let hasAllTags = rules => pipe(
+// fn :: [a] -> [a]
+let fn = args => pipe(
   of,
-  ap(map(includes, rules)),
+  ap(map(includes, args)),
   all(identity)
 );
 
-console.log(hasAllTags(['a', 'd'])(data));
-console.log(hasAllTags(['a', 'g'])(data));
+console.log(fn(['a', 'd'])(data));
+console.log(fn(['a', 'g'])(data));
 ```
 
 其實由 imperative 作法，已經可以看出一些端倪：
