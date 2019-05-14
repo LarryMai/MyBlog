@@ -4,7 +4,7 @@ tags:
   - Ramda/includes
   - Ramda/any
 feature: images/feature/ramda.png
-date: 2019-05-10 16:52:21
+date: 2019-05-14 19:52:21
 ---
 實務上我們常需判斷某一個值是否存在於 Array 內，若存在則傳回 `true`，若不存在則傳回 `false`，對於簡單的需求，我們會希望不要傳入 Callback，直接傳入 Data 即可。
 
@@ -21,6 +21,7 @@ Ramda 0.26.1
 ```javascript
 let data = [1, 2, 3];
 
+// includes :: a -> [a] -> Boolean
 let includes = arg => arr => {
   for(let elem of arr) {
     if (elem === arg) return true;
@@ -28,6 +29,8 @@ let includes = arg => arr => {
   return false;
 }
 
+// fn :: a -> [a] -> Boolean
+let fn = includes;
 console.log(includes(1)(data));
 ```
 
@@ -56,9 +59,12 @@ import { any } from 'ramda';
 
 let data = [1, 2, 3];
 
+// includes :: a -> [a] -> Boolean
 let includes = arg => any(x => x === arg);
 
-console.log(includes(1)(data));
+// fn ::a -> [a] -> Boolean
+let fn = includes;
+console.log(fn(1)(data));
 ```
 
 其實我們大可不必自己寫 `for` loop，可藉助 Ramda 的 `any()` 組合出 `includes()`。
@@ -79,7 +85,9 @@ import { includes } from 'ramda';
 
 let data = [1, 2, 3];
 
-console.log(includes(1)(data));
+// fn :: a -> [a] -> Boolean
+let fn = includes;
+console.log(fn(1)(data));
 ```
 
 事實上 Ramda 已經提供 `includes()`，可直接使用。
@@ -107,7 +115,9 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-console.log(includes({ title: 'FP in JavaScript', price: 100 })(data));
+// fn :: a -> [a]
+let fn = includes;
+console.log(fn({ title: 'FP in JavaScript', price: 100 })(data));
 ```
 
 `includes()` 也可判斷 object 是否存在於 array，值得注意的是 `includes()` 使用 `equals()` 判斷，而非 `===`，比較的是 object property，而非 object reference。
@@ -139,6 +149,8 @@ import { includes } from 'ramda';
 
 let data = 'FP in JavaScript';
 
+// fn :: a -> [a] -> Boolean
+let fn = includes;
 console.log(includes('JavaScript', data));
 ```
 
@@ -167,4 +179,3 @@ console.log(data.includes('JavaScript'));
 
 [Ramda](https://ramdajs.com), [includes()](https://ramdajs.com/docs/#includes)
 [Ramda](https://ramdajs.com), [any()](https://ramdajs.com/docs/#any)
-
