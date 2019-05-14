@@ -3,7 +3,7 @@ tags:
   - Ramda
   - Ramda/uniq
 feature: images/feature/ramda.png
-date: 2019-05-10 23:26:20
+date: 2019-05-13 18:26:20
 ---
 ECMAScript 的 `Array.prototype` 並沒有內建 `uniq()`，在 ECMAScript 2015 可使用 `Set` 時實現，但僅限於 Primitive；Ramda 的 `uniq()` 可同時處理 Primitive 與 Object。
 
@@ -20,8 +20,11 @@ Ramda 0.26.1
 ```javascript
 let data = [1, 2, 3, 1];
 
+// uniq :: [a] -> [a]
 let uniq = arr => [...new Set(arr)];
 
+// fn :: [a] -> [a]
+let fn = uniq;
 console.log(uniq(data));
 ```
 
@@ -40,7 +43,9 @@ import { uniq } from 'ramda';
 
 let data = [1, 2, 3, 1];
 
-console.log(uniq(data));
+// fn :: [a] -> [a]
+let fn = uniq
+console.log(fn(data));
 ```
 
 事實上 Ramda 已經提供 `uniq()`，可直接使用。
@@ -66,6 +71,8 @@ let data = [
   { title: 'FP in JavaScript', price: 100 }
 ];
 
+// fn :: [a] -> [a]
+let fn = uniq;
 console.dir(uniq(data));
 ```
 

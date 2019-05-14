@@ -4,7 +4,7 @@ tags:
   - Ramda/eqBy
   - Ramda/uniqWith
 feature: images/feature/ramda.png
-date: 2019-05-13 18:36:07
+date: 2019-05-14 18:36:07
 ---
 Ramda 有些 Function 很少直接使用，而是用來產生 Predicate，`eqBy()` 就是其中之一。
 

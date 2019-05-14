@@ -5,7 +5,7 @@ tags:
   - Ramda/uniq
   - Ramda/identity
 feature: images/feature/ramda.png
-date: 2019-05-14 15:53:53
+date: 2019-05-13 19:53:53
 ---
 對於一般需求，`uniq()` 即可勝任，但若需經過 Function 轉換後才比較，則要使用 `uniqBy()`，自行傳入 Callback。
 
