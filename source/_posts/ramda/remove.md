@@ -5,11 +5,17 @@ tags:
   - Ramda/slice
   - Ramda/without
 feature: images/feature/ramda.png
-date: 2019-05-02 11:23:43
+date: 2019-05-15 03:23:43
 ---
 若要從 Array 擷取其中一部分，但我們無法如 `slice()` 指定要的部分，只能指定不要的部分，此時我們可使用 Ramda 的 `remove()`。
 
 <!-- more -->
+
+## Version
+
+VS Code 1.33.1
+Quokka 1.0.210
+Ramda 0.26.1
 
 ## Functional
 
@@ -18,8 +24,12 @@ import { slice, without } from 'ramda';
 
 let data = [1, 2, 3, 4, 5];
 
-let remove = (start, count, arr) => without(slice(start, start + count, arr), arr);
-console.dir(remove(1, 3, data));
+// remove :: Number -> Number -> [a] -> [a]
+let remove = start => count => arr => without(slice(start, start + count, arr), arr);
+
+// fn :: Number -> Number -> [a] -> [a]
+let fn = remove;
+console.log(fn(1)(3)(data));
 ```
 
 假如我們一開始不知道 Ramda 的 `remove()`，也可透過 `slice()` 與 `without()` 組合：
@@ -37,7 +47,10 @@ console.dir(remove(1, 3, data));
 import { remove } from 'ramda';
 
 let data = [1, 2, 3, 4, 5];
-console.dir(remove(1, 3, data));
+
+// fn :: Number -> Number -> [a] -> [a]
+let fn = remove;
+console.log(fn(1)(3)(data));
 ```
 
 事實上 Ramda 已經內建 `remove()`，可直接使用。
@@ -70,7 +83,9 @@ let data = [
   { firstName: 'John',   lastName: 'Wu'}
 ];
 
-console.dir(remove(1, 3, data));
+// fn :: Number -> Number -> [a] -> [a]
+let fn = remove;
+console.dir(fn(1)(3)(data));
 ```
 
 若 element 為 object，`remove()` 依然適用。
