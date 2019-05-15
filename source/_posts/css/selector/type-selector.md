@@ -1,6 +1,7 @@
 title: CSS 之 Type Selector
 tags:
   - CSS
+  - CSS/Selector
 feature: images/feature/css.png
 date: 2019-05-15 21:28:30
 ---
@@ -10,7 +11,6 @@ Type Selector 會一次影響所有 HTML Tag，直接以 Tag 名稱描述即可�
 
 ## Version
 
-VS Code 1.33.1
 CCS 3
 
 ## Type Selector
@@ -53,7 +53,7 @@ div {
 
 CSS 部分若要以 type selector 描述 `<div>`，selector 直接使用 tag 名稱即可。
 
-![type000](/images/css/type-selector/type000.png)
+![type000](/images/css/selector/type-selector/type000.png)
 
 ## Conclusion
 
