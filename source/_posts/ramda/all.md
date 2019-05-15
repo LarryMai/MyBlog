@@ -4,7 +4,7 @@ tags:
   - Ramda/all
   - Ramda/propSatisfies
 feature: images/feature/ramda.png
-date: 2019-04-10 15:23:43
+date: 2019-05-15 13:23:43
 ---
 實務上我們常需判斷 Array 是否全部符合某條件，若存在則傳回 `true`，若不存在則傳回 `false`。
 
@@ -25,15 +25,18 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-let all = cb => arr => {
+// all :: (a -> Boolean) -> [a] -> Boolean
+let all = pred => arr => {
   for (let elem of arr) {
-    if (!cb(elem)) return false;
+    if (!pred(elem)) return false;
   }
   return true;
 };
 
-console.log(all(x => x.price >= 300)(data));
-console.log(all(x => x.price >= 100)(data));
+// fn :: [a] -> Boolean
+let fn = all(x => x.price >= 100);
+
+console.log(fn(data));
 ```
 
 建立 `all()`，imperative 會使用 `for` loop 搭配 `if` 判斷，若不符合條件就直接回傳  `false` 結束，若都符合條件則回傳 `true`。
@@ -49,7 +52,6 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-console.log(data.every(x => x.price >= 300));
 console.log(data.every(x => x.price >= 100));
 ```
 
@@ -70,8 +72,10 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-console.log(all(propSatisfies(gte(__, 300), 'price'))(data));
-console.log(all(propSatisfies(gte(__, 100), 'price'))(data));
+// fn :: [a] -> Boolean
+let fn = all(propSatisfies(gte(__, 100), 'price'));
+
+console.log(fn(data));
 ```
 
 事實上 Ramda 已經內建 `all()` ，且 callback 也可改用 `propSatisfies()` 與 `gte()` 產生，語意更佳。
