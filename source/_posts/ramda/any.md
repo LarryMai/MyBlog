@@ -4,7 +4,7 @@ tags:
   - Ramda/equals
   - Ramda/any
 feature: images/feature/ramda.png
-date: 2019-04-10 14:23:43
+date: 2019-05-15 14:23:43
 ---
 實務上我們常需判斷某一個值是否存在於 Array 內，若存在則傳回 `true`，若不存在則傳回 `false`。
 
@@ -25,15 +25,18 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-let any = cb => arr => {
+// any :: (a -> Boolean) -> [a] -> Boolean
+let any = pred => arr => {
   for (let elem of arr) {
-    if (cb(elem)) return true;
+    if (pred(elem)) return true;
   }
   return false;
 };
 
-console.log(any(x => x.price === 100)(data));
-console.log(any(x => x.price === 400)(data));
+// fn :: [a] -> Boolean
+let fn = any(x => x.price === 100);
+
+console.log(fn(data));
 ```
 
 建立 `any()`，imperative 會使用 `for` loop 搭配 `if` 判斷，若找到就直接回傳  `true` 結束，若都找不到則回傳 `false`。
@@ -50,7 +53,6 @@ let data = [
 ];
 
 console.log(data.some(x => x.price === 100));
-console.log(data.some(x => x.price === 400));
 ```
 
 `Array.prototype` 有內建 `some()`，直接傳入 arrow function 即可。
@@ -70,8 +72,10 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-console.log(any(propEq('price', 100))(data));
-console.log(any(propEq('price', 400))(data));
+// fn :: [a] -> Boolean
+let fn = any(propEq('price', 100));
+
+console.log(fn(data));
 ```
 
 事實上 Ramda 已經內建 `any()` ，且 callback 也可改用 `propEq()` 產生，語意更佳。
@@ -98,5 +102,3 @@ console.log(any(propEq('price', 400))(data));
 
 [Ramda](https://ramdajs.com), [any()](https://ramdajs.com/docs/#any)
 [Ramda](https://ramdajs.com), [propEq()](https://ramdajs.com/docs/#propEq)
-
-
