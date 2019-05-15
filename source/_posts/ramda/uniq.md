@@ -25,7 +25,8 @@ let uniq = arr => [...new Set(arr)];
 
 // fn :: [a] -> [a]
 let fn = uniq;
-console.log(uniq(data));
+
+console.log(fn(data));
 ```
 
 `data` 很明顯 `1` 是重複的，我們希望結果只顯示 `[1, 2, 3]`。
@@ -45,6 +46,7 @@ let data = [1, 2, 3, 1];
 
 // fn :: [a] -> [a]
 let fn = uniq
+
 console.log(fn(data));
 ```
 
@@ -73,7 +75,8 @@ let data = [
 
 // fn :: [a] -> [a]
 let fn = uniq;
-console.dir(uniq(data));
+
+console.dir(fn(data));
 ```
 
 若 element 為 object，`data` 很明顯第四筆是重複的，我們希望結果只顯示不重複的前三筆。
