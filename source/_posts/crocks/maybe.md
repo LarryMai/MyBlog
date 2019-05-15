@@ -136,7 +136,7 @@ let { Just } = Maybe;
 
 從 `Maybe` destructure 出 `Just`，將來不必再使用 `Maybe.Just`。
 
-第 7 行
+第 8 行
 
 ```javascript
 // fn :: Maybe Number -> Maybe Number
@@ -208,7 +208,7 @@ console.log(fn(Nothing()));
 
 沒顯示 `calling inc()`，表示 `inc()` 根本沒執行，直接回傳 `Nothing`。
 
-> 只有 `Just` 才會執行 `Maybe` 自帶的 function： `map()`，`Nothing` 完全不執行，這確保了只有正確 type 才會執行 `inc()`，不需要我們自己做 `typeof` 檢查，也不會產生不預期結果
+> 只有 `Just` 才會執行 `Maybe` 自帶的 function： `map()`，`Nothing` 完全不執行，這確保了只有正確 type 才會執行 `inc()`，不需我們自己做 `typeof` 檢查，也不會產生不預期結果
 
 ## safeNum()
 
@@ -376,7 +376,7 @@ let fn = n => safe(isNumber)(n).map(inc).option(0);
 * 接下來要使 `Maybe` 能經過運算，一定得使用 `map()` 傳入 function
 * 若很粗心忘記寫 `option()`，一般情況顯示 `Maybe` 就是錯的，一定會回來補上 `option(0)`
 
-也就是每個步驟都被逼著走，且在 `一般情況` 就會發現錯誤，不像 imperative 的 `typeof` 在一般情況不會錯，只有在特殊狀況才會出錯，這就是 bug 來源。
+也就是每個步驟都被逼著走，且在 `一般情況` 就會發現錯誤，不像 imperative 的 `typeof` 在一般情況不會錯，只有在 `特殊情況` 才會出錯，這就是 bug 來源。
 
 `Maybe` 還可讓你在寫 unit test 時不用想很奇怪的 test case，因為 `Maybe` 會確保沒有不預期結果。
 
