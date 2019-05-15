@@ -22,6 +22,7 @@ ECMAScript 2015
 ```javascript
 // add :: (Number, Number, Number) -> Number
 let add = (x, y, z) => x + y + z;
+
 console.log(add(1, 2, 3));
 ```
 
@@ -36,6 +37,7 @@ let data = [1, 2, 3];
 
 // add :: (Number, Number, Number) -> Number
 let add = (x, y, z) => x + y + z;
+
 console.log(add.apply(null, data));
 ```
 
@@ -52,6 +54,7 @@ let data = [1, 2, 3];
 
 // add :: (Number, Number, Number) -> Number
 let add = (x, y, z) => x + y + z;
+
 console.log(add(...data));
 ```
 
@@ -74,6 +77,7 @@ let apply = pred => args => pred.apply(null, args);
 
 // fn :: [Number] -> Number 
 let fn = apply(add);
+
 console.log(fn(data));
 ```
 
@@ -111,6 +115,7 @@ let add = (x, y, z) => x + y + z;
 
 // fn :: [Number] -> Number 
 let fn = apply(add);
+
 console.log(fn(data));
 ```
 
