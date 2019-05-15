@@ -40,6 +40,7 @@ let zipFunc = args => arr => {
 
 // fn :: [a] -> [b] -> [c]
 let fn = zipFunc;
+
 console.log(fn(fns)(data));
 ```
 
@@ -64,6 +65,7 @@ let zipFunc = zipWith(call);
 
 // fn :: [a] -> [b] -> [c]
 let fn = zipFunc;
+
 console.log(fn(fns)(data));
 ```
 
