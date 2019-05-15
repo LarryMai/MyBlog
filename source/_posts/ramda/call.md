@@ -58,6 +58,7 @@ let calPrice = (discount, price) => price - discount - 1000;
 
 // fn :: Number -> Number
 let fn = product => calPrice(product.discount, product.price);
+
 console.log(fn(product));
 ```
 
