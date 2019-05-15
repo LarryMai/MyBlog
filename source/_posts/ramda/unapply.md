@@ -23,6 +23,7 @@ let add = arr => arr[0] + arr[1] + arr[2];
 
 // fn :: [a] -> a
 let fn = add;
+
 console.log(fn([1, 2, 3]));
 ```
 
@@ -40,6 +41,7 @@ let add = arr => arr[0] + arr[1] + arr[2];
 
 // fn :: (*...) -> a
 let fn = unapply(add);
+
 console.log(fn(1, 2, 3));
 ```
 
