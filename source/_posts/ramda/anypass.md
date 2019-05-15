@@ -5,7 +5,7 @@ tags:
   - Ramda/any
   - Ramda/propEq
 feature: images/feature/ramda.png
-date: 2019-04-11 10:23:43
+date: 2019-05-15 12:23:43
 ---
 Ramda 有 `any()` 並不令人訝異，ECMAScript 也有 `some()`，但 Ramda 又另外提供了 `anyPass()`，這與 `any()` 有什麼不同呢 ?
 
@@ -24,12 +24,13 @@ import { anyPass, propEq } from 'ramda';
 
 let data = { title: 'FP in JavaScript', price: 100 };
 
-let isGoodPrice = anyPass([
+// fn :: Object -> Boolean
+let fn = anyPass([
   propEq('price', 100),
   propEq('price', 200)
 ]);
 
-console.log(isGoodPrice(data));
+console.log(fn(data));
 ```
 
 若只要 `price` 為 `100` 或 `200`，我們都認為是合理的價錢。
@@ -57,12 +58,13 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-let isGoodPrice = anyPass([
+// fn :: [Object] -> Boolean
+let fn = any(anyPass([
   propEq('price', 100),
   propEq('price', 200)
-]);
+]));
 
-console.log(any(isGoodPrice)(data));
+console.log(fn(data));
 ```
 > Q：`any()` 與 `anyPass()` 的差別在哪 ?
 
