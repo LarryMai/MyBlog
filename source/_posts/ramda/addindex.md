@@ -27,6 +27,7 @@ let data = [
 
 // fn :: [a] -> [b]
 let fn = arr => arr.map((x, i) => `${i}.${x.title}`);
+
 console.dir(fn(data));
 ```
 
@@ -45,6 +46,7 @@ let fn = arr => arr.map((x, i) => `${i}.${x.title}`);
 
 ```javascript
 import { map, addIndex } from 'ramda';
+
 let data = [
   { title: 'FP in JavaScript', price: 100 },
   { title: 'RxJS in Action', price: 200 },
@@ -56,10 +58,11 @@ let mapIndex = addIndex(map);
 
 // fn : (a -> b) -> [a] -> [b]
 let fn = mapIndex((x, i) => `${i}.${x.title}`);
+
 console.dir(fn(data));
 ```
 
-第 8 行
+第 9 行
 
 ```javascript
 // mapIndex :: (a -> b) -> [a] -> [b]
@@ -98,6 +101,7 @@ let index = pipe(identity, String);
 let fn = mapIndex(useWith(
   flip(concat), [title, index])
 );
+
 console.dir(fn(data));
 ```
 
