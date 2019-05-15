@@ -7,7 +7,7 @@ tags:
   - Ramda/lte
   - Ramda/propSatisfies
 feature: images/feature/ramda.png
-date: 2019-04-11 11:23:43
+date: 2019-05-15 11:23:43
 ---
 Ramda 有 `all()` 並不令人訝異，ECMAScript 也有 `every()`，但 Ramda 又另外提供了 `allPass()`，這與 `all()` 有什麼不同呢 ?
 
@@ -26,12 +26,13 @@ import { allPass, propSatisfies, lte, includes } from 'ramda';
 
 let data = { title: 'FP in JavaScript', price: 100 };
 
-let isGoodBook = allPass([
+// fn :: Object -> Boolean
+let fn = allPass([
   propSatisfies(lte(100), 'price'),
   propSatisfies(includes('JavaScript'), 'title')
 ]);
 
-console.log(isGoodBook(data));
+console.log(fn(data));
 ```
 
 若只要 `price` 大於 `100` 且 `title` 有 `JavaScript`，我們都認為是好書。
@@ -58,12 +59,13 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-let isGoodBook = allPass([
+// fn :: [Object] -> Boolean
+let fn = all(allPass([
   propSatisfies(lte(100), 'price'),
   propSatisfies(includes('JavaScript'), 'title')
-]);
+]));
 
-console.log(all(isGoodBook)(data));
+console.log(fn(data));
 ```
 
 > Q：`all()` 與 `allPass()` 的差別在哪 ?
@@ -89,3 +91,4 @@ console.log(all(isGoodBook)(data));
 [Ramda](https://ramdajs.com), [includes()](https://ramdajs.com/docs/#includes)
 [Ramda](https://ramdajs.com), [lte()](https://ramdajs.com/docs/#lte)
 [Ramda](https://ramdajs.com), [propSatisfies()](https://ramdajs.com/docs/#propSatisfies)
+
