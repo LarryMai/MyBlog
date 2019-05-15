@@ -28,6 +28,7 @@ let data = [1, 2, 3, -1];
 
 // fn :: (a -> b) -> [a] -> [a]
 let fn = pred => uniqBy(pred);
+
 console.log(fn(x => Math.abs(x))(data));
 ```
 
@@ -48,6 +49,7 @@ let data = [1, 2, 3, -1]
 
 // fn :: ((a, a) -> Boolean) -> [a] -> [a]
 let fn = pred => uniqWith(pred);
+
 console.log(fn((x, y) => Math.abs(x) === Math.abs(y))(data));
 ```
 
@@ -76,6 +78,7 @@ let data = [1, 2, 3, -1]
 
 // fn :: ((a, a) -> Boolean) -> [a] -> [a]
 let fn = pred => uniqWith(pred);
+
 console.log(fn(eqBy(Math.abs))(data));
 ```
 
@@ -102,6 +105,7 @@ let data = [
 
 // fn :: ((a, a) -> Boolean) -> [a] -> [a]
 let fn = pred => uniqWith(pred);
+
 console.dir(fn((x, y) => x.title === y.title || x.price === y.price)(data));
 ```
 
@@ -126,10 +130,8 @@ let data = [
 
 // fn :: ((a, a) -> Boolean) -> [a] -> [a]
 let fn = pred => uniqWith(pred);
-console.dir(fn(anyPass([
-  eqProps('title'),
-  eqProps('price')
-]))(data));
+
+console.dir(fn(anyPass([eqProps('title'), eqProps('price')]))(data));
 ```
 
 `(x, y) => x.title === y.title || x.price === y.price` 也可由 `anyPass()` 與 `eqProps()` 產生，使其 point-free。
@@ -152,4 +154,3 @@ console.dir(fn(anyPass([
 [Ramda](https://ramdajs.com), [eqBy()](https://ramdajs.com/docs/#eqBy)
 [Ramda](https://ramdajs.com), [anyPass()](https://ramdajs.com/docs/#anyPass)
 [Ramda](https://ramdajs.com), [eqProps()](https://ramdajs.com/docs/#eqProps)
-
