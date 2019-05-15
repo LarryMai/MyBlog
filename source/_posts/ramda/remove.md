@@ -29,6 +29,7 @@ let remove = start => count => arr => without(slice(start, start + count, arr), 
 
 // fn :: Number -> Number -> [a] -> [a]
 let fn = remove;
+
 console.log(fn(1)(3)(data));
 ```
 
@@ -50,6 +51,7 @@ let data = [1, 2, 3, 4, 5];
 
 // fn :: Number -> Number -> [a] -> [a]
 let fn = remove;
+
 console.log(fn(1)(3)(data));
 ```
 
@@ -85,6 +87,7 @@ let data = [
 
 // fn :: Number -> Number -> [a] -> [a]
 let fn = remove;
+
 console.dir(fn(1)(3)(data));
 ```
 
