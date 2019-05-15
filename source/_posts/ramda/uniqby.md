@@ -26,6 +26,7 @@ let data = [1, 2, 3, 1];
 
 // fn :: [a] -> [a]
 let fn = uniqBy(identity);
+
 console.log(fn(data));
 ```
 
@@ -54,6 +55,7 @@ let data = [1, 2, 3, 1];
 
 // fn :: [a] -> [a]
 let fn = uniq;
+
 console.log(fn(data));
 ```
 
@@ -74,6 +76,7 @@ let data = [1, 2, 3, -1];
 
 // fn :: (a -> b) -> [a] -> [a]
 let fn = pred => uniqBy(pred);
+
 console.log(fn(x => Math.abs(x))(data));
 ```
 
@@ -81,7 +84,7 @@ console.log(fn(x => Math.abs(x))(data));
 
 此時就不能再使用 `uniq()`，因為條件太特殊，只能使用 `uniqBy()`。
 
-第 7 行
+第 8 行
 
 ```javascript
 console.log(fn(x => Math.abs(x))(data));
@@ -105,6 +108,7 @@ let data = [
 
 // fn :: (a -> b) -> [a] -> [a]
 let fn = pred => uniqBy(pred);
+
 console.dir(fn(x => x.title)(data));
 ```
 
@@ -112,7 +116,7 @@ console.dir(fn(x => x.title)(data));
 
 此時就不能再使用 `uniq()`，因為條件太特殊，只能使用 `uniqBy()`。
 
-12 行
+13 行
 
 ```javascript
 console.dir(fn(x => x.title)(data));
@@ -136,6 +140,7 @@ let data = [
 
 // fn :: (a -> b) -> [a] -> [a]
 let fn = pred => uniqBy(pred);
+
 console.dir(fn(prop('title'))(data));
 ```
 
