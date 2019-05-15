@@ -31,6 +31,7 @@ let includes = arg => arr => {
 
 // fn :: a -> [a] -> Boolean
 let fn = includes;
+
 console.log(includes(1)(data));
 ```
 
@@ -64,6 +65,7 @@ let includes = arg => any(x => x === arg);
 
 // fn ::a -> [a] -> Boolean
 let fn = includes;
+
 console.log(fn(1)(data));
 ```
 
@@ -87,6 +89,7 @@ let data = [1, 2, 3];
 
 // fn :: a -> [a] -> Boolean
 let fn = includes;
+
 console.log(fn(1)(data));
 ```
 
@@ -117,6 +120,7 @@ let data = [
 
 // fn :: a -> [a]
 let fn = includes;
+
 console.log(fn({ title: 'FP in JavaScript', price: 100 })(data));
 ```
 
@@ -151,6 +155,7 @@ let data = 'FP in JavaScript';
 
 // fn :: a -> [a] -> Boolean
 let fn = includes;
+
 console.log(includes('JavaScript', data));
 ```
 
