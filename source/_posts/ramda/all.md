@@ -6,7 +6,7 @@ tags:
 feature: images/feature/ramda.png
 date: 2019-05-15 13:23:43
 ---
-實務上我們常需判斷 Array 是否全部符合某條件，若存在則傳回 `true`，若不存在則傳回 `false`。
+實務上我們常需判斷 Array 是否 `全部` 符合某條件，若存在則傳回 `true`，若不存在則傳回 `false`。
 
 <!-- more -->
 
@@ -73,12 +73,12 @@ let data = [
 ];
 
 // fn :: [a] -> Boolean
-let fn = all(propSatisfies(gte(__, 100), 'price'));
+let fn = all(x => x.price >= 100);
 
 console.log(fn(data));
 ```
 
-事實上 Ramda 已經內建 `all()` ，且 callback 也可改用 `propSatisfies()` 與 `gte()` 產生，語意更佳。
+其實 Ramda 已經內建 `all()`，可直接使用。
 
 > **all()**
 > `(a → Boolean) → [a] → Boolean`
@@ -89,6 +89,28 @@ console.log(fn(data));
 `[a]`：data 為 array
 
 `Boolean`：回傳比較結果
+
+![all003](/images/ramda/all/all003.png)
+
+## Point-free
+
+```javascript
+import { all, propSatisfies, gte, __ } from 'ramda';
+
+let data = [
+  { title: 'FP in JavaScript', price: 100 },
+  { title: 'RxJS in Action', price: 200 },
+  { title: 'Speaking JavaScript', price: 300 }
+];
+
+// fn :: [a] -> Boolean
+let fn = all(propSatisfies(gte(__, 100), 'price'));
+
+console.log(fn(data));
+```
+
+`any()` 的 callback 也可改用 `propSatisfies()` 與 `gte()` 產生，語意更佳。
+
 
 ![all002](/images/ramda/all/all002.png)
 
