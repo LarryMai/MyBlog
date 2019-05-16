@@ -8,6 +8,7 @@ tags:
   - Ramda/propSatisfies
   - Ramda/includes
   - Ramda/all
+  - Ramda/nonePass
 feature: images/feature/ramda.png
 date: 2019-05-15 12:23:43
 ---
