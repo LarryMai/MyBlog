@@ -6,6 +6,7 @@ tags:
   - Ramda/inc
   - Ramda/dec
   - Ramda/negate
+  - Ramda/zipFunc
 feature: images/feature/ramda.png
 date: 2019-05-14 21:07:02
 ---
