@@ -33,9 +33,9 @@ let fn = anyPass([
 console.log(fn(data));
 ```
 
-若只要 `price` 為 `100` 或 `200`，我們都認為是合理的價錢。
+若只要 `price` 為 `100` 或 `200`，我們都認為是合理價錢。
 
-以 FP 的角度，我們必須提供兩個 predicate，但只要其中一個 predicate 成立即可，因此使用 Ramda 的 `anyPass()` 將兩個使用 `propEq()` 產生的 predicate 組合成單一 predicate。
+以 FP 角度，我們必須提供兩個 predicate，但只要其中一個 predicate 成立即可，因此使用 Ramda 的 `anyPass()` 將兩個使用 `propEq()` 產生的 predicate 組合成單一 predicate。
 
 注意新 predicate 接受的 data 與原本 predicate 都相同，一樣是 object。
 
@@ -79,7 +79,7 @@ console.log(fn(data));
 ## Conclusion
 
 * `any()` 結果是 boolean；而 `anyPass()` 結果是 predicate
-* `anyPass()` 是 `any()` 的昇華：`any()` 的對象是 array，只能使用單一 predicate；而 `anyPass()` 的對象是 object，能使用多個 predicate
+* `anyPass()` 是 `any()` 的昇華：`any()` 對象是 array，只能使用單一 predicate；而 `anyPass()` 對象是 object，能使用多個 predicate
 * 若要 array 適用於多個 predicate，就必須組合 `any()` 與 `anyPass()`
 
 ## Reference
