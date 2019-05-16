@@ -4,7 +4,7 @@ tags:
 feature: images/feature/css.png
 date: 2019-05-15 21:12:48
 ---
-縱使前端技術日新月異，但其實脫離不開三個最基本技術：HTML / CSS / ECMAScript，其中視覺部分就是由 CSS 負責。
+縱使前端技術日新月異，但其實脫離不開三個最基本技術：HTML / CSS / ECMAScript，其中視覺部分就是 CSS 。
 
 <!-- more -->
 
@@ -14,8 +14,6 @@ CSS 3
 
 ## Inline
 
-**inline.html**
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -24,7 +22,7 @@ CSS 3
   <title>CSS Inline</title>
 </head>
 <body>
-  <div style="font-size:30px;color:#f00">test</div>
+  <div style="font-size:30px;color:#ff0000">test</div>
 </body>
 </html>
 ```
@@ -34,14 +32,10 @@ CSS 3
 第 8 行
 
 ```html
-<div style="font-size:30px;color:#f00">test</div>
+<div style="font-size:30px;color:#ff0000">test</div>
 ```
 
 HTML 使用 `<div></div>` 包住 `test`，並直接使用 `style` attribute 描述 element。
-
-> Emmet
->
-> `div[style=font-size:30px;color:#f00]{test}`
 
 優點：
 
@@ -52,8 +46,6 @@ HTML 使用 `<div></div>` 包住 `test`，並直接使用 `style` attribute 描�
 * 容易違反 DRY，將來維護困難
 
 ## Internal
-
-**internal.html**
 
 ```html
 <!DOCTYPE html>
@@ -84,9 +76,6 @@ HTML 使用 `<div></div>` 包住 `test`，並直接使用 `style` attribute 描�
 
 HTML 使用 `<div></div>` 包住 `test`，
 
-> Emmet
-> `div{test}`
-
 第 7 行
 
 ```css
@@ -98,10 +87,6 @@ div {
 
 CSS 直接以 `div` element selector 選擇，設定其 `font-size` 與 `color`。
 
-> Emmet
-> `f30`
-> `c#f00`
-
 優點：
 
 * 適合練習或 demo 使用
@@ -111,8 +96,6 @@ CSS 直接以 `div` element selector 選擇，設定其 `font-size` 與 `color`�
 * 容易違反 DRY，將來維護困難
 
 ## External
-
-**external1.html**
 
 ```html
 <!DOCTYPE html>
@@ -137,11 +120,6 @@ CSS 直接以 `div` element selector 選擇，設定其 `font-size` 與 `color`�
 ```
 
 使用 `<link>` 載入獨立 `.css` 檔案。
-
-> Emmet
-> `link:css`
-
-**external2.html**
 
 ```html
 <!DOCTYPE html>
@@ -178,11 +156,7 @@ div {
 }
 ```
 
-CSS 直接以 `div` element selector 選擇，設定其 `font-size` 與 `color`。
-
-> Emmet
-> `f30`
-> `c#f00`
+CSS 直接以 `div` type selector 選擇，設定其 `font-size` 與 `color`
 
 優點：
 
@@ -198,8 +172,4 @@ CSS 直接以 `div` element selector 選擇，設定其 `font-size` 與 `color`�
 * CSS 的 inline 寫法，容易違反 DRY，且 priority 太高，將來不容易維護
 * CSS 的 internal 寫法適合練習與 demo，實際專案不建議使用
 * CSS 的 external 寫法有 module 特性，容易重複使用與維護，建議用在實際專案
-
-## Sample Code
-
-完整範例可以在我的 [GitHub](https://github.com/oomusou/css-way) 上找到
 
