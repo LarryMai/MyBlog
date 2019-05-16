@@ -6,7 +6,7 @@ tags:
 feature: images/feature/ramda.png
 date: 2019-05-15 04:23:43
 ---
-若想在 `Array.prototype.map()` 的 Callback 得知目前 Element 的 Index，其 Callback 的第二個參數就是 Index，但 Ramda 的 `map()` 並沒有提供如此功能，該如何解決呢 ?
+若想在 `Array.prototype.map()` 的 Callback 得知目前 Element 的 Index，其 Callback 的第二個參數就是 Index，但 Ramda 的 `map()` 並沒有提供此功能，該如何解決呢 ?
 
 <!-- more -->
 
@@ -69,7 +69,7 @@ console.dir(fn(data));
 let mapIndex = addIndex(map);
 ```
 
-`map()` 必須經過 `addIndex()` 的包裝後，其 callback 才有 index 可用。
+`map()` 必須經過 `addIndex()` 包裝後，其 callback 才有 index 可用。
 
 >**addIndex()**
 >`((a … → b) … → [a] → *) → ((a …, Int, [a] → b) … → [a] → *)`
@@ -105,7 +105,7 @@ let fn = mapIndex(useWith(
 console.dir(fn(data));
 ```
 
-也可以將 callback 部分進一步 point-free。
+也可以將 callback 進一步 point-free。
 
 > 這個 point-free 在 production code 就不建議使用，因為太複雜了，可讀性不高，僅適合拿來練習 point-free
 
