@@ -5,7 +5,7 @@ tags:
 feature: images/feature/css.png
 date: 2019-05-15 22:32:04
 ---
-最暴力的 Selector，一次將選取全部 Element。
+最暴力的 Selector，一次將選取全部 Element，但 Side Effect 也最大，須小心使用。
 
 <!-- more -->
 
@@ -50,6 +50,6 @@ CCS 3
 
 ## Conclusion
 
-* Universa selector 以 `*` 描述，side effect 最大
+* 實務上較少使用 universal selector，因為 side effect 太大
 
 
