@@ -40,7 +40,7 @@ CCS 3
 <div id="name">Sam</div>
 ```
 
-HTML 部分有 `<div>`，以 `id` attribute 使用 `name` id。
+HTML 部分有 `<div>`，HTML 部分有 `<div>`，其 `id` 為 `name`。
 
 第 7 行
 
