@@ -18,10 +18,11 @@ CSS 3
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Class Scope</title>
   <style>
     .box {
-      color: #f00;
+      font-size: 30px;
+      color: #ff0000;
     }
   </style>
 </head>
@@ -42,10 +43,11 @@ CSS 3
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Class Scope</title>
   <style>
     .post .box {
-      color: #f00;
+      font-size: 30px;
+      color: #ff0000;
     }
   </style>
 </head>
@@ -66,7 +68,7 @@ CSS 3
 </div>
 ```
 
-實務上會在要選擇的 `<div>` 外面再加上一層 `<div>`，並加上一個新的 class。
+實務上會在要選擇的 `<div>` 外面再加上一層 `<div>`，並加上一個新的 class，但不描述任何 property。
 
 第 6 行
 
@@ -76,12 +78,10 @@ CSS 3
 }
 ```
 
-如此就可使用 descendant selector 同時選取 `.post` 與 `.box` 兩個 class，這樣只會選到 `box 2`，類似替 CSS selector 創建了 scope。
-
+如此就可使用 descendant combinator 同時選取 `.post` 與 `.box` 兩個 class，這樣只會選到 `box 2`，類似替 CSS selector 創建了 scope。
 
 ![class000](/images/css/class-scope/class000.png)
 
 ## Conclusion
 
-* CSS 的 class 並不止用在設定 property，也可以使用 empty class 建立出 scope，方便 CSS selector 選擇到我們要的 element
-
+* CSS 的 class 並不只用在設定 property，也可以使用 empty class 建立出 scope，方便 CSS selector 選擇到我們要的 element
