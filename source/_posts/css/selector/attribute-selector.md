@@ -53,7 +53,7 @@ div[title="sam"] {
 }
 ```
 
-既然 `<div>` 使用了 `title` attribute，CSS 部分若要以 attribute selector 描述 `<div>`，selector 為 `[attribute="value"]`。
+既然 `<div>` 使用了 `title` attribute，CSS 若要以 attribute selector 描述 `<div>`，selector 為 `[attribute="value"]`。
 
 ![attr000](/images/css/selector/attribute-selector/attr000.png)
 
