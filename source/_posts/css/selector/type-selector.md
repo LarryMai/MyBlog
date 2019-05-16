@@ -57,6 +57,6 @@ CSS 部分若要以 type selector 描述 `<div>`，selector 直接使用 tag 名
 
 ## Conclusion
 
-* 或許你會覺得用 Tag Selector 較傳神，不過 Type Selector 為 W3C spec 的標準用語
+* 或許你會覺得用 tag selector 較傳神，不過 type selector 為 W3C 標準用語
 * Type selector 直接使用 tag 名稱描述，但會影響所有 tag，side effect 最大
 
