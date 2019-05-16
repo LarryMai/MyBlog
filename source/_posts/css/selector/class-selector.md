@@ -23,11 +23,12 @@ CCS 3
   <title>Class Selector</title>
   <style>
     .box1 {
-      font-size: 120%;
+      font-size: 30px;
       color: #ff0000;
     }
+    
     .box2 {
-      font-size: 120%;
+      font-size: 30px;
       color: #ff0000;
     }
   </style>
@@ -39,7 +40,7 @@ CCS 3
 </html>
 ```
 
-18 行
+19 行
 
 ```html
 <div class="box1">Box 1</div>
@@ -51,11 +52,12 @@ HTML 部分有 `<div>`，以 `class` attribute 使用 `box1` class。
 
 ```css
 .box1 {
-  font-size: 120%;
+  font-size: 30px;
   color: #ff0000;
 }
+
 .box2 {
-  font-size: 120%;
+  font-size: 30px;
   color: #ff0000;
 }
 ```
@@ -74,10 +76,11 @@ HTML 部分有 `<div>`，以 `class` attribute 使用 `box1` class。
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Class Selector</title>
+  <title>Grouping Selector</title>
   <style>
-    .box1, .box2 {
-      font-size: 120%;
+    .box1,
+    .box2 {
+      font-size: 30px;
       color: #ff0000;
     }
   </style>
@@ -92,8 +95,9 @@ HTML 部分有 `<div>`，以 `class` attribute 使用 `box1` class。
 第 7 行
 
 ```css
-.box1, .box2 {
-  font-size: 120%;
+.box1,
+.box2 {
+  font-size: 30px;
   color: #ff0000;
 }
 ```
@@ -103,15 +107,16 @@ class 之間以 `,` 隔開，表示這兩個 class 共用相同的 property，�
 ![class001](/images/css/selector/class-selector/class001.png)
 
 ## Descendant Combinator
+
 ```html
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Class Selector</title>
+  <title>Descendant Combinator</title>
   <style>
     .box1 .box2 {
-      font-size: 120%;
+      font-size: 30px;
       color: #ff0000;
     }
   </style>
@@ -191,5 +196,4 @@ Class 之間直接連在一起，表示當 `box1` 與 `box2` **組合**在一起
 ## Conclusion
 
 * Class selector 使用 `.` + `class 名稱` 描述，且可套用多個 HTML element，side effect 最小，實務上使用最多的是 class selector
-* 由於 class 以 `空白隔開` 與 `連在一起` 意義不一樣，所以 class 之間是否有 `空白`  就非常重要，不再只是 coding style 而已
-
+* 由於 class 以 `空白隔開` 與 `連在一起` 意義不一樣，所以 class 之間是否有 `空白` 就非常重要，不再只是 coding style 而已
