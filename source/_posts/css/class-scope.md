@@ -2,7 +2,7 @@ title: 使用 Empty Class 建立 Selector Scope
 tags:
   - CSS
 feature: images/feature/css.png
-date: 2019-05-15 15:23:43
+date: 2019-05-16 15:23:43
 ---
 實務上會遇到有些 CSS Class，並沒有設定任何 Property，目的在於建立出 Scope，方便 Selector 選擇到我們要的 Element。
 
