@@ -21,10 +21,7 @@ Ramda 0.26.1
 // add :: [a] -> a
 let add = arr => arr[0] + arr[1] + arr[2];
 
-// fn :: [a] -> a
-let fn = add;
-
-console.log(fn([1, 2, 3]));
+console.log(add([1, 2, 3]));
 ```
 
 `add()` 為普通 function，只有 1 個 array 為 argument。
