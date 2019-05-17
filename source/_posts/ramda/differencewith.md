@@ -36,7 +36,7 @@ console.log(fn(first, second));
 
 > **differenceWith()**
 > `((a, a) → Boolean) → [a] → [a] → [a]`
-> 回傳第一個 array 不存在於第二個 array 部分，但可提供 predicate 客製化比較方式
+> 自行提供 predicate 決定比較方式，回傳第一個 array 不存在於第二個 array 部分
 
 `((a, a) → Boolean)`：決定判斷相等的 predicate
 
