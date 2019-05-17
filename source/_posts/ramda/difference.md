@@ -24,10 +24,7 @@ import { difference } from 'ramda';
 let first = [1, 3, 5, 7];
 let second = [1, 4, 7];
 
-// fn :: [*] -> [*] -> [*]
-let fn = difference;
-
-console.log(fn(first, second)); 
+console.log(difference(first, second)); 
 ```
 
 想知道 `first` array 哪些 element 不存在於 `second` array，Ramda 提供了 `difference()`。
@@ -59,10 +56,7 @@ let second = [
   { firstName: 'Kevin', lastName: 'Yang'},
 ];
 
-// fn :: [*] -> [*] -> [*]
-let fn = difference;
-
-console.dir(fn(first, second)); 
+console.dir(difference(first, second)); 
 ```
 
 若 `first` array 的 element 為 object，想得知不存在於 `second` array 的 object 有哪些，`difference()` 依然適用。
@@ -79,4 +73,3 @@ console.dir(fn(first, second));
 ## Reference
 
 [Ramda](https://ramdajs.com), [difference()](https://ramdajs.com/docs/#difference)
-
