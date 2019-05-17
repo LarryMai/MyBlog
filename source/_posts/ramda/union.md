@@ -29,10 +29,7 @@ let second = [5, 3, 7];
 // union :: [*] → [*] → [*]
 let union = pipe(concat, uniq);
 
-// fn :: [*] → [*] → [*]
-let fn = union;
-
-console.log(fn(first, second));
+console.log(union(first, second));
 ```
 
 根據 `union()` 原始意義：將兩個 Array 加以合併，只保留不重複部分，其實我們也可以使用 `concat()` 與 `uniq()` 組合而成。
@@ -47,10 +44,7 @@ import { union } from 'ramda';
 let first = [1, 3, 5];
 let second = [5, 3, 7];
 
-// fn :: [*] → [*] → [*]
-let fn = union;
-
-console.log(fn(first, second));
+console.log(union(first, second));
 ```
 
 Ramda 其實已經提供了 `union()`，可直接使用。
@@ -82,10 +76,7 @@ let second = [
   { firstName: 'Kevin', lastName: 'Yang'},
 ];
 
-// fn :: [*] → [*] → [*]
-let fn = union;
-
-console.dir(fn(first, second));
+console.dir(union(first, second));
 ```
 
 `union()` 也可以用在 object。
@@ -104,4 +95,3 @@ console.dir(fn(first, second));
 [Ramda](https://ramdajs.com), [pipe()](https://ramdajs.com/docs/#pipe)
 [Ramda](https://ramdajs.com), [concat()](https://ramdajs.com/docs/#concat)
 [Ramda](https://ramdajs.com), [uniq()](https://ramdajs.com/docs/#uniq)
-
