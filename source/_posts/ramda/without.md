@@ -9,6 +9,8 @@ date: 2019-05-16 14:23:03
 ---
 若要找出第一個 Array 不在第二個 Array 的 Element，我們會使用 `difference()`，若要找出第二個 Array 不在第一個 Array 的 Element 呢 ?
 
+<!-- more -->
+
 ## Version
 
 VS Code 1.33.1
