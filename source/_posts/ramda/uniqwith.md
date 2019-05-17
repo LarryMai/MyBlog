@@ -26,10 +26,10 @@ import { uniqBy } from 'ramda';
 
 let data = [1, 2, 3, -1];
 
-// fn :: (a -> b) -> [a] -> [a]
-let fn = pred => uniqBy(pred);
+// fn :: [a] -> [a]
+let fn = uniqBy(x => Math.abs(x));
 
-console.log(fn(x => Math.abs(x))(data));
+console.log(fn(data));
 ```
 
 `data` 中包含 `1` 與 `-1`，若`1` 與  `-1` 均視為相同而不想重複顯示，也就是我們希望結果只顯示 `[1, 2, 3]`。
@@ -47,10 +47,10 @@ import { uniqWith, eqBy } from 'ramda';
 
 let data = [1, 2, 3, -1]
 
-// fn :: ((a, a) -> Boolean) -> [a] -> [a]
-let fn = pred => uniqWith(pred);
+// fn :: [a] -> [a]
+let fn = uniqWith((x, y) => Math.abs(x) === Math.abs(y));
 
-console.log(fn((x, y) => Math.abs(x) === Math.abs(y))(data));
+console.log(fn(data));
 ```
 
 我們也可以使用 `uniqWith()` 完成。
@@ -76,10 +76,10 @@ import { uniqWith, eqBy } from 'ramda';
 
 let data = [1, 2, 3, -1]
 
-// fn :: ((a, a) -> Boolean) -> [a] -> [a]
-let fn = pred => uniqWith(pred);
+// fn :: [a] -> [a]
+let fn = uniqWith(eqBy(Math.abs));
 
-console.log(fn(eqBy(Math.abs))(data));
+console.log(fn(data));
 ```
 
 `(x, y) => Math.abs(x) === y` 可進一步由 `eqBy(Math.abs)` 化簡成 point-free。
@@ -103,10 +103,10 @@ let data = [
   { title: 'Exploring ReasonML', price: 200 },
 ];
 
-// fn :: ((a, a) -> Boolean) -> [a] -> [a]
-let fn = pred => uniqWith(pred);
+// fn :: [a] -> [a]
+let fn = uniqWith((x, y) => x.title === y.title || x.price === y.price);
 
-console.dir(fn((x, y) => x.title === y.title || x.price === y.price)(data));
+console.dir(fn(data));
 ```
 
 若 element 為 object，只要 `title` 或 `price` 相等就視為相同，也就是第四筆與第一筆相同，第五筆與第二筆相同，我們希望結果只顯示不重複的前三筆。
@@ -128,10 +128,10 @@ let data = [
   { title: 'Exploring ReasonML', price: 200 },
 ];
 
-// fn :: ((a, a) -> Boolean) -> [a] -> [a]
-let fn = pred => uniqWith(pred);
+// fn :: [a] -> [a]
+let fn = uniqWith(anyPass([eqProps('title'), eqProps('price')]));
 
-console.dir(fn(anyPass([eqProps('title'), eqProps('price')]))(data));
+console.dir(fn(data));
 ```
 
 `(x, y) => x.title === y.title || x.price === y.price` 也可由 `anyPass()` 與 `eqProps()` 產生，使其 point-free。
