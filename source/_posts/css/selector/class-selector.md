@@ -13,6 +13,10 @@ Class Selector 為 CSS 最常用的 Selector，實務上常看到幾種寫法：
 
 CCS 3
 
+## Version
+
+CCS 3
+
 ## Class Selector
 
 ```html
@@ -68,9 +72,28 @@ HTML 部分有 `<div>`，以 `class` attribute 使用 `box1` class。
 
 > Class selector 可套用在多個 HTML element，沒有 side effect，重複使用程度最高，還可以透過多個 class 組合 CSS property，實務上使用最多的是 class selector
 
+```css
+[class~='box1'] {
+  font-size: 30px;
+  color: #ff0000;
+}
+
+[class~='box2'] {
+  font-size: 30px;
+  color: #ff0000;
+}
+```
+
+因為 CSS class 用於 HTML 的 `class` attribute，因此也可以使用 attribute selector 表示。
+
+其中 `class ~='box1'` 表示 `box1` 在 `class` attribute 的 class list 當中，所以等效於 `.box1`。
+
+> 雖然語法等效，但實務上不會這樣寫
+
 ![class000](/images/css/selector/class-selector/class000.png)
 
 ## Grouping Selector
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -197,3 +220,7 @@ Class 之間直接連在一起，表示當 `box1` 與 `box2` **組合**在一起
 
 * Class selector 使用 `.` + `class 名稱` 描述，且可套用多個 HTML element，side effect 最小，實務上使用最多的是 class selector
 * 由於 class 以 `空白隔開` 與 `連在一起` 意義不一樣，所以 class 之間是否有 `空白` 就非常重要，不再只是 coding style 而已
+
+## Reference
+
+[MDN](https://developer.mozilla.org/en-US/), [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors)
