@@ -81,7 +81,7 @@ console.dir(union(first, second));
 
 `union()` 也可以用在 object。
 
-> 由於 `union()` 是使用 `uniq()` 實現，而 `uniq()` 是使用 `equals()` 比較，而非 ECMAScript 的 `===`，因此比較的是 value equality，而非 reference equality
+> 由於 `union()` 使用 `uniq()` 實現，而 `uniq()` 又使用 `equals()` 比較，而非 ECMAScript 的 `===`，因此比較的是 value equality，而非 reference equality
 
 ![union002](/images/ramda/union/union002.png)
 
