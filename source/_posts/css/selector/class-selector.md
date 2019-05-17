@@ -5,7 +5,7 @@ tags:
 feature: images/feature/css.png
 date: 2019-05-15 21:36:41
 ---
-Class Selector 為 CSS 最常用的 Selector，實務上常看到幾種寫法：`.box1, box2`，`.box1 .box2` 與 `.box1.box2`，因為很像，因此很容易誤會其意義。
+Class Selector 為 CSS 最常用的 Selector，實務上常看到幾種寫法：`.box1, box2`、`.box1 .box2` 與 `.box1.box2`，因為很像很容易誤會其意義。
 
 <!-- more -->
 
