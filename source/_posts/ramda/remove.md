@@ -27,10 +27,7 @@ let data = [1, 2, 3, 4, 5];
 // remove :: Number -> Number -> [a] -> [a]
 let remove = start => count => arr => without(slice(start, start + count, arr), arr);
 
-// fn :: Number -> Number -> [a] -> [a]
-let fn = remove;
-
-console.log(fn(1)(3)(data));
+console.log(remove(1)(3)(data));
 ```
 
 假如我們一開始不知道 Ramda 的 `remove()`，也可透過 `slice()` 與 `without()` 組合：
@@ -40,19 +37,14 @@ console.log(fn(1)(3)(data));
 
 ![remove000](/images/ramda/remove/remove000.png)
 
-## remove()
-
-### Primitive
+## Primitive
 
 ```javascript
 import { remove } from 'ramda';
 
 let data = [1, 2, 3, 4, 5];
 
-// fn :: Number -> Number -> [a] -> [a]
-let fn = remove;
-
-console.log(fn(1)(3)(data));
+console.log(remove(1)(3)(data));
 ```
 
 事實上 Ramda 已經內建 `remove()`，可直接使用。
@@ -72,7 +64,7 @@ console.log(fn(1)(3)(data));
 
 ![remove002](/images/ramda/remove/remove002.png)
 
-### Object
+## Object
 
 ```javascript
 import { remove } from 'ramda';
@@ -85,10 +77,7 @@ let data = [
   { firstName: 'John',   lastName: 'Wu'}
 ];
 
-// fn :: Number -> Number -> [a] -> [a]
-let fn = remove;
-
-console.dir(fn(1)(3)(data));
+console.dir(remove(1)(3)(data));
 ```
 
 若 element 為 object，`remove()` 依然適用。
