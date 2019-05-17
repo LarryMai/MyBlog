@@ -29,9 +29,6 @@ let includes = arg => arr => {
   return false;
 }
 
-// fn :: a -> [a] -> Boolean
-let fn = includes;
-
 console.log(includes(1)(data));
 ```
 
@@ -63,10 +60,7 @@ let data = [1, 2, 3];
 // includes :: a -> [a] -> Boolean
 let includes = arg => any(x => x === arg);
 
-// fn ::a -> [a] -> Boolean
-let fn = includes;
-
-console.log(fn(1)(data));
+console.log(includes(1)(data));
 ```
 
 其實我們大可不必自己寫 `for` loop，可藉助 Ramda 的 `any()` 組合出 `includes()`。
@@ -78,19 +72,14 @@ console.log(fn(1)(data));
 
 ![includes002](/images/ramda/includes/includes002.png)
 
-## includes()
-
-### Primitive
+## Primitive
 
 ```javascript
 import { includes } from 'ramda';
 
 let data = [1, 2, 3];
 
-// fn :: a -> [a] -> Boolean
-let fn = includes;
-
-console.log(fn(1)(data));
+console.log(includes(1)(data));
 ```
 
 事實上 Ramda 已經提供 `includes()`，可直接使用。
@@ -107,7 +96,7 @@ console.log(fn(1)(data));
 
 ![includes003](/images/ramda/includes/includes003.png)
 
-### Object
+## Object
 
 ```javascript
 import { includes } from 'ramda';
@@ -118,10 +107,7 @@ let data = [
   { title: 'Speaking JavaScript', price: 300 }
 ];
 
-// fn :: a -> [a]
-let fn = includes;
-
-console.log(fn({ title: 'FP in JavaScript', price: 100 })(data));
+console.log(includes({ title: 'FP in JavaScript', price: 100 })(data));
 ```
 
 `includes()` 也可判斷 object 是否存在於 array，值得注意的是 `includes()` 使用 `equals()` 判斷，而非 `===`，比較的是 object property，而非 object reference。
@@ -146,15 +132,12 @@ console.log(data.includes({ title: 'FP in JavaScript', price: 100 }));
 
 ![includes005](/images/ramda/includes/includes005.png)
 
-### String
+## String
 
 ```javascript
 import { includes } from 'ramda';
 
 let data = 'FP in JavaScript';
-
-// fn :: a -> [a] -> Boolean
-let fn = includes;
 
 console.log(includes('JavaScript', data));
 ```
