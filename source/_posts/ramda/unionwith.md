@@ -60,7 +60,7 @@ console.log(fn(first)(second));
 > `((a, a) → Boolean) → [*] → [*] → [*]`
 > 自行提供 predicate 決定比較方式，將兩個 array 合併成不重複 array
 
-`(a, a) -> Boolean`：
+`(a, a) -> Boolean`：決定判斷相等的 predicate
 
 `[*]`：第一個 array
 
