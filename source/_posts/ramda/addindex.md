@@ -56,7 +56,7 @@ let data = [
 // mapIndex :: (a -> b) -> [a] -> [b]
 let mapIndex = addIndex(map);
 
-// fn : (a -> b) -> [a] -> [b]
+// fn : [a] -> [b]
 let fn = mapIndex((x, i) => `${i}.${x.title}`);
 
 console.dir(fn(data));
@@ -97,7 +97,7 @@ let title = pipe(prop('title'), concat('.'));
 // index :: Object -> String
 let index = pipe(identity, String);
 
-// fn :: (a -> b) -> [a] -> [b]
+// fn :: [a] -> [b]
 let fn = mapIndex(useWith(
   flip(concat), [title, index])
 );
