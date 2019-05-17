@@ -9,8 +9,6 @@ date: 2019-05-16 14:23:03
 ---
 若要找出第一個 Array 不在第二個 Array 的 Element，我們會使用 `difference()`，若要找出第二個 Array 不在第一個 Array 的 Element 呢 ?
 
-<!-- more -->
-
 ## Version
 
 VS Code 1.33.1
@@ -28,9 +26,6 @@ let second = [1, 4, 7];
 // without :: [a] → [a] → [a]
 let without = flip(difference);
 
-// fn :: [a] → [a] → [a]
-let fn = without;
-
 console.log(without(first, second));
 ```
 
@@ -38,9 +33,7 @@ console.log(without(first, second));
 
 ![without000](/images/ramda/without/without000.png)
 
-## without()
-
-### Primitive
+## Primitive
 
 ```javascript
 import { without } from 'ramda';
@@ -65,7 +58,7 @@ console.log(without(first, second));
 
 ![without001](/images/ramda/without/without001.png)
 
-### Object
+## Object
 
 ```javascript
 import { without } from 'ramda';
