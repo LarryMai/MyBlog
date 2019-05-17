@@ -39,10 +39,7 @@ let zipFunc = args => arr => {
   return result;
 };
 
-// fn :: [a] -> [b] -> [c]
-let fn = zipFunc;
-
-console.log(fn(fns)(data));
+console.log(zipFunc(fns)(data));
 ```
 
 `fns` array 有一系列 function，會依序套用到 `data` array。
@@ -64,10 +61,7 @@ let data = [1, 2, 3];
 // zipFunc :: [a] -> [b] -> [c]
 let zipFunc = zipWith(call);
 
-// fn :: [a] -> [b] -> [c]
-let fn = zipFunc;
-
-console.log(fn(fns)(data));
+console.log(zipFunc(fns)(data));
 ```
 
 Ramda 並沒有提供 `zipFunc()`，但我們可以自行組合。
