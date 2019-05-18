@@ -43,7 +43,7 @@ console.log(call(add, 1, 2));
 
 ![call000](/images/ramda/call/call000.png)
 
-## Imperative
+## Function
 
 ```javascript
 import { converge, prop } from 'ramda';
