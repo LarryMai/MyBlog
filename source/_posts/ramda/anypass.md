@@ -49,6 +49,8 @@ console.log(fn(data));
 
 ![anypass000](/images/ramda/anypass/anypass000.png)
 
+## Array
+
 ```javascript
 import { anyPass, propEq, any } from 'ramda';
 
