@@ -37,7 +37,7 @@ console.log(remove(1)(3)(data));
 
 ![remove000](/images/ramda/remove/remove000.png)
 
-## Primitive
+## remove()
 
 ```javascript
 import { remove } from 'ramda';
