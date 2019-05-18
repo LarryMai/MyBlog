@@ -19,7 +19,7 @@ VS Code 1.33.1
 Quokka 1.0.212
 Ramda 0.26.1
 
-## Primitive
+## uniqBy()
 
 ```javascript
 import { uniqBy } from 'ramda';
