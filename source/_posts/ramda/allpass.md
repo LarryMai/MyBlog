@@ -51,6 +51,8 @@ console.log(fn(data));
 
 ![allpass000](/images/ramda/allpass/allpass000.png)
 
+## Array
+
 ```javascript
 import { allPass, propSatisfies, lte, all, includes } from 'ramda';
 
