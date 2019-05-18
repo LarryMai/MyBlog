@@ -85,7 +85,7 @@ import { isObject, safe } from 'crocks';
 let safeNth = ofst => arr => safe(isObject)(nth(ofst, arr));
 ```
 
-自行建立 `saveNth()`，signature 與 Ramda 的 `nth()` 完全相同，差異只在於回傳 `Maybe`，而不是 `a | Undefiend`。
+自行建立 `saveNth()`，signature 與 Ramda 的 `nth()` 完全相同，差異只在回傳 `Maybe`，而不是 `a | Undefiend`。
 
 > **safeNth()**
 > `Number -> [a] -> Maybe a`
