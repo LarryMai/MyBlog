@@ -27,7 +27,7 @@ let fn = n => inc(n);
 console.log(fn(2));
 ```
 
-很簡單的 `inc()`，當輸入為 `Number` `2` 時，毫無懸念結果為 `3`。
+很簡單的 `inc()`，當輸入為 number `2` 時，毫無懸念結果為 `3`。
 
 ![maybe000](/images/crocks/maybe/maybe000.png)
 
@@ -43,9 +43,9 @@ let fn = n => inc(n);
 console.log(fn('8'));
 ```
 
-但傳入改為 `String` `8` 時，結果為 `81`，且 `81` 為 `String`，並不是預期的 `Number`。
+但傳入改為 string `8` 時，結果為 `81`，且 `81` 為 string，並不是預期的 number。
 
-> 由於 ECMAScript 為 dynamic type language，因此可以傳入任何 type，而當 `+` 遇到 `String` 時，會將兩個 operand 都轉成 `String`，`+` 從原本的 `add()` 變成 `concat()`，因此最後結果為 `String` `81`
+> 由於 ECMAScript 為 dynamic type language，因此可以傳入任何 type，而當 `+` 遇到string 時，會將兩個 operand 都轉成 string，`+` 從原本的 `add()` 變成 `concat()`，因此最後結果為 string `81`
 
 ![maybe001](/images/crocks/maybe/maybe001.png)
 
@@ -63,7 +63,7 @@ console.log(fn(undefined));
 
 當傳入為 `undefined` 時，結果為 `NaN`。
 
-> `81` 與 `NaN` 都不是我們預期結果，要避免這些情形發生，唯一的方法就是確認輸入只能是 `Number` 才能使用 `inc()` 運算，其他 type 都不執行 `inc()`
+> `81` 與 `NaN` 都不是我們預期結果，要避免這些情形發生，唯一的方法就是確認輸入只能是 number 才能使用 `inc()` 運算，其他 type 都不執行 `inc()`
 
 ![maybe002](/images/crocks/maybe/maybe002.png)
 
@@ -81,9 +81,9 @@ console.log(fn('8'));
 console.log(fn(undefined));
 ```
 
-為了確保輸入一定是 `Number`，我們當然可以在 `fn()` 加上 `typeof` 判斷，確定是 `Number` 才執行 `inc()`，否則傳回 default 值 `0`。
+為了確保輸入一定是 number，我們當然可以在 `fn()` 加上 `typeof` 判斷，確定是 number 才執行 `inc()`，否則傳回 default 值 `0`。
 
-如此結果就不會是 `String` 或 `NaN` 這些不是我們預期結果。
+如此結果就不會是 string 或 `NaN` 這些不是我們預期結果。
 
 > 但這種寫法只能算是 short term solution：
 >
@@ -118,7 +118,7 @@ Maybe a = Nothing | Just a
 * `Just`：我們所預期 type，將會執行運算
 * `Nothing`：我們不預期 type，不會執行運算
 
-以本例而言，我們預期 type 是 `Number`，是故為 `Just`；而 `String` 與 `undefined` 都不是我們預期 type，是故為 `Nothing`。
+以本例而言，我們預期 type 是 number，是故為 `Just`；而 string 與 `undefined` 都不是我們預期 type，是故為 `Nothing`。
 
 第 1 行
 
@@ -149,7 +149,7 @@ Argument `n` 為 `Maybe`，而 `Maybe` 自帶 `map()`，可傳入 function，`ma
 
 由於 `fn()` 回傳為 `Maybe`，因此印出 `Just 3`，而非原本的 `3`。
 
-> 目前我們已經將 `Number` 包進 `Maybe`，但印出也是 `Maybe`，而非原本的` number` `3`，稍後會從 `Maybe` 萃取出來
+> 目前我們已經將 number 包進 `Maybe`，但印出也是 `Maybe`，而非原本的 number `3`，稍後會從 `Maybe` 萃取出來
 
 ## Just
 
@@ -247,7 +247,7 @@ let fn = n => safeNum(n).map(inc);
 let safeNum = v => typeof v === 'number' ? Just(v) : Nothing();
 ```
 
-使用 `typeof` 判斷是否為 `Number`，若是 `Number`，則包成 `Just`，否則包成 `Nothing`。
+使用 `typeof` 判斷是否為 number，若是 number，則包成 `Just`，否則包成 `Nothing`。
 
 > Ｑ：到底還是使用了 `typeof` ?
 
@@ -286,7 +286,7 @@ console.log(fn(undefined));
 let isNumber = v => typeof v === 'number';
 ```
 
-將 `Number` 寫死在 `safeNum()` 當然不好，可將此部分抽成 `isNumber()`，將來可透過 function compostion 由 `safe(isNumber)` 組合出 `safeNum()`，重複使用程度更高。
+將 number 寫死在 `safeNum()` 當然不好，可將此部分抽成 `isNumber()`，將來可透過 function compostion 由 `safe(isNumber)` 組合出 `safeNum()`，重複使用程度更高。
 
 11 行
 
@@ -382,7 +382,7 @@ let fn = n => safe(isNumber)(n).map(inc).option(0);
 
 ## Conclusion
 
-* `Maybe` 事實上就是 FP 的 Monad，但不知道 Monad 也沒關係
+* `Maybe` 事實上就是 FP 的 `Monad`，但不知道 `Monad` 也沒關係
 * `Maybe` 在 ECMAScript 的重要性遠超過其他語言，可避免 dynamic type language 產生不預期結果，大幅降低 bug 產生，使 ECMAScript 更安全
 * Crocks 已經提供了 `Maybe` 所需要的 helper function，可直接使用
 
