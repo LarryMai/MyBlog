@@ -7,15 +7,16 @@ tags:
 feature: images/feature/crocks.png
 date: 2019-05-18 21:13:08
 ---
-Ramda 有些 Function 會回傳 `undefined`，這些 Function 常常會忘記處理 `undefined` 而產生 Bug，比較好的方式是改回傳 `Maybe`，可避免忘記處理 `undefined`。
+Ramda 有些 Function 會回傳 `undefined`，使用端常常會忘記處理 `undefined` 而產生 Bug，比較好的方式是改回傳 `Maybe`，強迫使用端處理 `undefined`。
 
 <!-- more -->
 
 ## Version
 
-VS Code 1.33.1
-Quokka 1.0.209
+VS Code 1.34.0
+Quokka 1.0.213
 Ramda 0.26.1
+Crocks 0.11.1
 
 ## nth()
 
@@ -48,7 +49,7 @@ console.log(nth(3)(data).title);
 
 但別忘了 `nth()` 可能回傳 `undefined`，因此很容易產生 `Cannot read property of undefined` 的 run-time 錯誤。
 
-> 當然可以搭配 Ramda 的 `propOr()` 避免，但只要你稍微不小心，還是會忘了使用 `propOr()`
+> 當然可以搭配 Ramda 的 `propOr()` 避免，但只要使用端稍微不小心，還是會忘記使用 `propOr()`
 
 ## safeNth()
 
@@ -110,14 +111,14 @@ console.log(safeNth(1)(data).option({ title: 'No title' }).title);
 
 因為 `safeNth()` 回傳為 `Maybe`，所以取出資料時一定要透過 `option()` 才能取回 object，因此必須提供 default value 處理 `Nothing`。
 
-> `Maybe` 強迫你要使用 `option()` 才能取回 object，因此你不可能忘記處理 `Nothing`；不像 `undefined` 並沒有強迫處理，這就是常見的 bug 來源
+> `Maybe` 強迫你要使用 `option()` 才能取回 object，因此使用端不可能忘記處理 `Nothing`；不像 `undefined` 並沒有強迫處理，這就是常見的 bug 來源
 
 ![nth001](/images/crocks/safenth/nth001.png)
 
 ## Conclusion
 
 * 可自行建立 `safeNth()` 取代 Ramda 的 `nth()`，藉由 `Maybe` 的保護，就不會再出現  `Cannot read property of undefined` 的 run-time 錯誤
-* 實務上應使用 `Maybe` 取代 `undefined`，藉由 function 回傳 `Maybe`，強迫呼叫端透過 `option()` 處理
+* 實務上應使用 `Maybe` 取代 `undefined`，藉由 function 回傳 `Maybe`，強迫使用端透過 `option()` 處理 `undefined`
 
 ## Reference
 
