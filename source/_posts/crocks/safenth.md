@@ -111,13 +111,13 @@ console.log(safeNth(1)(data).option({ title: 'No title' }).title);
 
 因為 `safeNth()` 回傳為 `Maybe`，所以取出資料時一定要透過 `option()` 才能取回 object，因此必須提供 default value 處理 `Nothing`。
 
-> `Maybe` 強迫你要使用 `option()` 才能取回 object，因此使用端不可能忘記處理 `Nothing`；不像 `undefined` 並沒有強迫處理，這就是常見的 bug 來源
+> `Maybe` 強迫你要使用 `option()` 才能取回 object，因此使用端不可能忘記處理 `Nothing`；不像 `undefined` 並沒有強迫處理，這就是常見 bug 來源
 
 ![nth001](/images/crocks/safenth/nth001.png)
 
 ## Conclusion
 
-* 可自行建立 `safeNth()` 取代 Ramda 的 `nth()`，藉由 `Maybe` 的保護，就不會再出現  `Cannot read property of undefined` 的 run-time 錯誤
+* 可自行建立 `safeNth()` 取代 Ramda 的 `nth()`，藉由 `Maybe` 保護，就不會再出現  `Cannot read property of undefined` 的 run-time 錯誤
 * 實務上應使用 `Maybe` 取代 `undefined`，藉由 function 回傳 `Maybe`，強迫使用端透過 `option()` 處理 `undefined`
 
 ## Reference
