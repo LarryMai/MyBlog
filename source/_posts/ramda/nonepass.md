@@ -22,7 +22,7 @@ VS Code 1.33.0
 Quokka 1.0.205
 Ramda 0.26.1
 
-## nonePass
+## nonePass()
 
 ```javascript
 import { anyPass, propEq, compose, complement, includes, propSatisfies } from 'ramda';
@@ -57,6 +57,8 @@ console.log(fn(data));
 `(*… → Boolean)`：組合成單一 predicate
 
 ![nonepass000](/images/ramda/nonepass/nonepass000.png)
+
+## Array
 
 ```javascript
 import { anyPass, propEq, compose, complement, includes, propSatisfies, all } from 'ramda';
