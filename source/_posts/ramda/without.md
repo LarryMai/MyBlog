@@ -35,7 +35,7 @@ console.log(without(first, second));
 
 ![without000](/images/ramda/without/without000.png)
 
-## Primitive
+## without()
 
 ```javascript
 import { without } from 'ramda';
