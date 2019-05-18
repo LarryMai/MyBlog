@@ -72,7 +72,7 @@ console.log(includes(1)(data));
 
 ![includes002](/images/ramda/includes/includes002.png)
 
-## Primitive
+## includes()
 
 ```javascript
 import { includes } from 'ramda';
