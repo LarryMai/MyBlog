@@ -9,12 +9,6 @@ ECMAScript 的 `Array.prototype` 並沒有內建 `uniq()`，在 ECMAScript 2015 
 
 <!-- more -->
 
-## Version
-
-VS Code 1.33.1
-Quokka 1.0.212
-Ramda 0.26.1
-
 ## uniq()
 
 ```javascript
@@ -23,10 +17,7 @@ let data = [1, 2, 3, 1];
 // uniq :: [a] -> [a]
 let uniq = arr => [...new Set(arr)];
 
-// fn :: [a] -> [a]
-let fn = uniq;
-
-console.log(fn(data));
+console.log(uniq(data));
 ```
 
 `data` 很明顯 `1` 是重複的，我們希望結果只顯示 `[1, 2, 3]`。
@@ -44,10 +35,7 @@ import { uniq } from 'ramda';
 
 let data = [1, 2, 3, 1];
 
-// fn :: [a] -> [a]
-let fn = uniq
-
-console.log(fn(data));
+console.log(uniq(data));
 ```
 
 事實上 Ramda 已經提供 `uniq()`，可直接使用。
@@ -73,10 +61,7 @@ let data = [
   { title: 'FP in JavaScript', price: 100 }
 ];
 
-// fn :: [a] -> [a]
-let fn = uniq;
-
-console.dir(fn(data));
+console.dir(uniq(data));
 ```
 
 若 element 為 object，`data` 很明顯第四筆是重複的，我們希望結果只顯示不重複的前三筆。
