@@ -6,7 +6,7 @@ tags:
 feature: images/feature/sonarqube.png
 date: 2019-05-19 15:23:07
 ---
-SonarQube 除了搭配 Jenkins 檢查程式碼品質外，還可以在 IDE 中使用 SonarLint，讓 developer 在程式開發階段就及早發現可能的 bugs、vulenrability、code smell 與 duplication，本文將介紹 SonarLint + PhpStorm。
+SonarQube 除了搭配 Jenkins 檢查程式碼品質外，還可以在 IDE 中使用 SonarLint，讓 developer 在程式開發階段就及早發現可能的 Bugs、Vulenrability、Code Smell 與 Duplication，本文將介紹 SonarLint + PhpStorm。
 
 <!-- more -->
 
