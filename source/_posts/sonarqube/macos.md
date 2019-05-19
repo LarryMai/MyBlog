@@ -3,6 +3,7 @@ tags:
   - Ramda
   - SonarQube
   - macOS
+  - Homebrew
 feature: images/feature/sonarqube.png
 date: 2019-05-19 09:21:41
 ---

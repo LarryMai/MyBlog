@@ -3,6 +3,9 @@ tags:
   - SonarQube
   - PHP
   - Laravel
+  - Jenkins
+  - macOS
+  - Homebrew
 feature: images/feature/sonarqube.png
 date: 2019-05-19 10:09:16
 ---
