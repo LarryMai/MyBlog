@@ -18,7 +18,7 @@ SonarQube 7.1
 
 ##  Installation
 
-```sh
+```shell
 $ brew install sonarqube
 ```
 
@@ -32,7 +32,7 @@ $ brew install sonarqube
 
 ## Start SonarQube
 
-```sh
+```shell
 $ sonar console
 ```
 
