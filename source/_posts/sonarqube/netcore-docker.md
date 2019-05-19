@@ -173,7 +173,7 @@ networks:
 
 ```yaml
 net-core:
-    build: .
+  build: .
 ```
 
 使用 `build` 將同目錄下的 `Dockerfile` build 成 image，也就是剛才的 `Dockerfile`。
@@ -319,7 +319,7 @@ dotnet /opt/scanner/SonarScanner.MSBuild.dll begin /k:core2 /n:Core2 /v:1.0 /d:s
 
 第 4 行
 
-```bash
+```shell
 dotnet build
 ```
 
@@ -340,15 +340,15 @@ dotnet /opt/scanner/SonarScanner.MSBuild.dll end /d:sonar.login=admin /d:sonar.p
 ## Run SonarScanner
 
 ```bash
-SonarScanner $ docker-compose up --build
+$ docker-compose up --build
 ```
 啟動 .NET Core 與 SonarQube container，並且自動執行 SonarScanner。
 
 * **--build** : 重新建立 .NET Core 自訂 image，若有任何修改，將重新包進 image，確保 `docker-compose` 是最新的 image
 
-![core000](/images/sonarqube/netcore-docker/core000.png)
+![core000](/images/sonarqube/netore-docker/core000.png)
 
-![core002](/images/sonarqube/netcore-docker/core002.png)
+![core002](/images/sonarqube/netore-docker/core002.png)
 
 1. 在 host 以 `http://localhost:9000` ，將可看到 SonarQube 的檢查結果
 
@@ -358,7 +358,7 @@ SonarScanner $ docker-compose up --build
 $ docker-compose down
 ```
 
-![core003](/images/sonarqube/netcore-docker/core003.png)
+![core003](/images/sonarqube/netore-docker/core003.png)
 
 ## Conclusion
 
@@ -369,4 +369,3 @@ $ docker-compose down
 ## Sample Code 
 
 完整的範例可以在我的 [GitHub](https://github.com/oomusou/sonarscanner) 上找到
-
