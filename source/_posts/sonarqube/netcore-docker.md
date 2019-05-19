@@ -3,7 +3,7 @@ tags:
   - SonarQube
   - .NET Core
   - Docker
-feature: images/feature/ramda.png
+feature: images/feature/sonarqube.png
 date: 2019-05-19 14:53:06
 ---
 本文使用 Docker Compose 同時啟動 .NET Core 與 SonarQube 兩個 container，並自動對 .NET Core 專案進行檢查。

@@ -2,7 +2,7 @@ title: 如何使用 SonarQube 檢查 Java 專案 ?
 tags:
   - SonarQube
   - Java
-feature: images/feature/ramda.png
+feature: images/feature/sonarqube.png
 date: 2019-05-19 15:12:04
 ---
 SonarQube 已經內建 SonarJava，可以直接對  Java 進行檢查，本文將以 Java + Gradle 為例，並在 Eclipse 中使用 SonarLint 對  Java 專案進行檢查。
