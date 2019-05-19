@@ -18,7 +18,7 @@ Ramda 0.25
 
 ## Installation
 
-```
+```shell
 $ npm install ramda
 ```
 
@@ -26,7 +26,7 @@ $ npm install ramda
 
 ## Type Definition
 
-```
+```shell
 $ npm install types/npm-ramda --save-dev
 ```
 
