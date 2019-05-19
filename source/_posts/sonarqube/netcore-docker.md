@@ -346,9 +346,9 @@ $ docker-compose up --build
 
 * **--build** : 重新建立 .NET Core 自訂 image，若有任何修改，將重新包進 image，確保 `docker-compose` 是最新的 image
 
-![core000](/images/sonarqube/netore-docker/core000.png)
+![core000](/images/sonarqube/netcore-docker/core000.png)
 
-![core002](/images/sonarqube/netore-docker/core002.png)
+![core002](/images/sonarqube/netcore-docker/core002.png)
 
 1. 在 host 以 `http://localhost:9000` ，將可看到 SonarQube 的檢查結果
 
@@ -358,7 +358,7 @@ $ docker-compose up --build
 $ docker-compose down
 ```
 
-![core003](/images/sonarqube/netore-docker/core003.png)
+![core003](/images/sonarqube/netcore-docker/core003.png)
 
 ## Conclusion
 
