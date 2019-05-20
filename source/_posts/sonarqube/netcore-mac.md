@@ -1,4 +1,4 @@
-title: 如何使用 SonarQube 檢查 .NET Core 專案？(macOS)
+title: 如何在 macOS 使用 SonarQube 檢查 .NET Core 專案 ?
 tags:
   - SonarQube
   - .NET Core
