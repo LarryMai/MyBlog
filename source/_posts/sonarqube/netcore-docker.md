@@ -1,4 +1,4 @@
-title: 如何使用 SonarQube 檢查 .NET Core 專案 ? (Docker)
+title: 如何在 Docker 使用 SonarQube 檢查 .NET Core 專案 ?
 tags:
   - SonarQube
   - .NET Core
