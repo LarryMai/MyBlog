@@ -18,13 +18,13 @@ SonarQube 7.1 (build 11001)
 
 ![rule000](/images/sonarqube/deactivate-rule/rule000.png)
 
-***Rule -> C#***
+***Rules -> C#***
 
-若第一個 rule :  `=+ should not be used instead of +=`  不適合團隊，想暫時不啟用檢查。
+若第一個 rule :  `=+ should not be used instead of +=`  不適合團隊，想暫時不啟用。
 
 > 並不是這個 rule 不好，只是因為是第一個 C# rule，所以以此為範例
 
-SonarQube 舊版允許你直接不啟用某個 rule，但新版取消了這個功能，無法直接不啟用。
+SonarQube 舊版允許你直接不啟用某個 rule，但新版取消該功能，無法直接不啟用。
 
 ## Quality Profiles
 
@@ -69,14 +69,14 @@ SonarQube 預設使用的 Quality Profile 是 `Sonar way`，目前 `Sonar way` �
 
 ![rule008](/images/sonarqube/deactivate-rule/rule008.png)
 
-1. 找到我們想取消的 `=+ should not be used instead of +=` rule
+1. 找到我們想取消的 `=+ should not be used instead of +=`
 2. 按 `Deactivate` 取消
 
 ![rule009](/images/sonarqube/deactivate-rule/rule009.png)
 
-1.  `=+ should not be used instead of +=` rule 已被 `Deactivate`
+1.  `=+ should not be used instead of +=` 已被 `Deactivate`
 
 ## Conclusion
 
-* 原本認為很簡單的功能，但因為 SonarQube 的設計有改變，竟然花了一些時間才搞定，特別記錄下來
+* 原本認為很簡單的功能，但因為 SonarQube 的設計改變，竟然花了一些時間才搞定，特別記錄下來
 
