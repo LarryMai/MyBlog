@@ -27,7 +27,7 @@ SonarLint 3.3.0.2482
 1. 當按下 `Update binding`，欲將 SonarQube server 上的 project lists、rules、profile 下載到本機
 2. 出現 `Analyzers Not Loaded` 錯誤訊息
 
- ## Root Cause
+## Root Cause
 
 SonarLint 3.3.0.2482 必須搭配使用 SonarTS 1.5 以上，但是 SonarQube 6.7.2 LTS 預設提供為 SonarTS 1.1，因此 SonarLint 無法載入 TypeScript analyzer。
 
