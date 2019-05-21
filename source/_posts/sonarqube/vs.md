@@ -6,7 +6,7 @@ tags:
 feature: images/feature/sonarqube.png
 date: 2019-05-19 15:31:24
 ---
-SonarQube 除了搭配 Jenkins 檢查程式碼品質外，還可以在 IDE 中使用 SonarLint，讓 developer 在程式開發階段就及早發現可能的 Bugs、Vulenrability、Code Smell 與 Duplication，本文將介紹 SonarLint + Visual Studio。
+SonarQube 除了搭配 Jenkins 檢查程式碼品質外，還可在 IDE 中使用 SonarLint，讓 Developer 在開發階段就及早發現可能的 Bugs、Vulenrability、Code Smell 與 Duplication，本文將介紹 SonarLint + Visual Studio。
 
 <!-- more -->
 
@@ -39,9 +39,9 @@ C# 7.2
 
 ![sonarlint003](/images/sonarqube/vs/sonarlint003.png)
 
-安裝完第一次進入 Visual Studio 後
+安裝完第一次進入 Visual Studio：
 
-1. SonarLint 即將下載其他語言的 scanner，如 JavaScript，將 `Don't show this message again` 打勾
+1. SonarLint 將下載其他語言 scanner，如 JavaScript，將 `Don't show this message again` 打勾
 2. 按 `Yes` 繼續
 
 ## SonarQube Server
@@ -79,7 +79,7 @@ SonarQube 檢查出 `IPadAir.cs` 有 code smell，class 不該使用 `I` 開頭�
 
 ![sonarlint010](/images/sonarqube/vs/sonarlint010.png)
 
-SonarLint 能在 Visual Studio 內即時的檢查出目前檔案的 issue。
+SonarLint 能在 Visual Studio 內即時檢查出目前檔案的 issue。
 
 ![sonarlint011](/images/sonarqube/vs/sonarlint011.png)
 
@@ -95,9 +95,9 @@ SonarLint 亦可手動檢查整個 solution。
 
 ![sonarlint013](/images/sonarqube/vs/sonarlint013.png)
 
-SonarLint 會將所有檢查到的 issue 顯示在下方。
+SonarLint 會將所有檢查到 issue 顯示在下方。
 
 ## Conclusion
 
-* 有了 SonarLint，developer 就能更即時的獲得 SonarQube 的建議，養成寫出 clean code 的好習慣
+* 有了 SonarLint，developer 就能更即時的獲得 SonarQube 建議，養成 clean code 好習慣
 

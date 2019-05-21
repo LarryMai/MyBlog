@@ -390,7 +390,7 @@ Suka 對於 mobile phone 的 font size 調整很好，但 tablet 與 desktop 對
 
 ## Sample Code
 
-完整的範例可以在我的 [GitHub](https://github.com/oomusou/hexo-theme-suka) 上找到
+完整範例可以在我的 [GitHub](https://github.com/oomusou/hexo-theme-suka) 上找到
 
 ## Reference
 

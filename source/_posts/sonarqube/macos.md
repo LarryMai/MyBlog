@@ -45,9 +45,9 @@ $ sonar console
 
 ![ac00](/images/sonarqube/macos/mac002.png)
 
-輸入 `localhost:9000`，若看到 SonarQube 首頁，則表示安裝成功
+* 輸入 `localhost:9000`，若看到 SonarQube 首頁，則表示安裝成功
 
-> 右上角 `Log in` 可登入管理設定 SonarQube，預設為 `admin/admin`
+* 右上角 `Log in` 可登入管理設定 SonarQube，預設為 `admin/admin`
 
 ## Conclusion
 

@@ -62,7 +62,7 @@ ENV SCANNER_VERSION=4.3.1.1372
 ENV SCANNER_HOME=/opt/scanner
 ```
 
-使用 `ENV` 設定 Dockerfile 的環境變數。
+使用 `ENV` 設定 `Dockerfile` 的環境變數。
 
 `SCANNER_VERSION` : 因為 SonarScanner 的下載路徑，會與版本有關，所以特別設定成變數。
 
@@ -74,7 +74,7 @@ ENV SCANNER_HOME=/opt/scanner
 WORKDIR /app
 ```
 
-設定 container 的工作目錄，也就是預設目錄都會在 `/app` 下。
+設定 container 工作目錄，也就是預設目錄都會在 `/app` 下。
 
 第 8 行
 
@@ -89,7 +89,7 @@ RUN apt-get install -y openjdk-8-jre
 
 * 使用 `wget` 下載 SonarScanner
 * 使用 `unzip` 對 zip 解壓縮
-* `SonarScanner` 會使用 Java 執行，需要安裝 Java Runtime
+* `SonarScanner` 會使用 Java 執行，需要安裝 Java runtime
 
 12 行
 
@@ -107,7 +107,7 @@ RUN unzip /opt/sonar-scanner-msbuild.zip -d $SCANNER_HOME
 RUN rm /opt/sonar-scanner-msbuild.zip
 ```
 
-建立 `/opt/scanner` 目錄，將 SonarScanner 壓縮檔解壓縮放到 `/opt/scanner` 目錄下，解壓縮完刪除 SonarScanner 壓縮檔。
+建立 `/opt/scanner` 目錄，將 SonarScanner 壓縮檔解壓縮放到該目錄下，解壓縮完刪除 SonarScanner 壓縮檔。
 
 16 行
 
@@ -115,7 +115,7 @@ RUN rm /opt/sonar-scanner-msbuild.zip
 RUN chmod 775 $SCANNER_HOME/ -R
 ```
 
-將 SonarScanner 目錄所有檔案賦予執行權力。
+將 SonarScanner 目錄所有檔案賦予執行權限。
 
 18 行
 
@@ -254,7 +254,7 @@ networks:
 
 使用 `network` 設定使用 `netcore` 網路，並設定其 IP 為 `172.16.238.10`。
 
-> 一般來說，我們不必為 container 設定固定 IP，只要使用 container 名稱就可彼此溝通，但稍後 SonarScanner 必須使用固定 IP 才能連上 SonarQube，所以在此特別要設定固定 IP
+> 一般來說，我們不必為 container 設定固定 IP，只要使用 container 名稱就可彼此溝通，但稍後 SonarScanner 必須使用固定 IP 才能連上 SonarQube，所以在此特別設定
 
 24 行
 
@@ -275,7 +275,7 @@ networks:
 HOST_DIR=~/Code/CSharp
 ```
 
-將 `HOST_DIR` 以環境變數設定，為 host 與 .NET Core container 所共享的目錄。
+設定 `HOST_DIR` 環境變數，為 host 與 .NET Core container 所共享的目錄。
 
 
 ## scanner.sh
@@ -296,11 +296,11 @@ dotnet /opt/scanner/SonarScanner.MSBuild.dll end /d:sonar.login=admin /d:sonar.p
 sleep 30
 ```
 
-主要是要等 SonarQube 啟動完成，比較好的方式是使用 Health Check 明確得知 SonarQube 已經啟動完成。
+主要是要等 SonarQube 啟動完成，比較好的方式是使用 health check 明確得知 SonarQube 已經啟動完成。
 
 這裡暫時先 sleep 30 秒，等 SonarQube 先啟動，.NET Core 才開始執行 SonarScanner。
 
-這裡還有改善的空間，也可以自行調整 sleep 時間。
+這裡還有改善空間，也可以自行調整 sleep 時間。
 
 第 3 行
 
@@ -310,7 +310,7 @@ dotnet /opt/scanner/SonarScanner.MSBuild.dll begin /k:core2 /n:Core2 /v:1.0 /d:s
 
 使用 `dotnet` 執行 `SonarScanner.MSBuild.dll`，一開始以 `begin` 開頭：
 
-* **/k** : SonarQube 對專案的 key，內部將以此 key 作為辨別，必須唯一
+* **/k** : SonarQube 對專案的 key，內部將以此 key 作為識別，必須唯一
 * **/n** : 在 SonarQube 網頁上顯示的專案名稱
 * **/v** : 在 SonarQube 網頁上顯示的版本編號
 * **/d:sonar.login** : 指定 SonarQube 帳號
@@ -358,14 +358,16 @@ $ docker-compose up --build
 $ docker-compose down
 ```
 
+結束 container。
+
 ![core003](/images/sonarqube/netcore-docker/core003.png)
 
 ## Conclusion
 
-* 由於 SonarScanner 已經被包在 Dockerfile 內，host 就不用再安裝 SonarScanner
-* 沒有將 .NET Core 安裝在 SonarQube container 內，而是分別使用 .NET Core container 與 SonarQube container，符合 Microservice 精神
+* 由於 SonarScanner 已經被包在 dockerfile 內，host 就不用再安裝 SonarScanner
+* 沒有將 .NET Core 安裝在 SonarQube container 內，而是分別使用 .NET Core container 與 SonarQube container，符合 microservice 精神
 * 只要執行 `docker-compose up --build`，SonarScanner 就會自動啟動進行檢查
 
 ## Sample Code 
 
-完整的範例可以在我的 [GitHub](https://github.com/oomusou/sonarscanner) 上找到
+完整範例可以在我的 [GitHub](https://github.com/oomusou/sonarscanner) 上找到

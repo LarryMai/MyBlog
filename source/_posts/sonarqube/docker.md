@@ -5,7 +5,7 @@ tags:
 feature: images/feature/sonarqube.png
 date: 2019-05-19 09:38:51
 ---
-SonarQube 是一套 `程式碼品質檢查工具`，可以幫我們檢查 Code 的 Bugs、 Vulenrability、Code Smell 與 Duplication，也屬於 `持續整合` 重要的一環，亦可使用 Docker 安裝，將來管理會更加容易。
+SonarQube 是一套 `程式碼品質檢查工具`，可以幫我們檢查 Code 的 Bugs、 Vulenrability、Code Smell 與 Duplication，也屬於 `持續整合` 重要一環，亦可使用 Docker 安裝，將來管理會更加容易。
 
 <!-- more -->
 

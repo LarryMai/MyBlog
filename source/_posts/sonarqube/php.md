@@ -65,9 +65,9 @@ $ sonar console
 
 ![hp01](/images/sonarqube/php/php017.png)
 
-輸入 `localhost:9000`，若看到 SonarQube 首頁，則表示安裝成功
+* 輸入 `localhost:9000`，若看到 SonarQube 首頁，則表示安裝成功
 
-> 右上角 `Log in` 可登入管理設定 SonarQube，預設為 `admin/admin`
+* 右上角 `Log in` 可登入管理設定 SonarQube，預設為 `admin/admin`
 
 ## SonarQube Scanner
 
@@ -92,7 +92,7 @@ SonarQube 雖然已經包含 SonarPHP，但必須靠 SonarQube Scanner 才能執
 
 **sonar-scanner.properties**
 
-```
+```shell
 #----- Default SonarQube server
 sonar.host.url=http://localhost:9000
 ```
@@ -120,13 +120,13 @@ $ sonar-scanner -Dsonar.projectKey=Laravel56 -Dsonar.sources=. -Dsonar.projectNa
 使用 `sonar-scanner` 對 Laravel 專案進行檢查。
 
 * **-D** : 對 SonarQube 的 property 進行設定
-* **sonar.projectKey**：SonarQube 對專案的 key，內部將以此 key 作為辨別，必須唯一
+* **sonar.projectKey**：SonarQube 對專案的 key，內部將以此 key 作為識別，必須唯一
 * **sonar.sources**：SonarQube 要檢查的目錄，因為已經在專案目錄下，`.` 即為 `目前目錄`
 * **sonar.projectName**：在 SonarQube 網頁上顯示的名稱
 * **sonar.projectVersion**：在 SonarQube 網頁上顯示的版本編號
-* **sonar.exclusions**：不受 SonarQube 檢查的目錄，如 PHP 套件的放在 `vendor` 目錄下，實務上我們不會想讓 SonarQube 去檢查 package 的程式碼品質，所以會加以排除
+* **sonar.exclusions**：不受 SonarQube 檢查的目錄，如 PHP packgage 放在 `vendor` 目錄下，實務上我們不會讓 SonarQube 去檢查 package，會加以排除
 
-> SonarQube 預設也會檢查 JavaScript，若你有 JavaScript 的套件目錄不想檢查，也可以設定在 `sonar.exclusions`
+> SonarQube 預設也會檢查 JavaScript，若你有 JavaScript package 目錄不想檢查，也可以設定在 `sonar.exclusions`
 
 ![hp02](/images/sonarqube/php/php023.png)
 
@@ -140,11 +140,11 @@ $ sonar-scanner -Dsonar.projectKey=Laravel56 -Dsonar.sources=. -Dsonar.projectNa
 
 進入 SonarQube 網頁，就可看到 `Laravel56` 專案已經出現 SonarQube。
 
-到目前為止，SonarQube 對 PHP 的檢查已經完成，就算只將 SonarQube 裝在本機，也對 PHP 程式碼品質的檢查有很大的幫助。
+到目前為止，SonarQube 對 PHP 檢查已經完成，就算只將 SonarQube 裝在本機，也對 PHP 程式碼品質檢查有很大幫助。
 
 ## Jenkins
 
-實務上 SonarQube 還會與其他 CI server 合作，接下來將以 Jenkins 為例，介紹如何以 Jenkins 自動化 SonarQube。
+實務上 SonarQube 還會與其他 CI server 合作，接下來將以 Jenkins 為例，介紹如何以 Jenkins 自動執行 SonarQube。
 
 ### Installation
 
@@ -158,11 +158,11 @@ $ brew install jenkins-lts
 
 * 若想在每次 Mac 重開機就自動執行 Jenkins，輸入 `brew services start jenkins-lts`
 
-> 若想自行啟動 Jenkins，輸入 `jenkins-lts`
+* 若想自行啟動 Jenkins，輸入 `jenkins-lts`
 
 ### Start Jenkins
 
-```
+```shell
 $ jenkins-lts
 ```
 
@@ -264,7 +264,7 @@ $ jenkins-lts
 
 ![hp00](/images/sonarqube/php/php007.png)
 
-1. 選擇 Job，按左側 `Configure`
+* 選擇 Job，按左側 `Configure`
 
 ![hp02](/images/sonarqube/php/php027.png)
 
@@ -281,7 +281,7 @@ $ jenkins-lts
 
 ![hp01](/images/sonarqube/php/php010.png)
 
-```
+```shell
 sonar.projectKey=Laravel56 
 sonar.sources=. 
 sonar.projectName=Laravel56 
@@ -291,7 +291,7 @@ sonar.exclusions=vendor/**
 
 在 `Analysis properties` 加上以上設定。
 
-```
+```shell
 ~/MyProject $ sonar-scanner -Dsonar.projectKey=Laravel56 -Dsonar.sources=. -Dsonar.projectName=Laravel56 -Dsonar.projectVersion=1.0 -Dsonar.exclusions=vendor/**
 ```
 
@@ -308,17 +308,17 @@ sonar.exclusions=vendor/**
 
 ![hp01](/images/sonarqube/php/php014.png)
 
-也會看到剛剛 Jenkins 執行的 Project 出現在 SonarQube 上。
+會看到剛剛 Jenkins 執行的 Project 出現在 SonarQube 上。
 
 ## Conclusion
 
 * SonarQube 已經內建 SonarPHP，也可以用來檢查 PHP
 * 就算不將 SonarQube 安裝在 server，安裝在本機也能有效的檢查 PHP 程式碼品質
-* 藉由 Jenkins 幫忙，我們就可以自動化執行 SonarQube
+* 藉由 Jenkins 幫忙，我們就可以自動執行 SonarQube
 
 ## Sample Code
 
-完整的範例可以在我的 [GitHub](https://github.com/oomusou/Laravel56Demo) 上找到
+完整範例可以在我的 [GitHub](https://github.com/oomusou/Laravel56Demo) 上找到
 
 ## Reference
 

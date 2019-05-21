@@ -89,7 +89,7 @@ SonarQube 雖然已經包含 SonarTS，但必須靠 SonarQube Scanner 才能執�
 
 **sonar-scanner.properties**
 
-```
+```shell
 #----- Default SonarQube server
 sonar.host.url=http://localhost:9000
 ```
@@ -108,13 +108,13 @@ sonar.host.url=http://localhost:9000
 
 1. 將 `~/sonar-scanner-3.1.0.1141-macosx/bin` 目錄加到 system path
 
+```shell
+$ sonar-scanner -Dsonar.projectKey=Angular52 -Dsonar.sources=. -Dsonar.projectName=Angular52 -Dsonar.projectVersion=1.0
 ```
-~/MyProject $ sonar-scanner -Dsonar.projectKey=Angular52 -Dsonar.sources=. -Dsonar.projectName=Angular52 -Dsonar.projectVersion=1.0
-```
-使用 `sonar-scanner` 對 Laravel 專案進行檢查。
+使用 `sonar-scanner` 對 Angular 專案進行檢查。
 
 * **-D** : 對 SonarQube 的 property 進行設定
-* **sonar.projectKey**：SonarQube 對專案的 key，內部將以此 key 作為辨別，必須唯一
+* **sonar.projectKey**：SonarQube 對專案的 key，內部將以此 key 作為識別，必須唯一
 * **sonar.sources**：SonarQube 要檢查的目錄，因為已經在專案目錄下，`.` 即為 `目前目錄`
 * **sonar.projectName**：在 SonarQube 網頁上顯示的名稱
 * **sonar.projectVersion**：在 SonarQube 網頁上顯示的版本編號
@@ -131,7 +131,7 @@ sonar.host.url=http://localhost:9000
 
 進入 SonarQube 網頁，就可看到 `Angular52` 專案已經出現 SonarQube。
 
-到目前為止，SonarQube 對 TypeScript 的檢查已經完成，就算只將 SonarQube 裝在本機，也對 TypeScript 程式碼品質的檢查有很大的幫助。
+到目前為止，SonarQube 對 TypeScript 檢查已經完成，就算只將 SonarQube 裝在本機，也對 TypeScript 程式碼品質檢查有很大幫助。
 
 > Q：Angular 專案有 `node_modules` 目錄，不需如 Lavavel 專案去排除 `vendor` 目錄嗎？
 
@@ -187,13 +187,13 @@ Slack 將開啟 browser
 
 ![lack01](/images/sonarqube/angular/slack018.png)
 
-1. 按 `Add Configuration` 加入 Jenkins CI
+1. 按 `Add Configuration` 加入 Jenkins
 
 ### Add Integration
 
 ![lack01](/images/sonarqube/angular/slack019.png)
 
-1. 按 `Add Incoming WebHooks Integration` 正式加入整合
+1. 按 `Add Incoming WebHooks Integration` 正式加入
 
 ### Setup Instructions
 
@@ -274,7 +274,7 @@ $ sonar-scanner -Dsonar.projectKey=Angular52 -Dsonar.sources=. -Dsonar.projectNa
 
 ## Jenkins
 
-實務上 SonarQube 還會與其他 CI server 合作，接下來將以 Jenkins 為例，介紹如何以 Jenkins 自動化 SonarQube。
+實務上 SonarQube 還會與其他 CI server 合作，接下來將以 Jenkins 為例，介紹如何以 Jenkins 自動執行 SonarQube。
 
 ### Installation
 
@@ -436,18 +436,18 @@ sonar.projectVersion=1.0
 
 ![lack04](/images/sonarqube/angular/slack049.png)
 
-1. Slack 也再次收到 SonarQube 檢查的結果
+* Slack 也再次收到 SonarQube 檢查的結果
 
 ## Conclusion
 
 - SonarQube 已經內建 SonarTS，也可以用來檢查 TypeScript 與 Angular
-- 就算不將 SonarQube 安裝在 server，安裝在本機也能有效的檢查 TypeScript 程式碼品質
+- 就算不將 SonarQube 安裝在 server，安裝在本機也能有效檢查 TypeScript 程式碼品質
 - SonarQube 也能將檢查結果推送到 Slack
 - 藉由 Jenkins 幫忙，我們就可以自動化執行 SonarQube
 
 ## Sample Code
 
-完整的範例可以在我的 [GitHub](https://github.com/oomusou/NG52JenkinsSonarQubeSlack) 上找到
+完整範例可以在我的 [GitHub](https://github.com/oomusou/NG52JenkinsSonarQubeSlack) 上找到
 
 ## Reference
 

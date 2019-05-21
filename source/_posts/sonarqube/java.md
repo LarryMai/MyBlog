@@ -236,7 +236,7 @@ $ gradle sonarqube
 
 進入 SonarQube 網頁，就可看到 `JavaSonarQube` 專案已經出現 SonarQube。
 
-> 目前為止，SonarQube 已經可以正常透過 Gradle 執行，實務上可以透過 Jenkins 執行 Gradle，就可透過 CI 自動執行 SonarQube，但這種方式較被動，若發現有任何 issue，還要開 ticket 要求修改，一來一回可能好幾天，若能在開發階段就即時 SonarQube 檢查，就能「及早發現，及早治療」。
+> 目前為止，SonarQube 已經可以正常透過 Gradle 執行，實務上可以透過 Jenkins 執行 Gradle，就可自動執行 SonarQube，但這種方式較被動，若發現有任何 issue，還要開 ticket 要求修改，一來一回可能好幾天，若能在開發階段就即時 SonarQube 檢查，就能「及早發現，及早治療」。
 
 ## SonarLint
 
@@ -322,16 +322,15 @@ $ gradle sonarqube
 
 ![java032](/images/sonarqube/java/java032.png)
 
-1. 點選 SonarLint Rule Description，會顯示該警告更詳細的解釋，甚至還有範例說明
+1. 點選 `SonarLint Rule Description`，會顯示更詳細解釋，甚至還有範例說明
 
 ## Conclusion
 
-* 我對 Java 與 Gradle 完全不熟，本篇要感謝 Carl Su 的友情幫助，才能在 Eclipse 順利執行 SonarLint
-* 有了 SonarLint，developer 就能更即時的獲得 SonarQube 的建議，養成寫出 clean code 的好習慣
+* 有了 SonarLint，developer 就能更即時獲得 SonarQube 建議，養成 clean code 好習慣
 
 ## Sample Code
 
-完整的範例可以在我的 [GitHub](https://github.com/oomusou/javasonarqube) 上找到
+完整範例可以在我的 [GitHub](https://github.com/oomusou/javasonarqube) 上找到
 
 ## Appendix
 

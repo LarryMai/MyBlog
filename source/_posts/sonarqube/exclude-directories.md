@@ -4,13 +4,13 @@ tags:
 feature: images/feature/sonarqube.png
 date: 2019-05-19 15:58:01
 ---
-在使用 SonarQube 對專案做檢查時，有些目錄與檔案不想檢查，最典型的就是在 MVC 專案時，不想檢查 JavaScript Package 的程式碼，畢竟我們關心的是團隊的程式碼品質，不是 Package 的程式碼品質，我們該如何設定排除呢？
+在使用 SonarQube 對專案做檢查時，有些目錄與檔案不想檢查，最典型的就是在 MVC 專案時，不想檢查 JavaScript Package，畢竟我們關心的是團隊的程式碼品質，而不是 Package，我們該如何設定排除呢？
 
 <!-- more -->
 
 ## Version
 
-SonarQube 1.0
+SonarQube 7.1
 
 ## Setting
 

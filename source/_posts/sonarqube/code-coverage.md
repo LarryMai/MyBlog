@@ -29,7 +29,7 @@ Rider 2018.1.3
 
 ![coverage000](/images/sonarqube/code-coverage/coverage000.png)
 
-在 NUnit 專案加入 Coverlet package，這是個基於 .NET Core，且能跨平台計算 Code Coverage 的 package。
+在 NUnit 專案加入 Coverlet，這是個基於 .NET Core，且能跨平台計算 code coverage 的 package。
 
 > OpenCover 與 dotCover 算 .NET 生態圈兩大最有名的 package，但目前都只能跑在 Windows 平台，Coverlet 算目前跨平台最佳 solution
 
@@ -76,7 +76,7 @@ ENV SCANNER_VERSION=4.3.1.1372
 ENV SCANNER_HOME=/opt/scanner
 ```
 
-使用 `ENV` 設定 Dockerfile 的環境變數。
+使用 `ENV` 設定 dockerfile 的環境變數。
 
 `SCANNER_VERSION` : 因為 SonarScanner 的下載路徑，會與版本有關，所以特別設定成變數。
 
@@ -121,7 +121,7 @@ RUN unzip /opt/sonar-scanner-msbuild.zip -d $SCANNER_HOME
 RUN rm /opt/sonar-scanner-msbuild.zip
 ```
 
-建立 `/opt/scanner` 目錄，將 SonarScanner 壓縮檔解壓縮放到 `/opt/scanner` 目錄下，解壓縮完刪除 SonarScanner 壓縮檔。
+建立 `/opt/scanner` 目錄，將 SonarScanner 壓縮檔解壓縮放到該目錄下，解壓縮完刪除 SonarScanner 壓縮檔。
 
 16 行
 
@@ -187,7 +187,7 @@ networks:
 
 ```yaml
 net-core:
-    build: .
+  build: .
 ```
 
 使用 `build` 將同目錄下的 `Dockerfile` build 成 image，也就是剛才的 `Dockerfile`。
@@ -312,7 +312,7 @@ dotnet /opt/scanner/SonarScanner.MSBuild.dll end /d:sonar.login=admin /d:sonar.p
 sleep 30
 ```
 
-主要是要等 SonarQube 啟動完成，比較好的方式是使用 Health Check 明確得知 SonarQube 已經啟動完成。
+主要是要等 SonarQube 啟動完成，比較好的方式是使用 health check 明確得知 SonarQube 已經啟動完成。
 
 這裡暫時先 sleep 30 秒，等 SonarQube 先啟動，.NET Core 才開始執行 SonarScanner。
 
@@ -326,7 +326,7 @@ dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
 執行 NUnit 單元測試。
 
-* **/p:CollectCoverage=true** : 命令 Coverlet 計算 Code Coverage
+* **/p:CollectCoverage=true** : 命令 Coverlet 計算 code coverage
 * **/p:CoverletOutputFormat=opencover** : 命令 Coverlet 以 OpenCover 格式產出
 
 第 6 行
@@ -344,7 +344,7 @@ dotnet /opt/scanner/SonarScanner.MSBuild.dll begin /k:core2 /n:Core2 /v:1.0 /d:s
 * **/d:sonar.password** : 指定 SonarQube 密碼
 * **/d:sonar.host.url** : 指定 SonarQube server IP 與 port
 * **/d:sonar.cs.opencover.reportsPaths** : 設定 OpenCover 格式的 XML 檔案位置
-* **/d:sonar.coverage.exclusions** : 設定 SonarQube 排除 Code Coverage 計算的檔案
+* **/d:sonar.coverage.exclusions** : 設定 SonarQube 排除 code coverage 計算的檔案
 
 > 目前 SonarQube 設定 exclusions 的 regex 有些 bug，可能無法如文件那般設定 regex，假如遇到這個 bug，就先用最原始的方式指定 exclusions
 
@@ -381,11 +381,11 @@ SonarScanner $ docker-compose up --build
 
 ![coverage002](/images/sonarqube/code-coverage/coverage002.png)
 
-1. Coverlet 計算出 Code Coverage，並且產生 `coverage.opencover.xml`
+1. Coverlet 計算出 code coverage，並且產生 `coverage.opencover.xml`
 
 ![coverage003](/images/sonarqube/code-coverage/coverage003.png)
 
-1. 在 host 以 `http://localhost:9000` ，將可看到 SonarQube 的檢查結果，並且正確顯示 Code Coverage
+1. 在 host 以 `http://localhost:9000` ，將可看到 SonarQube 的檢查結果，並且正確顯示 code coverage
 
 ## Stop Container
 
@@ -397,18 +397,17 @@ $ docker-compose down
 
 ## Conclusion
 
-* 由於 SonarScanner 已經被包在 Dockerfile 內，host 就不用再安裝 SonarScanner
-* 沒有將 .NET Core 安裝在 SonarQube container 內，而是分別使用 .NET Core container 與 SonarQube container，符合 Microservice 精神
-* Coverlet 為目前唯一的 .NET Core 跨平台 Code Coverage 解決方案，並且可以產出 OpenCover 格式 XML
-* 只要執行 `docker-compose up --build`，就會執行 NUnit 單元測試與 Coverlet 計算 Code Coverage，且 SonarScanner 也會自動進行檢查
+* 由於 SonarScanner 已經被包在 dockerfile 內，host 就不用再安裝 SonarScanner
+* 沒有將 .NET Core 安裝在 SonarQube container 內，而是分別使用 .NET Core container 與 SonarQube container，符合 microservice 精神
+* Coverlet 為目前唯一的 .NET Core 跨平台 code coverage 解決方案，並且可以產出 OpenCover 格式 XML
+* 只要執行 `docker-compose up --build`，就會執行 NUnit 與 Coverlet 計算 code coverage，且 SonarScanner 也會自動進行檢查
 
 ## Sample Code 
 
-完整的範例可以在我的 [GitHub](https://github.com/oomusou/sonarscanner) 上找到
+完整範例可以在我的 [GitHub](https://github.com/oomusou/sonarscanner) 上找到
 
 ## Reference
 
 [Tonerdo](https://github.com/tonerdo), [Coverlet](https://github.com/tonerdo/coverlet)
 [Shryne Boyer](https://tattoocoder.com), [Cross platform code coverage arrives for .NET Core](https://tattoocoder.com/cross-platform-code-coverage-arrives-for-net-core/)
 [SonarQube](https://docs.sonarqube.org), [Code Coverage Result Import (C#, VB.NET)](https://docs.sonarqube.org/pages/viewpage.action?pageId=6389770)
-

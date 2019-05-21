@@ -58,9 +58,9 @@ $ sonar console
 
 ![core007](/images/sonarqube/netcore-mac/core007.png)
 
-輸入 `localhost:9000`，若看到 SonarQube 首頁，則表示安裝成功
+* 輸入 `localhost:9000`，若看到 SonarQube 首頁，則表示安裝成功
 
-> 右上角 `Log in` 可登入管理設定 SonarQube，預設為 `admin/admin`
+* 右上角 `Log in` 可登入管理設定 SonarQube，預設為 `admin/admin`
 
 ## SonarQube Scanner for MSBuild
 
@@ -138,7 +138,7 @@ $ dotnet build
 $ dotnet ~/SonarScannerMsbuild/SonarScanner.MSBuild.dll end
 ```
 
-* 需加上 `end`，scanner 正式將 `dotnet build` 檢查出的結果寫入 SonarQube project
+* 需加上 `end`，scanner 正式將 `dotnet build` 檢查結果寫入 SonarQube project
 
 ![core054](/images/sonarqube/netcore-mac/core012.png)
 
@@ -191,7 +191,7 @@ $ jenkins
 
 ![lack03](/images/sonarqube/netcore-mac/core016.png)
 
-1. 選擇 `Install suggested plugins` 即可
+* 選擇 `Install suggested plugins` 即可
 
 ### Getting Started
 
@@ -210,13 +210,13 @@ $ jenkins
 
 ![lack03](/images/sonarqube/netcore-mac/core019.png)
 
-1. Jenkins 安裝完成，按 `Start using jenkins` 開始使用 Jenkins
+* Jenkins 安裝完成，按 `Start using jenkins` 開始使用 Jenkins
 
 ### Welcome to Jenkins
 
 ![lack03](/images/sonarqube/netcore-mac/core020.png)
 
-1. 進入 Jenkins 管理介面，如此 Jenkins 已經設定成功
+進入 Jenkins 管理介面，如此 Jenkins 已經設定成功
 
 ## Jenkins Job
 
@@ -258,8 +258,7 @@ $ jenkins
 
 ![lack04](/images/sonarqube/netcore-mac/core033.png) 
 
-1. 講以下 command 貼上
-
+1. 將以下 command 貼上
 
 ```shell
 dotnet /Users/oomusou/SonarScannerMsbuild/SonarScanner.MSBuild.dll begin /k:core2 /n:Core2 /v:1.0
@@ -272,12 +271,12 @@ dotnet /Users/oomusou/SonarScannerMsbuild/SonarScanner.MSBuild.dll end
 
 ![lack04](/images/sonarqube/netcore-mac/core021.png)
 
-1. 按左側 `Build Now` 執行 Job
+* 按左側 `Build Now` 執行 Job
 
 
 ![lack04](/images/sonarqube/netcore-mac/core022.png)
 
-1. Job 執行成功會出現 `藍燈`
+* Job 執行成功會出現 `藍燈`
 
 ![lack04](/images/sonarqube/netcore-mac/core023.png)
 
@@ -286,12 +285,12 @@ dotnet /Users/oomusou/SonarScannerMsbuild/SonarScanner.MSBuild.dll end
 ## Conclusion
 
 - SonarQube 已經內建 SonarC#，也可以用來檢查 C# 與 .NET Core
-- 就算不將 SonarQube 安裝在 server，安裝在本機也能有效的檢查 C# 程式碼品質
+- 就算不將 SonarQube 安裝在 server，安裝在本機也能有效檢查 C# 程式碼品質
 - 藉由 Jenkins 幫忙，我們就可以自動化執行 SonarQube
 
 ## Sample Code
 
-完整的範例可以在我的 [GitHub](https://github.com/oomusou/Core2SonarQubeJenkins) 上找到
+完整範例可以在我的 [GitHub](https://github.com/oomusou/Core2SonarQubeJenkins) 上找到
 
 ## Reference
 

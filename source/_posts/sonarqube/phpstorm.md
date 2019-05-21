@@ -6,7 +6,7 @@ tags:
 feature: images/feature/sonarqube.png
 date: 2019-05-19 15:23:07
 ---
-SonarQube 除了搭配 Jenkins 檢查程式碼品質外，還可以在 IDE 中使用 SonarLint，讓 developer 在程式開發階段就及早發現可能的 Bugs、Vulenrability、Code Smell 與 Duplication，本文將介紹 SonarLint + PhpStorm。
+SonarQube 除了搭配 Jenkins 檢查程式碼品質外，還可在 IDE 中使用 SonarLint，讓 Developer 在開發階段就及早發現可能的 Bugs、Vulenrability、Code Smell 與 Duplication，本文將介紹 SonarLint + PhpStorm。
 
 <!-- more -->
 
@@ -43,7 +43,7 @@ Laravel 5.6.17
 
 1. ***PhpStorm -> Preferences -> Other Settings -> SonarLint General Settings***
 2. 選擇 `Settings` tab
-3. 勾選 `Automatically trigger analysis`，SonarLint 將會自動檢查目前的檔案
+3. 勾選 `Automatically trigger analysis`，SonarLint 將自動檢查目前檔案
 4. 在 `SonarQube servers` 按 `+` 新增 server
 
 ![sonarlint004](/images/sonarqube/phpstorm/sonarlint004.png)
@@ -70,7 +70,7 @@ Laravel 5.6.17
 
 ![sonarlint008](/images/sonarqube/phpstorm/sonarlint008.png)
 
-1. 選擇 `File Exclusions` tab，若每個專案都有特定的目錄不想被 SonarLint 檢查，可統一設定在此
+1. 選擇 `File Exclusions` tab，若每個專案都有特定的目錄不想被 SonarLint 檢查，可統一在此設定
 
 ## Project Setting
 
@@ -80,7 +80,7 @@ Laravel 5.6.17
 
 1. ***PhpStorm -> Preferences -> Other Settings -> SonarLint Project Settings***
 2. 選擇 `Bind to SonarQube project` tab
-3. 將 `Enable binding to remote SonarQube server` 打勾，如此本地專案將與 SonarQube server 端綁定
+3. 將 `Enable binding to remote SonarQube server` 打勾，將本地專與 SonarQube server 端綁定
 4. `Bind to server` 選擇剛剛建立的 `MySonarQube`
 5. `SonarQube project` 選擇欲綁定的 `SonarQube` 專案
 
@@ -88,7 +88,7 @@ Laravel 5.6.17
 
 ![sonarlint010](/images/sonarqube/phpstorm/sonarlint010.png)
 
-1. 選擇 `File Exclusions` tab，若專案中有特定的目錄不想被 SonarLint 檢查，可設定在此
+1. 選擇 `File Exclusions` tab，若專案中有特定的目錄不想被 SonarLint 檢查，可在此設定
 2. 按 `OK` 儲存設定
 
 ## Automatic Analysis
@@ -108,4 +108,4 @@ SonarLint 能在 PhpStorm 內即時的檢查出目前檔案的 issue。
 
 ## Conclusion
 
-* 有了 SonarLint，developer 就能更即時的獲得 SonarQube 的建議，養成寫出 clean code 的好習慣
+* 有了 SonarLint，developer 就能更即時的獲得 SonarQube 建議，養成 clean code 好習慣
