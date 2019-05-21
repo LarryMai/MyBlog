@@ -47,7 +47,7 @@ console.log(nth(3)(data).title);
 
 ![nth000](/images/crocks/safenth/nth000.png)
 
-但別忘了 `nth()` 可能回傳 `undefined`，因此很容易產生 `Cannot read property of undefined` 的 run-time 錯誤。
+但別忘了 `nth()` 可能回傳 `undefined`，因此很容易產生 `Cannot read property of undefined` 的 runtime 錯誤。
 
 > 當然可以搭配 Ramda 的 `propOr()` 避免，但只要使用端稍微不小心，還是會忘記使用 `propOr()`
 
@@ -117,7 +117,7 @@ console.log(safeNth(1)(data).option({ title: 'No title' }).title);
 
 ## Conclusion
 
-* 可自行建立 `safeNth()` 取代 Ramda 的 `nth()`，藉由 `Maybe` 保護，就不會再出現  `Cannot read property of undefined` 的 run-time 錯誤
+* 可自行建立 `safeNth()` 取代 Ramda 的 `nth()`，藉由 `Maybe` 保護，就不會再出現  `Cannot read property of undefined` 的 runtime 錯誤
 * 實務上應使用 `Maybe` 取代 `undefined`，藉由 function 回傳 `Maybe`，強迫使用端透過 `option()` 處理 `undefined`
 
 ## Reference

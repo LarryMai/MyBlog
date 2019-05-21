@@ -5,7 +5,7 @@ tags:
 feature: images/feature/crocks.png
 date: 2019-05-13 17:42:16
 ---
-ECMAScript 為 Dynamic Type Language，Function 的 Parameter 並不必指定 Type Hint，因此可以傳入任何 Type，理論上必須在 Runtime 使用 `typeof` 做 Type Check，否則依賴 Type Coercion 很容易產生 Bug；`Mabye` 提供了另外一種方式：只會將正確 Type 進行運算，而不需使用 `typeof` 檢查。
+ECMAScript 為 Dynamic Type Language，Function 的 Parameter 並不必指定 Type Annotation，因此可以傳入任何 Type，理論上必須在 Runtime 使用 `typeof` 做 Type Check，否則依賴 Type Coercion 很容易產生 Bug；`Mabye` 提供了另外一種方式：只會將正確 Type 進行運算，而不需使用 `typeof` 檢查。
 
 <!-- more -->
 
