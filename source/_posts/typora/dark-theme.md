@@ -5,7 +5,7 @@ tags:
 feature: images/feature/typora.png
 date: 2019-05-23 12:26:04
 ---
-自從 macOS Mojave 引進 Dark Mode 之後，我的所有 App 都已經切換成 Dark Mode，唯一一個沒切換的只剩 Typora，其實目前已經有不少 Typora Theme 支援 Dark Mode，但總是沒找到完全喜歡的，索性自己調了一個，特色是使用 Fira Code 與 Darcula 主題配色。
+自從 macOS Mojave 引進 Dark Mode 之後，我所有 App 都已經切換成 Dark Mode，唯一一個沒切換的只剩 Typora，其實目前已經有不少 Typora Theme 支援 Dark Mode，但總是沒找到完全喜歡的，索性自己調了一個，特色是使用 Fira Code 與 Darcula 主題配色。
 
 <!-- more -->
 
