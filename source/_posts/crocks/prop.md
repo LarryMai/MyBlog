@@ -94,7 +94,9 @@ let isNotNil = compose(not, isNil);
 let prop_ = compose(safe(isNotNil), prop);
 
 // fn :: Object -> Number
-let fn = obj => prop_('price', obj).map(multiply(0.8)).option(0);
+let fn = obj => prop_('price', obj)
+  .map(multiply(0.8))
+  .option(0);
 
 console.log(fn(obj));
 ```
@@ -125,7 +127,9 @@ let isNotNil = compose(not, isNil);
 
 ```javascript
 // fn :: Object -> Number
-let fn = obj => prop_('price', obj).map(multiply(0.8)).option(0);
+let fn = obj => prop_('price', obj)
+  .map(multiply(0.8))
+  .option(0);
 ```
 
 `fn()` 改用自訂的 `prop_()`。
@@ -147,7 +151,9 @@ let obj = {
 };
 
 // fn :: Object -> Number
-let fn = obj => prop('price', obj).map(multiply(0.8)).option(0);
+let fn = obj => prop('price', obj)
+  .map(multiply(0.8))
+  .option(0);
 
 console.log(fn(obj));
 ```
