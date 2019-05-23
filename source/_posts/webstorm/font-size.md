@@ -61,4 +61,5 @@ WebStorm 預設 font size 較小，且不是根據 macOS 在 system preferences 
 ## Conclusion
 
 * WebStorm 沒有辦法吃 macOS 的 system preferences 較為可惜，必須手動一一設定 font size
+* 這不只 WebStorm 適用，其他 JetBrains 產品如 Android Studio、DataGrip 也適用
 
