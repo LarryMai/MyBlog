@@ -5,7 +5,7 @@ tags:
 feature: images/feature/crocks.png
 date: 2019-05-23 17:06:15
 ---
-當值被包進 `Maybe`，該如何改變 `Maybe` 內的值呢 ? `Maybe()` 自帶 `map()`，將原來 Function 傳進 `map()` 即可。
+當值被包進 `Maybe`，該如何改變 `Maybe` 內的值呢 ? `Maybe` 自帶 `map()`，將原來 Function 傳進 `map()` 即可。
 
 <!-- more -->
 
