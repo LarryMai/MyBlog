@@ -1,4 +1,4 @@
-title: 如何判斷 ECMAScript 的變數型別 ?
+title: 如何判斷 ECMAScript 變數型別 ?
 tags:
   - ECMAScript
 feature: images/feature/ecmascript.png
