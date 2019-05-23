@@ -1,6 +1,5 @@
 title: 如何在 macOS 安裝 SonarQube ?
 tags:
-  - Ramda
   - SonarQube
   - macOS
   - Homebrew
