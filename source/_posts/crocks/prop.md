@@ -5,6 +5,8 @@ tags:
   - Crocks
   - Crocks/prop
   - Maybe
+  - Maybe/map
+  - Maybe/option
 feature: images/feature/crocks.png
 date: 2019-05-23 11:16:45
 ---
