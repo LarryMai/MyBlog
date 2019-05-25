@@ -278,7 +278,7 @@ console.log(getCookie('age')(data).option('N/A'));
 * Imperative 會使用很多中繼變數，常需為了變數命名傷透腦筋，也必須小心處理 `undefined`
 * Functional 則不必使用中繼變數，可由 `pipe()` 清楚看出演算法思路，藉由將問題最小化分割，然後各個擊破
 * Ramda 有些 function 會回傳 `undefined`，如 `find()`，可藉由 `Maybe` 讓使用端處理，讓主邏輯更為清楚，不用再為 `undefined` 分心
-* Crocks 不少 function 與 Ramda 同名，差異在於回傳 algebraic data type，一律以 `_` postfix 表示，類似 Haskell 以 `fn' ` 的 apostrophe 命名方式
+* Crocks 不少 function 與 Ramda 同名，差異在於回傳 ADT，一律以 `_` postfix 表示，類似 Haskell 以 `fn' ` 的 apostrophe 命名方式
 
 ## Reference
 
