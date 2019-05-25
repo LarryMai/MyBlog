@@ -1,7 +1,15 @@
 title: 使用 map() 改變 Maybe 內的值
 tags:
+  - Ramda
   - Crocks
   - Maybe
+  - Maybe/option
+  - Maybe/map
+  - Ramda/inc
+  - Ramda/multiply
+  - Ramda/pipe
+  - Crocks/safe
+  - Crocks/isNumber
 feature: images/feature/crocks.png
 date: 2019-05-23 17:06:15
 ---
