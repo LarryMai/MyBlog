@@ -162,7 +162,7 @@ FP 不會使用 `for` loop 處理，可由 `pipe()` 清楚看出演算法流程�
 
 其中將 string 轉成 object，是想借助 Ramda 對 object 支援豐富 function。
 
-> 可以看出 FP 解決問題方式是將問題最小化切割，然後各個擊破，與 Imperative整體思考方式不同
+> 可以看出 FP 解決問題方式是將問題最小化切割，然後各個擊破，與 imperative 整體思考方式不同
 
 第 8 行
 
