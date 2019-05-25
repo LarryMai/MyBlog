@@ -79,7 +79,7 @@ console.log(getCookie('age')(data));
 for(let i = 0; i < arr.length; i++) {
 ```
 
-Imperative 作法會使用 `for` loop 一個一個找。
+Imperative 會使用 `for` loop 一個一個找。
 
 第 9 行
 
@@ -254,7 +254,7 @@ find(compose(isNotNil, prop(key))),
 prop_(key),
 ```
 
-由於要回傳 `Maybe`，改用 Crocks 的 `prop()`，而不是 Ramd 的 `props()`，因為 Crocks 很多 function 名稱與 Ramda 一樣，差異只在於回傳 `Maybe`，因此 Crocks 所提供的同名 function 一律以 `_` postfix 表示。
+由於要回傳 `Maybe`，改用 Crocks 的 `prop()`，而不是 Ramd 的 `prop()`，因為 Crocks 很多 function 名稱與 Ramda 一樣，差異只在於回傳 `Maybe`，因此 Crocks 所提供的同名 function 一律以 `_` postfix 表示。
 
 26 行
 
