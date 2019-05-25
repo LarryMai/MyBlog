@@ -28,6 +28,7 @@ date: 2019-05-25 15:05:26
 VS Code 1.34.0
 Quokka 1.0.216
 Ramda 0.26.1
+Croks 0.11.1
 
 ## Cookie
 
