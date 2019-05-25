@@ -2,6 +2,10 @@ title: Maybe 使 ECMAScript 更安全
 tags:
   - Crocks
   - Maybe
+  - Maybe/option
+  - Maybe/map
+  - Crocks/safe
+  - Crocks/isNumber
 feature: images/feature/crocks.png
 date: 2019-05-13 17:42:16
 ---
