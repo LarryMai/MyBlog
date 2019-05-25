@@ -4,6 +4,9 @@ tags:
   - Ramda/nth
   - Crocks
   - Maybe
+  - Crocks/safe
+  - Crocks/isObject
+  - Maybe/option
 feature: images/feature/crocks.png
 date: 2019-05-18 21:13:08
 ---
