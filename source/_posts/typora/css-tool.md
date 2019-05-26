@@ -6,7 +6,7 @@ tags:
 feature: images/feature/typora.png
 date: 2019-05-23 12:41:34
 ---
-Typora 是使用 Electorn 技術的 macOS App，也因此可自行使用 CSS 開發 Theme，或者利用既有的 Theme 加以微調 CSS，但問題來了，該如何觀察 CSS 呢 ?
+Typora 是使用 Electorn 技術的 macOS App，也因此可自行使用 CSS 開發 Theme，或者利用既有的 Theme 加以微調 CSS，但該如何觀察 CSS 呢 ?
 
 <!-- more -->
 
@@ -32,12 +32,12 @@ Safari 12.1 (14607.1.40.1.4)
 
 ![css002](/images/typora/css-tool/css002.png)
 
-如此 Typora 的 HTML 與 CSS 就完整呈現了，可使用 element selection 工具觀察要調整的 HTML element。
+如此 Typora 的 HTML 與 CSS 就完整呈現了，可使用 element selection 工具觀察 HTML element。
 
 ## Conclusion
 
 * Typora 在 macOS 只能使用 Safari 觀察，不能使用 Chrome
-* Developer Tool 一打通，剩下就是 CSS 功力了
+* Developer tool 一打通，剩下就是 CSS 功力了
 
 ## Reference
 

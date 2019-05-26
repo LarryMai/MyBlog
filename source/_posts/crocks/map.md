@@ -13,7 +13,7 @@ tags:
 feature: images/feature/crocks.png
 date: 2019-05-23 17:06:15
 ---
-當值被包進 `Maybe`，該如何改變 `Maybe` 內的值呢 ? `Maybe` 自帶 `map()`，將原來 Function 傳進 `map()` 即可。
+當值被包進 `Maybe` 後，該如何改變 `Maybe` 內的值呢 ? `Maybe` 自帶 `map()`，將原來 Function 傳進 `map()` 即可。
 
 <!-- more -->
 
@@ -22,7 +22,7 @@ date: 2019-05-23 17:06:15
 VS Code 1.34.0
 Quokka 1.0.216
 Ramda 0.26.1
-Crocs 0.11.1
+Crocks 0.11.1
 
 ## Imperative
 
@@ -40,7 +40,7 @@ console.log(fn(1));
 
 `fn()` 要先經過 `inc()`，然後再將結果傳入 `multiply(2)`。
 
-Imperative 會先用變數保存 `inc()` 計算完的資料，再將變數傳入 `multiply()`。
+Imperative 會先用變數保存 `inc()` 計算完結果，再將變數傳入 `multiply()`。
 
 ![maybe000](/images/crocks/map/map000.png)
 

@@ -19,7 +19,7 @@ tags:
 feature: images/feature/ramda.png
 date: 2019-05-25 15:05:26
 ---
-當我們使用 `document.cookie()` 讀取 Cookie 時，回傳為 String，我們希望提供 Key 讀取其 Value，這常見的需求該如何實現呢 ? 本文分別使用 Imperative、Functional 與 Maybe 三種方式實現。
+當我們使用 `document.cookie()` 讀取 Cookie 時，回傳為 String，我們希望提供 Key 讀取其 Value，這常見需求該如何實現呢 ? 本文分別使用 Imperative、Functional 與 Maybe 三種方式實現。
 
 <!-- more -->
 
@@ -28,7 +28,7 @@ date: 2019-05-25 15:05:26
 VS Code 1.34.0
 Quokka 1.0.216
 Ramda 0.26.1
-Croks 0.11.1
+Crocks 0.11.1
 
 ## Cookie
 
@@ -70,7 +70,7 @@ console.log(getCookie('lastName')(data));
 console.log(getCookie('age')(data));
 ```
 
-`data` 為根據 `document.cookie()` 所整理過的 string。
+`data` 為根據 `document.cookie()` 所整理過的 array。
 
 我們希望當傳入 key 時， `getCookie()` 回傳 value。
 
@@ -160,7 +160,7 @@ FP 不會使用 `for` loop 處理，可由 `pipe()` 清楚看出演算法流程�
 2. 再使用 `find()` 搜尋 array 中每個 object，找到就傳回 object，否則傳回 `undefined`
 3. 最後使用 `propOr()` 根據 key 取得 value
 
-其中將 string 轉成 object，是想借助 Ramda 對 object 支援豐富 function。
+其中將 string 轉成 object，是想借助 Ramda 對 object 有豐富 function 可用。
 
 > 可以看出 FP 解決問題方式是將問題最小化切割，然後各個擊破，與 imperative 整體思考方式不同
 

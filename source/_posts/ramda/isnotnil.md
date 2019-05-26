@@ -35,7 +35,7 @@ console.log(isNotNil(null));
 
 > **isNotNil()**
 > `* -> Boolean`
-> 判斷是否不是 `null` 或 `undefined`
+> 判斷是否不是 `undefined` 或 `null`
 
 ![isnotnil000](/images/ramda/isnotnil/isnotnil000.png)
 

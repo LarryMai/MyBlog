@@ -10,7 +10,7 @@ tags:
 feature: images/feature/crocks.png
 date: 2019-05-23 11:16:45
 ---
-Ramda 的 `prop()` 可能會回傳 `undefined`，這也是常見 Bug 來源之一；而 `Crocks` 的 `prop()` 則回傳 `Maybe`，可確保 ECMAScript 不再回傳不預期結果。 
+Ramda 的 `prop()` 可能回傳 `undefined`，這也是常見 Bug 來源之一；而 `Crocks` 的 `prop()` 則回傳 `Maybe`，可確保 ECMAScript 不再回傳不預期結果。 
 
 <!-- more -->
 
@@ -19,7 +19,7 @@ Ramda 的 `prop()` 可能會回傳 `undefined`，這也是常見 Bug 來源之�
 VS Code 1.34.0
 Quokka 1.0.216
 Ramda 0.26.1
-Crocs 0.11.1
+Crocks 0.11.1
 
 ## ECMAScript
 
@@ -34,7 +34,7 @@ let fn = obj => obj.price * 0.8;
 console.log(fn(obj));
 ```
 
-`fn()` 會取 `obj` 的 `price`，再打八折，若 `obj` 正確提供 `price` property，則一切正常。
+`fn()` 會取 `obj` 的 `price` 再打八折，若 `obj` 正確提供 `price` property，則一切正常。
 
 ![prop000](/images/crocks/prop/prop000.png)
 
@@ -75,7 +75,7 @@ console.log(fn(obj));
 > `s → {s: a} → a | Undefined`
 > 傳入 key 與 object，傳回 value
 
-若 key 找不到，`prop()` 會回傳 `undefined`，所以儘管使用了 Ramda 的 `prop()`，問題依舊沒解決，結果一樣是 `NaN`。
+若 key 找不到，`prop()` 會回傳 `undefined`，所以儘管使用了 Ramda 的 `prop()`，問題依舊沒解決，一樣是 `NaN`。
 
 ![prop002](/images/crocks/prop/prop002.png)
 
@@ -138,7 +138,7 @@ let fn = obj => prop_('price', obj)
 
 由於 `prop_()` 回傳 `Maybe`，因此就不能再使用 `pipe()`，而要改用 `Maybe` 的 `map()` 執行 `multiply(0.8)`。
 
-最後再透過 `option()` 將 `Maybe` 轉成 number。
+最後再透過 `option()` 將 `Maybe` 轉回 number。
 
 ![prop003](/images/crocks/prop/prop003.png)
 
@@ -179,7 +179,7 @@ console.log(fn(obj));
 
 ## Conclusion
 
-* Ramda 為了與 ECMAScript 妥協，有些 function 回傳了 `undefiend`，如 `prop()`，這很容易產生 bug
+* Ramda 與 ECMAScript 妥協，有些 function 回傳 `undefiend`，如 `prop()`，這很容易產生 bug
 * Crocks 的 `prop()` 除了用在 object，也能用在 array
 * Crocks 的 `prop()` 回傳的是 `Maybe`，強迫我們要透過 `option()` 處理 `undefined`，實務上建議使用 Crocks 的 `prop()` 取代 Ramda 的 `prop()`
 

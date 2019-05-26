@@ -17,7 +17,7 @@ ECMAScript 為 Dynamic Type Language，Function 的 Parameter 並不必指定 Ty
 
 VS Code 1.33.1
 Quokka 1.0.212
-Croks 0.11.1
+Crocks 0.11.1
 
 ## Number
 
