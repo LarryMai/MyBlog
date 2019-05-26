@@ -17,7 +17,7 @@ macOS 10.14.5
 
 ![fontsize000](/images/webstorm/font-size/fontsize000.png)
 
-WebStorm 預設 font size 較小，且不是根據 macOS 在 system preferences 所設定顯示，必須獨立設定。
+WebStorm 預設 font size 較小，且不是根據 macOS 在 system preferences 設定顯示。
 
 ## IDE
 
@@ -38,10 +38,10 @@ WebStorm 預設 font size 較小，且不是根據 macOS 在 system preferences 
 設定 editor 的 font size。
 
 1. **Font**：預設為 `Menlo`，也是很棒的字型，不過由於 ES6 的 arrow function 興起，建議改用 `Fira Code` 系列，較能顯示 FP 特色
-2. **Size**：由於是寫 code 主要用字，建議比 IDE 的 font size 略大
-3. **Line spacing**：行距，建議可稍微寬一點
+2. **Size**：由於是寫 code 主要用字，建議比 IDE 的 font size 略大，設定為 `16`
+3. **Line spacing**：行距，建議可稍微寬一點，設定為 `1.1`
 4. **Fallback font**：若遇到 `Fira Code` 無法顯示的字，就改用 `Menlo` 顯示
-5. **Enable font ligatures**：要打勾，`=>` 與 `!==` 才會以 `Fira Code` 的特殊字型顯示
+5. **Enable font ligatures**：要打勾，`=>` 與 `!==` 才會以 `Fira Code` 特殊字型顯示
 
 ## Terminal
 
