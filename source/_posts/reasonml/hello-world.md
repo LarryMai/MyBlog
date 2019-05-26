@@ -10,6 +10,7 @@ date: 2019-05-26 18:18:13
 
 ## Version
 
+macOS Mojave 10.14.5
 Node 10.15.3
 Yarn 1.15.2
 ReasonML 3.0.4

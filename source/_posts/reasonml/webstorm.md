@@ -11,6 +11,7 @@ date: 2019-05-26 20:06:55
 
 ## Version
 
+macOS Mojave 10.14.5
 WebStorm 2019.1.2
 ReasonML 0.76.3
 
@@ -36,7 +37,9 @@ ReasonML plugin 在 marketplace 找不到，只能從 [ReasonML plugin](https://
 
 ![ws003](/images/reasonml/webstorm/ws003.png)
 
-安裝完在 `Installed` 下有 `ReasonML` plugin。
+***WebStorm -> Preferences -> Plugins -> Installed***
+
+安裝完在 `Installed` 下會看到 `ReasonML` plugin。
 
 ## Conclusion
 

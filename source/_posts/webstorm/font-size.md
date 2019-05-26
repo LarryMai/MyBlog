@@ -10,7 +10,7 @@ WebStorm 基於 JavaScript 生態設計，預設組態已經很好用，需要�
 
 ## Version
 
-macOS 10.14.5
+macOS Mojave 10.14.5
 ＷebStorm 2019.1.2
 
 ## Default Font Size
