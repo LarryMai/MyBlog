@@ -117,7 +117,7 @@ console.log(fn2(1));
 
 ## Reference
 
-[egghead.io](https://egghead.io/), [Unwrap Values from a Maybe](https://egghead.io/lessons/javascript-unwrap-values-from-a-maybe)
+[Andy Van Slaars](https://egghead.io/instructors/andrew-van-slaars), [Unwrap Values from a Maybe](https://egghead.io/lessons/javascript-unwrap-values-from-a-maybe)
 [Crocks](https://evilsoft.github.io/crocks/), [Maybe](https://evilsoft.github.io/crocks/docs/crocks/Maybe.html)
 [Crocks](https://evilsoft.github.io/crocks/), [map()](https://evilsoft.github.io/crocks/docs/crocks/Maybe.html#map)
 

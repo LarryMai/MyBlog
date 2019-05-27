@@ -392,7 +392,7 @@ let fn = n => safe(isNumber)(n).map(inc).option(0);
 
 ## Reference
 
-[Egghead.io](https://egghead.io), [Understanding the Maybe Data Type](https://egghead.io/lessons/javascript-understand-the-maybe-data-type)
-[Egghead.io](https://egghead.io), [Create a Maybe with a Safe Utility Function](https://egghead.io/lessons/javascript-create-a-maybe-with-a-safe-utility-function)
-[Egghead.io](https://egghead.io), [Unwrap Values from a Maybe](https://egghead.io/lessons/javascript-unwrap-values-from-a-maybe)
+[Andy Van Slaars](https://egghead.io/instructors/andrew-van-slaars), [Understanding the Maybe Data Type](https://egghead.io/lessons/javascript-understand-the-maybe-data-type)
+[Andy Van Slaars](https://egghead.io/instructors/andrew-van-slaars), [Create a Maybe with a Safe Utility Function](https://egghead.io/lessons/javascript-create-a-maybe-with-a-safe-utility-function)
+[Andy Van Slaars](https://egghead.io/instructors/andrew-van-slaars), [Unwrap Values from a Maybe](https://egghead.io/lessons/javascript-unwrap-values-from-a-maybe)
 [Gilad Shoham](https://blog.bitsrc.io/@giladshoham), [Get Better Type Checking in JavaScript with the Maybe Type](https://blog.bitsrc.io/get-better-type-checking-in-javascript-with-the-maybe-type-e7f70b23b505)

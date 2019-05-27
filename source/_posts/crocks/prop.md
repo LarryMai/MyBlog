@@ -185,6 +185,6 @@ console.log(fn(obj));
 
 ## Reference
 
-[egghead.io](https://egghead.io), [Safely Access Object Properties with prop()](https://egghead.io/lessons/javascript-safely-access-object-properties-with-prop)
+[Andy Van Slaars](https://egghead.io/instructors/andrew-van-slaars), [Safely Access Object Properties with prop()](https://egghead.io/lessons/javascript-safely-access-object-properties-with-prop)
 [Ramda](https://ramdajs.com), [prop()](https://ramdajs.com/docs/#prop)
 [Crocks](https://evilsoft.github.io/crocks/), [prop()](https://evilsoft.github.io/crocks/docs/crocks/Maybe.html#prop)
