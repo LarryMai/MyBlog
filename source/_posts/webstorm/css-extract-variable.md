@@ -5,7 +5,7 @@ tags:
 feature: images/feature/webstorm.png
 date: 2019-05-27 12:52:28
 ---
-WebStorm 在 2019.1 開始支援 Extract Variable，可將 CSS 重複部分直接抽成 CSS Variable，方便日後維護。
+WebStorm 在 2019.1 開始支援 CSS 的 Extract Variable，可將重複部分直接抽成 CSS Variable，方便日後維護。
 
 <!-- more -->
 
