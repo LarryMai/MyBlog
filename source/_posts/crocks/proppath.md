@@ -16,6 +16,7 @@ Ramda 的 `path()` 可能回傳 `undefined`，這也是常見 Bug 來源之一�
 VS Code 1.34.0
 Quokka 1.0.216
 Ramda 0.26.1
+Crocks 0.11.1
 
 ## ECMAScript
 
