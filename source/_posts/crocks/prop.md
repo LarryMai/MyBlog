@@ -10,7 +10,7 @@ tags:
 feature: images/feature/crocks.png
 date: 2019-05-23 11:16:45
 ---
-Ramda 的 `prop()` 可能回傳 `undefined`，這也是常見 Bug 來源之一；而 `Crocks` 的 `prop()` 則回傳 `Maybe`，可確保 ECMAScript 不再回傳不預期結果。 
+Ramda 的 `prop()` 可能回傳 `undefined`，這也是常見 Bug 來源之一；而 Crocks 的 `prop()` 則回傳 `Maybe`，可確保 ECMAScript 不再回傳不預期結果。 
 
 <!-- more -->
 
