@@ -42,7 +42,7 @@ console.log(fn(1));
 
 Imperative 會先用變數保存 `inc()` 計算完結果，再將變數傳入 `multiply()`。
 
-![maybe000](/images/crocks/map/map000.png)
+![maybe000](/images/crocks/maybe/map/map000.png)
 
 ## Functional
 
@@ -62,7 +62,7 @@ Functional 會使用 `pipe()` 將 `inc()` 與 `multiply()` 加以組合。
 
 但 ECMAScript 是 dynamic type language，雖然我們希望是 `Number -> Number`，但若傳入 string，結果就是 `NaN`，並不是我們預期結果。
 
-![maybe001](/images/crocks/map/map001.png)
+![maybe001](/images/crocks/maybe/map/map001.png)
 
 ## Maybe
 
@@ -85,7 +85,7 @@ console.log(fn(1));
 
 最後再使用 `option()` 將 `Maybe` 轉回 number。
 
-![maybe002](/images/crocks/map/map002.png)
+![maybe002](/images/crocks/maybe/map/map002.png)
 
 ```javascript
 import { pipe, inc, multiply } from 'ramda';
@@ -109,7 +109,7 @@ console.log(fn2(1));
 
 事實上我們可以維持原本的 function 不變，只需一次 `map()` 即可。
 
-![maybe003](/images/crocks/map/map003.png)
+![maybe003](/images/crocks/maybe/map/map003.png)
 
 ## Conclusion
 

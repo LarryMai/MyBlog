@@ -36,7 +36,7 @@ console.log(fn(obj));
 
 `fn()` 會取 `obj` 的 `price` 再打八折，若 `obj` 正確提供 `price` property，則一切正常。
 
-![prop000](/images/crocks/prop/prop000.png)
+![prop000](/images/crocks/maybe/prop/prop000.png)
 
 ```javascript
 let obj = {
@@ -51,7 +51,7 @@ console.log(fn(obj));
 
 若 `obj` 根本沒有 `title` property，結果為 `NaN`，這並不是我們預期結果。
 
-![prop001](/images/crocks/prop/prop001.png)
+![prop001](/images/crocks/maybe/prop/prop001.png)
 
 ## Ramda
 
@@ -77,7 +77,7 @@ console.log(fn(obj));
 
 若 key 找不到，`prop()` 會回傳 `undefined`，所以儘管使用了 Ramda 的 `prop()`，問題依舊沒解決，一樣是 `NaN`。
 
-![prop002](/images/crocks/prop/prop002.png)
+![prop002](/images/crocks/maybe/prop/prop002.png)
 
 ## Maybe
 
@@ -140,7 +140,7 @@ let fn = obj => prop_('price', obj)
 
 最後再透過 `option()` 將 `Maybe` 轉回 number。
 
-![prop003](/images/crocks/prop/prop003.png)
+![prop003](/images/crocks/maybe/prop/prop003.png)
 
 ## Crocks
 
@@ -175,7 +175,7 @@ console.log(fn(obj));
 
 > 與 Ramda 的 `prop()` 不同點除了回傳 `Maybe` 外，Crocks 的 `prop()`  還能用在 array
 
-![prop004](/images/crocks/prop/prop004.png)
+![prop004](/images/crocks/maybe/prop/prop004.png)
 
 ## Conclusion
 

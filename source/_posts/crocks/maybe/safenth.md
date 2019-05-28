@@ -48,7 +48,7 @@ console.log(nth(3)(data).title);
 
 `a | Undefined`：若找得到則傳回 element，找不到則傳回 `undefined`
 
-![nth000](/images/crocks/safenth/nth000.png)
+![nth000](/images/crocks/maybe/safenth/nth000.png)
 
 但別忘了 `nth()` 可能回傳 `undefined`，因此很容易產生 `Cannot read property of undefined` 的 runtime 錯誤。
 
@@ -116,7 +116,7 @@ console.log(safeNth(1)(data).option({ title: 'No title' }).title);
 
 > `Maybe` 強迫你要使用 `option()` 才能取回 object，因此使用端不可能忘記處理 `Nothing`；不像 `undefined` 並沒有強迫處理，這就是常見 bug 來源
 
-![nth001](/images/crocks/safenth/nth001.png)
+![nth001](/images/crocks/maybe/safenth/nth001.png)
 
 ## Conclusion
 

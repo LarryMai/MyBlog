@@ -41,7 +41,7 @@ console.log(fn(user));
 
 > 若傳入的 object 真的有 `address` object 與 `postalCode` property，則一切順利如預期
 
-![proppath000](/images/crocks/proppath/proppath000.png)
+![proppath000](/images/crocks/maybe/proppath/proppath000.png)
 
 ```javascript
 let user = {
@@ -62,7 +62,7 @@ console.log(fn(user));
 
 若傳入 object 不存在 `postalCode` property，則會回傳 `undefined`，這就是常見 bug 來源。
 
-![proppath001](/images/crocks/proppath/proppath001.png)
+![proppath001](/images/crocks/maybe/proppath/proppath001.png)
 
 ```javascript
 let user = {
@@ -90,7 +90,7 @@ console.log(fn(user));
 * `||` 並非商業邏輯一部分，只是為了防止 property 不存在而判斷，因此將 code 變髒了
 
 
-![proppath002](/images/crocks/proppath/proppath002.png)
+![proppath002](/images/crocks/maybe/proppath/proppath002.png)
 
 ```javascript
 let user = {
@@ -111,7 +111,7 @@ console.log(fn(user));
 
 `address` object 也可能不存在，因此使用 `||` 判斷並不夠完整，依然產生 `Cannot read property of undefined` 的 run-time 錯誤。
 
-![proppath003](/images/crocks/proppath/proppath003.png)
+![proppath003](/images/crocks/maybe/proppath/proppath003.png)
 
 ```javascript
 let user = {
@@ -138,7 +138,7 @@ console.log(fn(user));
 * 必須很小心的每一層都判斷，常因為粗心而造成 bug
 * 這些判斷並非商業邏輯的一部分，只是為了防止 property 不存在而已，因此將 code 變髒了
 
-![proppath004](/images/crocks/proppath/proppath004.png)
+![proppath004](/images/crocks/maybe/proppath/proppath004.png)
 
 ## Ramda
 
@@ -172,7 +172,7 @@ console.log(fn(user));
 
 若 property 找不到，`path()` 會回傳 `undefined`，所以儘管使用了 Ramda 的 `path()`，問題依舊沒解決，一樣是 `undefined`。
 
-![proppath005](/images/crocks/proppath/proppath005.png)
+![proppath005](/images/crocks/maybe/proppath/proppath005.png)
 
 ## Crocks
 
@@ -219,7 +219,7 @@ Crocks 提供了 `propPath()`，用法與 Ramda 的 `path()` 完全相同，但�
 * Function 內不再有判斷 property 存在與否邏輯，只剩下原本商業邏輯，非常乾淨
 * 因為 `Maybe` 一定要透過 `option()` 取出，不會忘記處理 `undefined`
 
-![proppath006](/images/crocks/proppath/proppath006.png)
+![proppath006](/images/crocks/maybe/proppath/proppath006.png)
 
 ## Conclusion
 

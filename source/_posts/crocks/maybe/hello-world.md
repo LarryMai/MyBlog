@@ -33,7 +33,7 @@ console.log(fn(2));
 
 很簡單的 `inc()`，當輸入為 number `2` 時，毫無懸念結果為 `3`。
 
-![maybe000](/images/crocks/maybe/maybe000.png)
+![maybe000](/images/crocks/maybe/hello-world/maybe000.png)
 
 ## String
 
@@ -51,7 +51,7 @@ console.log(fn('8'));
 
 > 由於 ECMAScript 為 dynamic type language，因此可以傳入任何 type，而當 `+` 遇到string 時，會將兩個 operand 都轉成 string，`+` 從原本的 `add()` 變成 `concat()`，因此最後結果為 string `81`
 
-![maybe001](/images/crocks/maybe/maybe001.png)
+![maybe001](/images/crocks/maybe/hello-world/maybe001.png)
 
 ## Undefined
 
@@ -69,7 +69,7 @@ console.log(fn(undefined));
 
 > `81` 與 `NaN` 都不是我們預期結果，要避免這些情形發生，唯一的方法就是確認輸入只能是 number 才能使用 `inc()` 運算，其他 type 都不執行 `inc()`
 
-![maybe002](/images/crocks/maybe/maybe002.png)
+![maybe002](/images/crocks/maybe/hello-world/maybe002.png)
 
 ## typeof
 
@@ -95,7 +95,7 @@ console.log(fn(undefined));
 > * 無法在一般情況就發現錯誤
 > * 必須考驗 coder 細心程度，只要不夠細心，unit test 一樣測不到
 
-![maybe003](/images/crocks/maybe/maybe003.png)
+![maybe003](/images/crocks/maybe/hello-world/maybe003.png)
 
 ## Wrap into Maybe
 
@@ -149,7 +149,7 @@ let fn = n => n.map(inc);
 
 Argument `n` 為 `Maybe`，而 `Maybe` 自帶 `map()`，可傳入 function，`map()` 會幫我們將 `Maybe` 內的 value 透過傳入的 `inc()` 改變之，最後回傳 `Maybe` 。
 
-![maybe004](/images/crocks/maybe/maybe004.png)
+![maybe004](/images/crocks/maybe/hello-world/maybe004.png)
 
 由於 `fn()` 回傳為 `Maybe`，因此印出 `Just 3`，而非原本的 `3`。
 
@@ -186,7 +186,7 @@ let fn = n => n.map(x => console.log('calling inc()') || inc(x));
 
 > `console.log()` 配合 `||` 為 ECMAScript 常用測試 callback 手法
 
-![maybe005](/images/crocks/maybe/maybe005.png)
+![maybe005](/images/crocks/maybe/hello-world/maybe005.png)
 
 印出了 `calling inc()`，表示若輸入為 `Just`， 真的有執行 `Mapbe.map()` 的 callback。
 
@@ -208,7 +208,7 @@ console.log(fn(Nothing()));
 
 `inc()` 與 `fn()` 完全不變，只是改將 `Nothing` 傳入 `fn()`。
 
-![maybe006](/images/crocks/maybe/maybe006.png)
+![maybe006](/images/crocks/maybe/hello-world/maybe006.png)
 
 沒顯示 `calling inc()`，表示 `inc()` 根本沒執行，直接回傳 `Nothing`。
 
@@ -257,7 +257,7 @@ let safeNum = v => typeof v === 'number' ? Just(v) : Nothing();
 
 底層雖然會使用 `typeof`，但即將包成 higher order function，請繼續看下去。
 
-![maybe007](/images/crocks/maybe/maybe007.png)
+![maybe007](/images/crocks/maybe/hello-world/maybe007.png)
 
 ## Higher Order Function
 
@@ -310,7 +310,7 @@ let fn = n => safe(isNumber)(n).map(inc);
 
 由 `safe(isNumber)` 組合出 `safeNum()`，如此可安全將任何 value 包進 `Maybe`。
 
-![maybe008](/images/crocks/maybe/maybe008.png)
+![maybe008](/images/crocks/maybe/hello-world/maybe008.png)
 
 ## Helper Function
 
@@ -332,7 +332,7 @@ console.log(fn(undefined));
 
 > 目前只剩下最後一哩路： `fn()` 回傳 `Maybe`，所以印出結果是錯的，不過也因為能在一般狀況下就發現錯誤，我們很容易修正
 
-![maybe009](/images/crocks/maybe/maybe009.png)
+![maybe009](/images/crocks/maybe/hello-world/maybe009.png)
 
 ## Unwrap from Maybe
 
@@ -350,7 +350,7 @@ console.log(fn(undefined));
 
 Crocks 提供了 `Maybe.options()`，讓我們提供當 `Maybe` 為 `Nothing` 時該回傳的 default value，因為 `Nothing` 完全不會經過 `inc()` 運算。
 
-![maybe010](/images/crocks/maybe/maybe010.png)
+![maybe010](/images/crocks/maybe/hello-world/maybe010.png)
 
 `fn()` 的 signature 完全沒變，結果也完全沒變。
 
