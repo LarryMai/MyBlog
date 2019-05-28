@@ -72,7 +72,7 @@ console.log(includes(1)(data));
 
 ![includes002](/images/ramda/includes/includes002.png)
 
-## includes()
+## Primitive
 
 ```javascript
 import { includes } from 'ramda';
@@ -143,6 +143,16 @@ console.log(includes('JavaScript', data));
 ```
 
 `includes()` 除了用在 array，也可以用在 `string`。
+
+> **includes()**
+> `String -> String -> Boolean`
+> 判斷 data 是否存在於 string
+
+`string`： 欲判斷的 data
+
+`string`：data 為 string
+
+`Boolean`：回傳比較結果
 
 ![includes006](/images/ramda/includes/includes006.png)
 
