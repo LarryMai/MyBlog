@@ -158,4 +158,4 @@ ReasonML 共有兩套 string library 可用，其中 `String` module 為 ReasonM
 
 [ReasonML](https://reasonml.github.io/en/), [String & Char](https://reasonml.github.io/docs/en/string-and-char)
 [Dr.Axel Rauschmayer](https://twitter.com/rauschma), [Exploring ReasonML and functional programming](http://reasonmlhub.com/exploring-reasonml/ch_basic-types.html#strings)
-[Nick Graf](https://egghead.io/instructors/nik-graf), [Basic Datatypes and Operators in Reason](https://egghead.io/lessons/reason-basic-datatypes-and-operators-in-reason)
+[Nick Graf](https://egghead.io/instructors/nik-graf), [Basic Datatypes and Operators in ReasonML](https://egghead.io/lessons/reason-basic-datatypes-and-operators-in-reason)
