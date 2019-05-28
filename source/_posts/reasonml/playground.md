@@ -5,7 +5,7 @@ tags:
 feature: images/feature/reasonml.png
 date: 2019-05-26 18:32:23
 ---
-ReasonML 官方雖然提供了 Bsb、rtop 與 Sketch.sh 三種測試平台，但或許你還是比較喜歡 VS Code + Quokka 的方式，只可惜目前 Quokka 尚未支援 ReasonML，讓我們自己打造類似 Quokka 的測試環境。
+ReasonML 官方雖然提供了 Bsb、rtop 與 Sketch.sh 三種測試平台，但或許你還是比較喜歡 VS Code + Quokka 的方式，只可惜目前 Quokka 尚未支援 ReasonML，讓我們打造類似 Quokka 的測試環境。
 
 <!-- more -->
 
@@ -31,7 +31,7 @@ Nodemon 1.18.0
 $ yarn global add bs-platform
 ```
 
-`Bsb` 為 ReasonML 的建置系統，負責將 ReasonML 編譯成 ECMAScript。
+Bsb 為 ReasonML 的建置系統，安裝 BuckleScript 將 ReasonML 編譯成 ECMAScript。
 
 ![reason000](/images/reasonml/playground/reason000.png)
 
@@ -41,7 +41,7 @@ $ yarn global add bs-platform
 $ bsb -init reasonml-playground -theme basic-reason
 ```
 
-使用 `bsb` 建立 Node 專案。
+使用 bsb 建立 Node 專案。
 
 * `-init`：建立 sample project
 * `-theme`：sample project 主題，使用 `basic-reason`
@@ -102,7 +102,7 @@ $ yarn nodemon
 ## Conclusion
 
 * Sketch.sh 雖然好用，但無法測試學習 BuckleScript 部分
-* 透過 nodemon，我們也可以在熟悉的 VS Code 測試學習 ReasonML + BuckleScript，並且立即顯示結果
+* 透過 nodemon，我們也可以在熟悉的 VS Code 學習 ReasonML + BuckleScript，並且立即顯示結果
 
 ## Reference
 

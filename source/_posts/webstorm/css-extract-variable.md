@@ -56,4 +56,4 @@ Extract Variable 預設以 property 命名，你也可重構成其他名稱。
 
 ## Conclusion
 
-* 有了 extract Variable 與 rename variable，CSS 也能如 ECMAScript 做初步重構
+* 有了 extract variable 與 rename variable，CSS 也能如 ECMAScript 做初步重構

@@ -81,13 +81,14 @@ let fn = obj => obj.address.postalCode || 'N/A';
 console.log(fn(user));
 ```
 
-常見的寫法會使用 `||` 判斷，若 `postalCode` 不存在則顯示其他 string。
+常見寫法會使用 `||` 判斷，若 `postalCode` 不存在則顯示其他 string。
 
 這種寫法雖然可行，但有幾點必須注意：
 
 * `||` 是利用 falsy value 判斷，`undefined` 固然是 falsy value，但 empty string 也是 falsy value，若需求是要顯示 empty string 的話，這種寫法就會誤判造成 bug
 * 要時時小心 property 可能不存在加上 `||` 判斷，常因為粗心而忘記使用 `||` 造成 bug
-* `||` 並非商業邏輯一部分，只是為了防止 property 不存在而已，因此將 code 變髒了
+* `||` 並非商業邏輯一部分，只是為了防止 property 不存在而判斷，因此將 code 變髒了
+
 
 ![proppath002](/images/crocks/proppath/proppath002.png)
 
@@ -108,7 +109,7 @@ let fn = obj => obj.address.postalCode || 'N/A';
 console.log(fn(user));
 ```
 
-`address` object 也可能不存在，因此使用 `||` 判斷並不夠完整，依然產生 `Cannot read property of XXX of undefined` 的 run-time 錯誤。
+`address` object 也可能不存在，因此使用 `||` 判斷並不夠完整，依然產生 `Cannot read property of undefined` 的 run-time 錯誤。
 
 ![proppath003](/images/crocks/proppath/proppath003.png)
 
@@ -203,7 +204,7 @@ Crocks 提供了 `propPath()`，用法與 Ramda 的 `path()` 完全相同，但�
 > `Foldable f => f (String | Integer) -> a -> Maybe b`
 > 針對 nested object 取得其 property 值，但回傳為 `Maybe`
 
-` f (String | Integer)`：以 array 傳入 property
+`Foldable f => f (String | Integer)`：以 array 傳入 property
 
 `a`：data 為 object 或 array
 
@@ -214,7 +215,7 @@ Crocks 提供了 `propPath()`，用法與 Ramda 的 `path()` 完全相同，但�
 使用了 `Maybe` 後，我們發現：
 
 * 無論 nested object 有多深，我們都不須擔心 object 或 property 不存在；也不用擔心 falsy value 判斷有潛在 bug
-* 不用擔心粗心而造成 bug，只要記得 nested object 使用 `propPath()` 即可
+* 不用擔心因粗心而造成 bug，只要記得 nested object 使用 `propPath()` 即可
 * Function 內不再有判斷 property 存在與否邏輯，只剩下原本商業邏輯，非常乾淨
 * 因為 `Maybe` 一定要透過 `option()` 取出，不會忘記處理 `undefined`
 
