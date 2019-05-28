@@ -37,6 +37,14 @@ console.log(isEmpty(Just(4)));
 console.log(isEmpty(Nothing()))
 ```
 
+> **isEmpty()**
+> `a -> Boolean`
+> 判斷任意值是否為 empty
+
+`a`：data 為任意型別
+
+`Boolean`：回傳為 `true` 或 `false`
+
 * 只要是 empty string、`{}` 或 `[]`，`isEmpty()` 都會回傳 `true`
 * 但 `undefined` 與 `null` 則回傳 `false`，這兩個 nullable 要靠 `isNil()` 判斷
 * `Just` 與 `Nothing` 都回傳 `false`， `Maybe` 已經超出 `isEmpty()` 判斷能力
