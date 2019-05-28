@@ -9,7 +9,7 @@ tags:
 feature: images/feature/ramda.png
 date: 2018-05-16 13:52:39
 ---
-一直很羨慕 F# 的 `List` module 提供了豐富的 Function，而 ECMAScript 的 `Array.prototype` 卻只提供有限的 Function 可用，因此無法完全發揮 FP 威力。但這一切終於得到解決，Ramda 擁有豐富的 Function，且很容易自行開發 Function 與 Ramda 整合使用。
+一直很羨慕 F# 的 `List` Module 提供了豐富的 Function，而 ECMAScript 的 `Array.prototype` 卻只提供有限的 Function 可用，因此無法完全發揮 FP 威力。但這一切終於得到解決，Ramda 擁有豐富的 Function，且很容易自行開發 Function 與 Ramda 整合。
 
 <!-- more -->
 
@@ -67,7 +67,7 @@ let fn = price => arr => arr
 console.log(fn(300)(data));
 ```
 
-熟悉 FP 的讀者會很敏感發現，這就是典型 `filter()` 與 `map()` 而已，我們可直接使用 ECMAScript 在 `Array.prototype` 內建的 `filter()` 與 `map()` 即可完成需求。
+熟悉 FP 的讀者會很敏感發現，這就是典型 `filter()` 與 `map()` 而已，我們可直接使用 ECMAScript 在 `Array.prototype` 內建的 `filter()` 與 `map()` 即可完成。
 
 ![ramda001](/images/ramda/hello-world/ramda001.png)
 
@@ -97,7 +97,7 @@ Ramda 身為 Functional Library，內建 `filter()` 與 `map()` 自然不在話�
 
 至於 `filter()` 與 `map()` 要傳入的 callback，也可使用 arrow function。
 
-> 我們發現 `fn()` 的 `arr` parameter 不見了，此稱為 point-free，讓程式碼更為精簡
+> 我們發現 `fn()` 的 `arr` parameter 不見了，稱為 point-free，讓程式碼更精簡
 
 ![ramda002](/images/ramda/hello-world/ramda002.png)
 
@@ -164,8 +164,8 @@ console.log(fn(300)(data));
 
 ## Conclusion
 
-* Ramda 提供了 FP 該有的 function，不再侷限於 `Array.prototype` 有限的 function
-* Ramda 可以很容易的擴充 function，不再擔心污染 `Array.prototype` 
+* Ramda 提供了 FP 該有的 function，不再侷限於 `Array.prototype`
+* Ramda 可很容易擴充 function，不再擔心污染 `Array.prototype` 
 * Ramda 使用 `pipe()`，觀念上更接近 FP 的 Function Composition
 * Point-free 也是 Ramda 一大特色，讓程式碼更精簡，可讀性更高
 
