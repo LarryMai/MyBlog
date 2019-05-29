@@ -41,8 +41,8 @@ isNonEmptyString('abc'); // ?
 
 若使用 Ramda，要判斷 non empty string，有兩個條件：
 
-1. 必須是 string：`complement(isEmpty)`
-2. 必須是 non empty：`is(String)`
+1. 必須是 string：`is(String)`
+2. 必須是 non empty：`complement(isEmpty)`
 
 且兩者都必須成立：`allPass()`。
 
