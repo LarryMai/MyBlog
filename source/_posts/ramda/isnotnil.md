@@ -1,4 +1,4 @@
-title: Ramda 自行組合 isNotNil()
+title: 自行組合 isNotNil()
 tags:
   - Ramda
   - Ramda/isNil

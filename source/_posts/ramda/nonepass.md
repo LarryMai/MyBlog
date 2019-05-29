@@ -1,4 +1,4 @@
-title: Ramda 自行組合 nonePass()
+title: 自行組合 nonePass()
 tags:
   - Ramda
   - Ramda/compose

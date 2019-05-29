@@ -1,4 +1,4 @@
-title: Ramda 自行組合 zipFunc()
+title: 自行組合 zipFunc()
 tags:
   - Ramda
   - Ramda/zipWith
