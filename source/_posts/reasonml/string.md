@@ -4,7 +4,7 @@ tags:
 feature: images/feature/reasonml.png
 date: 2019-05-28 10:05:56
 ---
-ReasonML 是 Static Type Language，因此 Type 特別重要，我們就從最常用的 String 談起。
+ReasonML 是 Static Type Language，因此 Type 特別重要，我們就從最基本的 String 談起。
 
 <!-- more -->
 
