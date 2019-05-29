@@ -35,7 +35,7 @@ let name = "Sam\n Xiao";
 name |> Js.log;
 ```
 
-特殊字元必須使用 `\` 加以 escape，如 `\`、`n` (換行)。
+特殊字元必須使用 `\` 加以 escape，如 `\n` (換行)。
 
 > 與 ECMAScript 相同
 
