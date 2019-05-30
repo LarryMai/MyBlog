@@ -3,7 +3,7 @@ tags:
   - Ramda
   - Vue
 feature: images/feature/ramda.png
-date: 2019-05-30 10:35:27
+date: 2018-05-18 10:35:27
 ---
 Ramda 是 Clojure 在 ECMAScript 的實作，讓我們可以將更多 FP 特性在 ECMAScript 實現。本文將以 Vue 為例，示範如何在 Vue 使用 Ramda。
 

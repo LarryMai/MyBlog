@@ -123,9 +123,9 @@ greeting |> Js.log;
 greeting2 |> Js.log;
 ```
 
-ReasonML 尚未支援 Unicode，必須得靠 BuckleScript，在 `{j|} {|j}` 或 `{js|} {|js}` 內，BuckleScript 都會處理 Unicode。
+ReasonML 目前只支援 UTF-8，尚未如 ECMAScript 支援 UTF-16，必須得在 `{j|} {|j}` 或 `{js|} {|js}` 內使用 UTF-16，BuckleScript 會加以處理。
 
-> ECMAScript 原生支援 Unicode，這點優於 ReasonML
+> ECMAScript 原生支援 UTF-16，這點優於 ReasonML
 
 ![string005](/images/reasonml/string/string005.png)
 
