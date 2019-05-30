@@ -85,6 +85,17 @@ console.log(fn(1));
 
 最後再使用 `option()` 將 `Maybe` 轉回 number。
 
+> **map()**
+> `Maybe a ~> (a -> b) -> Maybe b`
+> 傳入 function 直接修改 `Maybe` 內的值
+
+`Maybe a`：data 為 `Maybe`
+
+`(a -> b)`：傳入 `a -> b` 的 function
+
+`Maybe b`：將 `Maybe` 內的 `a` 改成 `b`
+
+
 ![maybe002](/images/crocks/maybe/map/map002.png)
 
 ```javascript

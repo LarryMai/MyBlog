@@ -111,7 +111,29 @@ console.dir(fn());
 let fn = () => getBody().chain(propPath(['address', 'postalCode']));
 ```
 
-`chain()` 號稱 flat map，可將兩層 Maybe 打成一層 Maybe。
+> **chain()**
+> `Maybe a ~> (a -> Maybe b) -> Maybe b`
+> 將兩層 `Maybe` 打層一層 `Maybe`
+
+與 `map()` 比較一下：
+
+> **map()**
+> `Maybe a ~> (a -> b) -> Maybe b`
+> 傳入 function 直接修改 `Maybe` 內的值
+
+可以發現 `chain()` 與 `map()` 的差異在於傳入的 callback：
+
+* `map()` 為 `a -> b`，故直接修改 `Maybe` 內的值
+* `chain()` 為 `a -> Maybe b`，故可能產生兩層 `Maybe`
+
+而最後 `chain()` 會將兩層 `Maybe` 攤平成一層 `Maybe`。
+
+`Maybe a`：data 為 `Maybe`
+
+`(a -> b)`：傳入 `a -> Maybe b` 的 function
+
+`Maybe b`：將 `Maybe Maybe b` 轉成 `Maybe b`
+
 
 ![chain001](/images/crocks/maybe/chain/chain001.png)
 
