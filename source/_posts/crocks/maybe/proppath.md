@@ -109,7 +109,7 @@ let fn = obj => obj.address.postalCode || 'N/A';
 console.log(fn(user));
 ```
 
-`address` object 也可能不存在，因此使用 `||` 判斷並不夠完整，依然產生 `Cannot read property of undefined` 的 run-time 錯誤。
+`address` object 也可能不存在，因此使用 `||` 判斷並不夠完整，依然產生 `Cannot read property of undefined` 的 runtime 錯誤。
 
 ![proppath003](/images/crocks/maybe/proppath/proppath003.png)
 

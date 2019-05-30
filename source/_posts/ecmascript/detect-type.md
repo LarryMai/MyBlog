@@ -459,7 +459,7 @@ Function 共有 4 種建立方法：
 3. Function constructor
 4. Arrow function
 
-實務上最常使用 function expression 與 arrow function，function declaration 則漸漸較少使用，但 function constructor 使用機會更少，除非想在 run-time 動態湊出 function。
+實務上最常使用 function expression 與 arrow function，function declaration 則漸漸較少使用，但 function constructor 使用機會更少，除非想在 runtime 動態湊出 function。
 
 ```javascript
 /** function declaration */
