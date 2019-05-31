@@ -6,6 +6,7 @@ date: 2019-05-30 09:31:26
 * [Ramda 初體驗](/ramda/hello-world/)
 * [如何在 Angular 使用 Ramda ?](/ramda/angular/)
 * [如何在 Vue 使用 Ramda ?](/ramda/vue/)
+* [ECMAScript、Ramda 與 ReasonML 的初步比較](/reasonml/comparison/)
 
 ### Basic Functions
 * [Ramda 之 uniq()](/ramda/uniq/)
