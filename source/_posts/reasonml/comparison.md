@@ -99,7 +99,7 @@ fn(300)(data) |> Js.log
 * `Js.log()` 為 BuckleScript 所提供，相當於 JS 的 `console.log()`
 * ReasonML 支援 type inference，可自行推導出 type signature
 
-![cross002](images/cross002.png)
+![cross002](/images/reasonml/comparison/cross002.png)
 
 ## Conclusion
 
