@@ -40,7 +40,7 @@ fn(300)(data); //?
 * ECMAScript 若要將 `filter()` 與 `map()` 串起來，要以 OOP 的 method chaining 完成
 * ECMAScript 為 dynamic type，因此只能自己加上 type signature
 
-![cross001](images/cross001.png)
+![cross001](/images/reasonml/comparison/cross001.png)
 
 ## Ramda
 
@@ -67,7 +67,7 @@ fn(300)(data); //?
 * 需要將所使用 Ramda function 一一 import 進來
 * Ramd 只是 ECMAScript 的 library，因此只能自己加上 type signature
 
-![cross000](images/cross000.png)
+![cross000](/images/reasonml/comparison/cross000.png)
 
 ## ReasonML
 
