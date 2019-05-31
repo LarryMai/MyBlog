@@ -38,7 +38,7 @@ fn(300)(data); //?
 * ECMAScript 若要支援 currrying，要以兩個 `=>` 完成
 
 * ECMAScript 若要將 `filter()` 與 `map()` 串起來，要以 OOP 的 method chaining
-* ECMAScript 為 dynamic type，因此只能自己加上 type signature
+* ECMAScript 為 dynamic type language，因此只能自己加上 type signature
 
 ![cross001](/images/reasonml/comparison/cross001.png)
 
