@@ -91,10 +91,9 @@ let fn = (price, arr) => arr
 fn(300, data) |> Js.log
 ```
 
-* ReaonML 為 static type language，因此要使用 `type` 宣告 record，可以想成是強型別的 object，因此 `data` 型別為 `list(book)`
+* ReaonML 為 static type language，因此要使用 `type` 宣告 record，可以想成是強型別 object，因此 `data` 型別為 `list(book)`
 * ReasonML 支援 auto currying，使用單一 `=>` 即可
 * ReasonML 支援 `|>` operator，不需使用 `pipe()` function
-
 * ReasonML 對於 module 不是使用 `import` 而是直接使用，因此為 `List.filter()` 與 `List.map()`
 * `Array.of_list()` 不是 camelCase，因為是 OCaml 的 function
 * `Js.log()` 為 BuckleScript 所提供，相當於 JS 的 `console.log()`
@@ -108,5 +107,4 @@ fn(300, data) |> Js.log
 * Ramda 以 library 層次支援 FP，尤其連 callback 也能 point-free，但 `pipe()` function 還是沒 `|>` operator 漂亮
 * ReasonML 以 language 層次支援 FP，而且是 static type，唯有些 function 還必須借助 OCaml，因此不是 camelCase，看起來很礙眼
 * 僅 ReasonML 支援 type inference，ECMAScript 與 Ramda 都必須手動加上 type signature
-
 * ECMAScript、Ramda 與 ReasonML 三種寫法，你喜歡哪種風格呢 ?
