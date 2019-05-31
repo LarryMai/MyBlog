@@ -4,6 +4,7 @@ date: 2019-05-30 09:31:26
 ---
 ### Introduction
 * [ReasonML 初體驗](/reasonml/hello-world/)
+* [ECMAScript、Ramda 與 ReasonML 簡單比較](/reasonml/comparison/)
 
 ### Setup
 * [如何在本機打造 ReasonML Playground ?](/reasonml/playground/)
