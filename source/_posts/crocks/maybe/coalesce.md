@@ -7,7 +7,7 @@ tags:
 feature: images/feature/crocks.png
 date: 2019-05-31 17:04:56
 ---
-在 [使用 alt() 提早處理 Nothing](/crocks/maybe/alt/) 文章裡，我們在 `fn()` 使用了 `alt()` 處理 `Nothing`，但眼尖讀者會發現我們竟然 Hardcode String，實務上使用 Function 的機會更多，此時可使用 `coalensce()`。
+在 [使用 alt() 提早處理 Nothing](/crocks/maybe/alt/) 一文中，我們在 `fn()` 使用了 `alt()` 處理 `Nothing`，但眼尖讀者會發現我們竟然 Hardcode String，實務上使用 Function 的機會更多，此時可使用 `coalensce()`。
 
 <!-- more -->
 
