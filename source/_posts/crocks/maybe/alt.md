@@ -225,12 +225,12 @@ let fn = obj => prop('title', obj)
 
 ![alt002](/images/crocks/maybe/alt/alt002.png)
 
-使用端寫法完全不變，但已經顯示 `https://oomusou.io/crocks/page-not-found`，因為 `alt()` 在 `fn()` 內提前處理了 `Nothing`。
+使用端寫法完全不變，但已經顯示 `https://oomusou.io/crocks/page-not-found`，因為 `alt()` 在 `fn()` 內已提前處理 `Nothing`。
 
 ## Conclusion
 
 * `option()` 與 `alt()` 都能處理 `Noting`，但差異是 `option()` 處理完為 ECMAScript 原生型別；而 `alt()` 處理完還是 `Maybe`
-* `alt()` 適合在演算法過程中處理 `Nothing`，而且還要繼續使用 `Maybe`；`option()` 適合使用端最後將 `Maybe` 轉回 ECMAScript 原生型別，順便處理 `Nothing`
+* `alt()` 適合在演算法過程中處理 `Nothing`，而且還要繼續使用 `Maybe` 時；`option()` 則適合使用端最後將 `Maybe` 轉回 ECMAScript 原生型別，順便處理 `Nothing`
 * 當在 `Maybe` 中還要加上其他邏輯判斷時，可使用 `chain()` + `alt()` 組合，讓演算法繼續使用 `Maybe`
 
 ## Reference
