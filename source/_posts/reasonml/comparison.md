@@ -6,7 +6,7 @@ tags:
 feature: images/feature/reasonml.png
 date: 2019-05-31 11:56:00
 ---
-ReasonML 與 Ramda 都試圖以 FP 改造 ECMAScript，前者是以 Static Type Language 編譯成 JS，後者則以 Library 掛在 JS 之上，本文以簡單範例初步比較三者差異。
+ReasonML 與 Ramda 都試圖以 FP 改造 ECMAScript，ReasonML 是以 Static Type Language 編譯成 JS，而 Ramda 則以 Library 掛在 JS 之上，本文以簡單範例初步比較三者差異。
 
 <!-- more -->
 
@@ -65,7 +65,7 @@ fn(300)(data); //?
 * Ramda 以 `pipe()` 將 `filter()` 與 `map()` 串起來，且順便 point-free 把 `arr` parameter 省下來，同時也支援 currying
 * `filter()` 與 `map()` 的 callback 可用 `propEq()` 與 `prop()` 產生 arrow function，連 callback 也 point-free
 * 需要將所使用 Ramda function 一一 import 進來
-* Ramd 只是 ECMAScript 的 library，因此只能自己加上 type signature
+* Ramda 只是 ECMAScript 的 library，因此只能自己加上 type signature
 
 ![cross000](/images/reasonml/comparison/cross000.png)
 

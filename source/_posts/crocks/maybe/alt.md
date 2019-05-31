@@ -235,6 +235,6 @@ let fn = obj => prop('title', obj)
 
 ## Reference
 
-[Andy Van Slaars](https://egghead.io/instructors/andrew-van-slaars), [Recover from a Nothing with the alt() method](https://egghead.io/lessons/javascript-recover-from-a-nothing-with-the-alt-method)
+[Andy Van Slaars](https://egghead.io/instructors/andrew-van-slaars), [Recover from a Nothing with the coalesce() Method](https://egghead.io/lessons/javascript-recover-from-a-nothing-with-the-coalesce-method)
 [Crocks](https://evilsoft.github.io/crocks/), [alt()](https://evilsoft.github.io/crocks/docs/crocks/Maybe.html#alt)
-
+[Crocks](https://evilsoft.github.io/crocks/), [coalesce()](https://evilsoft.github.io/crocks/docs/crocks/Maybe.html#coalesce)
