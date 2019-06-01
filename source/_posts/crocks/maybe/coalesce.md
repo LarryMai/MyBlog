@@ -71,7 +71,7 @@ let fn = obj => prop('title', obj)
 ## coalesce()
 
 ```javascript
-import { isString, and, not, isEmpty, prop, safe, Maybe, coalesce } from 'crocks';
+import { isString, and, not, isEmpty, prop, safe, Maybe } from 'crocks';
 import { compose, join, split, toLower, concat, identity, ifElse, always } from 'ramda';
 
 let { of } = Maybe;
