@@ -72,7 +72,7 @@ let fn = obj => prop('title', obj)
 
 ```javascript
 import { isString, and, not, isEmpty, prop, safe, Maybe } from 'crocks';
-import { compose, join, split, toLower, concat, identity, ifElse, always } from 'ramda';
+import { compose, join, split, toLower, concat, identity, always } from 'ramda';
 
 let { of } = Maybe;
 
