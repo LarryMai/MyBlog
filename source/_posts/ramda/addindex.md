@@ -1,4 +1,4 @@
-title: Ramda 之 addIndex()
+title: 使用 addIndex() 替 Callback 加上 Index
 tags:
   - Ramda
   - Ramda/addIndex
