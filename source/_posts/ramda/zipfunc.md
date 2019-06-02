@@ -1,4 +1,4 @@
-title: 自行組合 zipFunc()
+title: 自行組合 zipFunc() 將 Array 所有 Function 都執行令一 Array 一次
 tags:
   - Ramda
   - Ramda/zipWith
