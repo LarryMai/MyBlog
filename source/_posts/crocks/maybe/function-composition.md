@@ -110,7 +110,7 @@ option('https://oomusou.io')(fn(data)); // ?
 import { isString, and, not, isEmpty, prop, safe, Maybe, chain, alt, map, option } from 'crocks';
 ```
 
-將原本的 `chain()`、`alt()`、`map()` 與 `option()` 改以 function 從 Crocks import 進來。
+從 Crocks import 進 `chain()`、`alt()` 與 `option()`，改用 function 操作 `Maybe`。
 
 第 2 行
 
