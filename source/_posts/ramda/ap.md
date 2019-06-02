@@ -1,4 +1,4 @@
-title: Ramda 之 ap()
+title: 使用 ap() 將 Array 中所有 Function 都執行一次
 tags:
   - Ramda
   - Ramda/ap
@@ -79,7 +79,7 @@ console.log(fn(['a', 'g'])(data));
 Imperative 作法中，首先必須對 `rules` array 加以展開，執行每個 `includes()`，也就是說：`rules` array 有幾筆，其實 `includes()` 就要執行幾次。
 
 ```javascript
-map(includes, rules)
+map(includes, args)
 ```
 
 因此可用 `map()` 對 `rules` 加以展開，成為：
@@ -94,7 +94,7 @@ map(includes, rules)
 傳統觀念 `map()` 都是用來產生 data，但由於 Ramda function 都有 currying 特性，也因此也可使用 `map()` 配合其他 function 來達成 function array，真正落實 FP 之 `function as data` 理念。
 
 ```javascript
-ap(map(includes, rules)),
+ap(map(includes, args)),
 ```
 
 且由於每個 `includes()` 都要對傳入的 `tags` 做測試，這剛好符合 Ramda `ap()` 格式。

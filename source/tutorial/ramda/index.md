@@ -15,7 +15,7 @@ title: Ramda Tutorial
 * [使用 apply() 將多參數 Function 變成單一參數](/ramda/apply/)
 * [使用 unapply() 將單一參數 Function 變成多參數](/ramda/unapply/)
 * [使用 call() 動態產生 Converging Function](/ramda/call/)
-* [Ramda 之 ap()](/ramda/ap/)
+* [使用 ap() 將 Array 中所有 Function 都執行一次](/ramda/ap/)
 * [Ramda 之 remove()](/ramda/remove/)
 * [Ramda 之 addIndex()](/ramda/addindex/)
 * [Ramda 之 allPass()](/ramda/allpass/)
