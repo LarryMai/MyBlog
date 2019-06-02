@@ -11,6 +11,10 @@ title: Ramda Tutorial
 * [使用 slice() 指定 Array 中要的部分](/ramda/slice/)
 * [使用 remove() 指定 Array 中不要的部分](/ramda/remove/)
 * [使用 addIndex() 替 Callback 加上 Index](/ramda/addindex/)
+* [只用 isNil() 同時判斷 undefined 與 null](/ramda/isnil/)
+* [自行組合 isNotNil()](/ramda/isnotnil/)
+* [Ramda 之 isEmpty()](/ramda/isempty/)
+* [自行組合 isNonEmptyString()](/crocks/isnonemptystring/)
 * [使用 difference() 找出第一個 Array 不在第二個 Array 部分](/ramda/difference/)
 * [使用 differenceWith() 提供特殊比較方式找出第一個 Array 不在第二個 Array 部分](/ramda/differencewith/)
 * [使用 without() 找出第二個 Array 不在第一個 Array 部分](/ramda/without/)
@@ -22,25 +26,20 @@ title: Ramda Tutorial
 * [使用 unapply() 將單一參數 Function 變成多參數](/ramda/unapply/)
 * [使用 call() 動態產生 Converging Function](/ramda/call/)
 * [使用 ap() 將 Array 中所有 Function 都執行一次](/ramda/ap/)
-
 * [Ramda 之 allPass()](/ramda/allpass/)
 * [Ramda 之 anyPass()](/ramda/anypass/)
 * [Ramda 之 all()](/ramda/all/)
 * [Ramda 之 any()](/ramda/any/)
 * [Ramda 之 none()](/ramda/none/)
+* [自行組合 nonePass()](/ramda/nonepass/)
 * [Ramda 之 union()](/ramda/union/)
 * [Ramda 之 unionWith()](/ramda/unionwith/)
 * [Ramda 之 reverse()](/ramda/reverse/)
-* [Ramda 之 isNil()](/ramda/isnil/)
-* [Ramda 之 isEmpty()](/ramda/isempty/)
 * [Ramda 之 take()](/ramda/take/)
-
-### Cookbook
 * [自行組合 zipFunc()](/ramda/zipfunc/)
-* [自行組合 nonePass()](/ramda/nonepass/)
 * [如何讀取 Cookie ?](/ramda/getcookie/)
-* [自行組合 isNotNil()](/ramda/isnotnil/)
-* [自行組合 isNonEmptyString()](/crocks/isnonemptystring/)
+
+
 
 
 

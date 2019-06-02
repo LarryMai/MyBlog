@@ -1,4 +1,4 @@
-title: Ramda 之 isNil()
+title: 只用 isNil() 同時判斷 undefined 與 null
 tags:
   - Ramda
   - Ramda/isNil
