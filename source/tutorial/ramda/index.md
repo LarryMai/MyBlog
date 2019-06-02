@@ -28,7 +28,7 @@ title: Ramda Tutorial
 * [使用 ap() 將 Array 中所有 Function 都執行一次](/ramda/ap/)
 * [使用 all() 找出 Array 中符合所有條件的 Element](/ramda/all/)
 * [使用 any() 找出 Array 中符合部分條件的 Element](/ramda/any/)
-* [Ramda 之 none()](/ramda/none/)
+* [使用 none() 找出 Array 中不符合全部條件的 Element](/ramda/none/)
 * [Ramda 之 allPass()](/ramda/allpass/)
 * [Ramda 之 anyPass()](/ramda/anypass/)
 * [自行組合 nonePass()](/ramda/nonepass/)

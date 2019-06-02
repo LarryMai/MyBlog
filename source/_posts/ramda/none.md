@@ -1,4 +1,4 @@
-title: Ramda 之 none()
+title: 使用 none() 找出 Array 中不符合全部條件的 Element
 tags:
   - Ramda
   - Ramda/none
