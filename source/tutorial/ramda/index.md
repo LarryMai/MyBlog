@@ -1,15 +1,13 @@
 ---
-title: Ramda Series
-date: 2019-05-30 09:31:26
+title: Ramda Tutorial
 ---
-### Introduction
+適合初學者由淺入深，循序漸進學習 Ramda
+
+* [ECMAScript、Ramda 與 ReasonML 簡單比較](/reasonml/comparison/)
 * [Ramda 初體驗](/ramda/hello-world/)
 * [如何在 Angular 使用 Ramda ?](/ramda/angular/)
 * [如何在 Vue 使用 Ramda ?](/ramda/vue/)
-* [ECMAScript、Ramda 與 ReasonML 簡單比較](/reasonml/comparison/)
-
-### Basic Functions
-* [Ramda 之 uniq()](/ramda/uniq/)
+* [使用 uniq() 取得不重複資料](/ramda/uniq/)
 * [Ramda 之 uniqBy()](/ramda/uniqby/)
 * [Ramda 之 uniqWith()](/ramda/uniqwith/)
 * [Ramda 之 eqBy()](/ramda/eqby/)

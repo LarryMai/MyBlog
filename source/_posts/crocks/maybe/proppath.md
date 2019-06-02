@@ -1,4 +1,4 @@
-title: Crocks 之 propPath()
+title: 使用 propPath() 取得 Nested Object 的 Property
 tags:
   - Crocks
   - Ramda

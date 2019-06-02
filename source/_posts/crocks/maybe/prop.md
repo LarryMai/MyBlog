@@ -1,4 +1,4 @@
-title: Crocks 之 prop()
+title: 使用 prop() 取得 Object 的 Property 
 tags:
   - Ramda
   - Ramda/prop

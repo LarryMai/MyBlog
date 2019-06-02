@@ -1,4 +1,4 @@
-title: Ramda 之 uniq()
+title: 使用 uniq() 取得不重複資料
 tags:
   - Ramda
   - Ramda/uniq
