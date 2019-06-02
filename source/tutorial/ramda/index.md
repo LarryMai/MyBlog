@@ -12,7 +12,7 @@ title: Ramda Tutorial
 * [使用 remove() 指定 Array 中不要的部分](/ramda/remove/)
 * [使用 addIndex() 替 Callback 加上 Index](/ramda/addindex/)
 * [只用 isNil() 同時判斷 undefined 與 null](/ramda/isnil/)
-* [自行組合 isNotNil()](/ramda/isnotnil/)
+* [自行組合 isNotNil() 同時判斷不是 undefined 與 null](/ramda/isnotnil/)
 * [Ramda 之 isEmpty()](/ramda/isempty/)
 * [自行組合 isNonEmptyString()](/crocks/isnonemptystring/)
 * [使用 difference() 找出第一個 Array 不在第二個 Array 部分](/ramda/difference/)

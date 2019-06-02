@@ -1,4 +1,4 @@
-title: 自行組合 isNotNil()
+title: 自行組合 isNotNil() 同時判斷不是 undefined 與 null
 tags:
   - Ramda
   - Ramda/isNil
