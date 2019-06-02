@@ -1,4 +1,4 @@
-title: Ramda 之 remove()
+title: 使用 remove() 指定 Array 中不要的部分
 tags:
   - Ramda
   - Ramda/remove
