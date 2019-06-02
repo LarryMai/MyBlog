@@ -1,4 +1,4 @@
-title: Ramda 之 without()
+title: 使用 without() 找出第二個 Array 不在第一個 Array 部分
 tags:
   - Ramda
   - Ramda/without
