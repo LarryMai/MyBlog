@@ -1,4 +1,4 @@
-title: Ramda 之 includes()
+title: 使用 includes() 判斷資料是否存在於 Array
 tags:
   - Ramda
   - Ramda/includes
