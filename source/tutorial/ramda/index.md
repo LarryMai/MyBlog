@@ -9,7 +9,7 @@ title: Ramda Tutorial
 * [如何在 Vue 使用 Ramda ?](/ramda/vue/)
 * [使用 uniq() 取得不重複資料](/ramda/uniq/)
 * [使用 uniqBy() 經過轉換後再取得不重複資料](/ramda/uniqby/)
-* [Ramda 之 uniqWith()](/ramda/uniqwith/)
+* [使用 uniqWith() 提供特殊比較方式取得不重複資料](/ramda/uniqwith/)
 * [Ramda 之 eqBy()](/ramda/eqby/)
 * [Ramda 之 includes()](/ramda/includes/)
 * [Ramda 之 unapply()](/ramda/unapply/)

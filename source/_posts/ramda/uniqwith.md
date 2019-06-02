@@ -1,4 +1,4 @@
-title: Ramda 之 uniqWith()
+title: 使用 uniqWith() 提供特殊比較方式取得不重複資料
 tags:
   - Ramda
   - Ramda/uniqBy
