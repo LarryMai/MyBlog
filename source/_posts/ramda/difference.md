@@ -1,4 +1,4 @@
-title: Ramda 之 difference()
+title: 使用 difference() 找出第一個 Array 不在第二個 Array 部分
 tags:
   - Ramda
   - Ramda/difference

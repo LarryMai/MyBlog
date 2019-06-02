@@ -10,7 +10,7 @@ title: Ramda Tutorial
 * [使用 includes() 判斷資料是否存在於 Array](/ramda/includes/)
 * [使用 slice() 指定 Array 中要的部分](/ramda/slice/)
 * [使用 remove() 指定 Array 中不要的部分](/ramda/remove/)
-* [Ramda 之 difference()](/ramda/difference/)
+* [使用 difference() 找出第一個 Array 不在第二個 Array 部分](/ramda/difference/)
 * [Ramda 之 differenceWith()](/ramda/differencewith/)
 * [使用 without() 找出第二個 Array 不在第一個 Array 部分](/ramda/without/)
 * [使用 eqBy() 產生特殊方式 Predicate](/ramda/eqby/)
