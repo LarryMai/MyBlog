@@ -1,4 +1,4 @@
-title: Ramda 之 eqBy()
+title: 使用 eqBy() 產生特殊方式 Predicate
 tags:
   - Ramda
   - Ramda/eqBy
