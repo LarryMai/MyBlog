@@ -1,4 +1,4 @@
-title: 自行組合 nonePass()
+title: 自行組合 nonePass() 產生不符合全部條件的 Predicate
 tags:
   - Ramda
   - Ramda/compose
