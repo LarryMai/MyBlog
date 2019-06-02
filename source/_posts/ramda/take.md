@@ -1,4 +1,4 @@
-title: Ramda 之 take()
+title: 使用 take() 取得 Array 前幾筆資料
 tags:
   - Ramda
   - Ramda/take

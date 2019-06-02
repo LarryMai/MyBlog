@@ -35,7 +35,7 @@ title: Ramda Tutorial
 * [使用 union() 合併兩 Array 並且不重複](/ramda/union/)
 * [使用 unionＷith() 提供特殊比較方式合併兩 Array 並且不重複](/ramda/unionwith/)
 * [使用 reverse() 將 Array 顛倒](/ramda/reverse/)
-* [Ramda 之 take()](/ramda/take/)
+* [使用 take() 取得 Array 前幾筆資料](/ramda/take/)
 * [自行組合 zipFunc()](/ramda/zipfunc/)
 * [如何讀取 Cookie ?](/ramda/getcookie/)
 
