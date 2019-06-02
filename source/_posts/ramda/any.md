@@ -1,4 +1,4 @@
-title: Ramda 之 any()
+title: 使用 any() 找出 Array 中符合部分條件的 Element
 tags:
   - Ramda
   - Ramda/equals

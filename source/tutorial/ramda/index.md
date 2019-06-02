@@ -27,7 +27,7 @@ title: Ramda Tutorial
 * [使用 call() 動態產生 Converging Function](/ramda/call/)
 * [使用 ap() 將 Array 中所有 Function 都執行一次](/ramda/ap/)
 * [使用 all() 找出 Array 中符合所有條件的 Element](/ramda/all/)
-* [Ramda 之 any()](/ramda/any/)
+* [使用 any() 找出 Array 中符合部分條件的 Element](/ramda/any/)
 * [Ramda 之 none()](/ramda/none/)
 * [Ramda 之 allPass()](/ramda/allpass/)
 * [Ramda 之 anyPass()](/ramda/anypass/)
