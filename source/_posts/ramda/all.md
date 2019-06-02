@@ -1,4 +1,4 @@
-title: Ramda 之 all()
+title: 使用 all() 找出 Array 中符合所有條件的 Element
 tags:
   - Ramda
   - Ramda/all
