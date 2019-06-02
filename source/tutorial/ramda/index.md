@@ -29,7 +29,7 @@ title: Ramda Tutorial
 * [使用 all() 找出 Array 中符合所有條件的 Element](/ramda/all/)
 * [使用 any() 找出 Array 中符合部分條件的 Element](/ramda/any/)
 * [使用 none() 找出 Array 中不符合全部條件的 Element](/ramda/none/)
-* [Ramda 之 allPass()](/ramda/allpass/)
+* [使用 allPass() 產生符合所有條件的 Predicate](/ramda/allpass/)
 * [Ramda 之 anyPass()](/ramda/anypass/)
 * [自行組合 nonePass()](/ramda/nonepass/)
 * [Ramda 之 union()](/ramda/union/)

@@ -1,4 +1,4 @@
-title: Ramda 之 allPass()
+title: 使用 allPass() 產生符合所有條件的 Predicate
 tags:
   - Ramda
   - Ramda/allPass
