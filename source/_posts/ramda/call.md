@@ -1,4 +1,4 @@
-title: Ramda 之 call()
+title: 使用 call() 動態產生 Converging Function
 tags:
   - Ramda
   - Ramda/call

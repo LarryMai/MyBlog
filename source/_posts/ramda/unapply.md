@@ -1,4 +1,4 @@
-title: Ramda 之 unapply()
+title: 使用 unapply() 將單一參數 Function 變成多參數
 tags:
   - Ramda
   - Ramda/unapply
