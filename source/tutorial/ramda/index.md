@@ -11,7 +11,7 @@ title: Ramda Tutorial
 * [使用 slice() 指定 Array 中要的部分](/ramda/slice/)
 * [使用 remove() 指定 Array 中不要的部分](/ramda/remove/)
 * [使用 difference() 找出第一個 Array 不在第二個 Array 部分](/ramda/difference/)
-* [Ramda 之 differenceWith()](/ramda/differencewith/)
+* [使用 differenceWith() 提供特殊比較方式找出第一個 Array 不在第二個 Array 部分](/ramda/differencewith/)
 * [使用 without() 找出第二個 Array 不在第一個 Array 部分](/ramda/without/)
 * [使用 eqBy() 產生特殊方式 Predicate](/ramda/eqby/)
 * [使用 uniq() 取得不重複資料](/ramda/uniq/)

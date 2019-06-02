@@ -1,4 +1,4 @@
-title: Ramda 之 differenceWith()
+title: 使用 differenceWith() 提供特殊比較方式找出第一個 Array 不在第二個 Array 部分
 tags:
   - Ramda
   - Ramda/differenceWith
