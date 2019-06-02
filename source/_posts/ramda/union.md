@@ -1,4 +1,4 @@
-title: Ramda 之 union()
+title: 使用 union() 合併兩 Array 並且不重複
 tags:
   - Ramda
   - Ramda/union
