@@ -1,4 +1,4 @@
-title: Ramda 之 apply()
+title: 使用 apply() 將多參數 Function 變成單一參數
 tags:
   - Ramda
   - Ramda/apply
