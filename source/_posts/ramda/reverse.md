@@ -1,4 +1,4 @@
-title: Ramda 之 reverse()
+title: 使用 reverse() 將 Array 顛倒
 tags:
   - Ramda
   - Ramda/reverse()

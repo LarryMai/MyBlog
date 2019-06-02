@@ -34,7 +34,7 @@ title: Ramda Tutorial
 * [自行組合 nonePass() 產生不符合全部條件的 Predicate](/ramda/nonepass/)
 * [使用 union() 合併兩 Array 並且不重複](/ramda/union/)
 * [使用 unionＷith() 提供特殊比較方式合併兩 Array 並且不重複](/ramda/unionwith/)
-* [Ramda 之 reverse()](/ramda/reverse/)
+* [使用 reverse() 將 Array 顛倒](/ramda/reverse/)
 * [Ramda 之 take()](/ramda/take/)
 * [自行組合 zipFunc()](/ramda/zipfunc/)
 * [如何讀取 Cookie ?](/ramda/getcookie/)
