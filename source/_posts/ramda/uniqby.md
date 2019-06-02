@@ -1,4 +1,4 @@
-title: Ramda 之 uniqBy()
+title: 使用 uniqBy() 經過 Function 轉換後再取得不重複資料
 tags:
   - Ramda
   - Ramda/uniqBy

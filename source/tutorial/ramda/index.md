@@ -8,7 +8,7 @@ title: Ramda Tutorial
 * [如何在 Angular 使用 Ramda ?](/ramda/angular/)
 * [如何在 Vue 使用 Ramda ?](/ramda/vue/)
 * [使用 uniq() 取得不重複資料](/ramda/uniq/)
-* [Ramda 之 uniqBy()](/ramda/uniqby/)
+* [使用 uniqBy() 經過 Function 轉換後再取得不重複資料](/ramda/uniqby/)
 * [Ramda 之 uniqWith()](/ramda/uniqwith/)
 * [Ramda 之 eqBy()](/ramda/eqby/)
 * [Ramda 之 includes()](/ramda/includes/)
