@@ -1,4 +1,4 @@
-title: Ramda 之 isEmpty()
+title: 使用 isEmpty() 判斷 Empty Value
 tags:
   - Ramda
   - Ramda/isEmpty
