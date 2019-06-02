@@ -10,6 +10,7 @@ title: Ramda Tutorial
 * [使用 includes() 判斷資料是否存在於 Array](/ramda/includes/)
 * [使用 slice() 指定 Array 中要的部分](/ramda/slice/)
 * [使用 remove() 指定 Array 中不要的部分](/ramda/remove/)
+* [使用 addIndex() 替 Callback 加上 Index](/ramda/addindex/)
 * [使用 difference() 找出第一個 Array 不在第二個 Array 部分](/ramda/difference/)
 * [使用 differenceWith() 提供特殊比較方式找出第一個 Array 不在第二個 Array 部分](/ramda/differencewith/)
 * [使用 without() 找出第二個 Array 不在第一個 Array 部分](/ramda/without/)
@@ -21,7 +22,7 @@ title: Ramda Tutorial
 * [使用 unapply() 將單一參數 Function 變成多參數](/ramda/unapply/)
 * [使用 call() 動態產生 Converging Function](/ramda/call/)
 * [使用 ap() 將 Array 中所有 Function 都執行一次](/ramda/ap/)
-* [Ramda 之 addIndex()](/ramda/addindex/)
+
 * [Ramda 之 allPass()](/ramda/allpass/)
 * [Ramda 之 anyPass()](/ramda/anypass/)
 * [Ramda 之 all()](/ramda/all/)
