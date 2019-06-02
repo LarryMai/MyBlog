@@ -33,7 +33,7 @@ title: Ramda Tutorial
 * [使用 anyPass() 產生符合部分條件的 Predicate](/ramda/anypass/)
 * [自行組合 nonePass() 產生不符合全部條件的 Predicate](/ramda/nonepass/)
 * [使用 union() 合併兩 Array 並且不重複](/ramda/union/)
-* [Ramda 之 unionWith()](/ramda/unionwith/)
+* [使用 unionＷith() 提供特殊比較方式合併兩 Array 並且不重複](/ramda/unionwith/)
 * [Ramda 之 reverse()](/ramda/reverse/)
 * [Ramda 之 take()](/ramda/take/)
 * [自行組合 zipFunc()](/ramda/zipfunc/)

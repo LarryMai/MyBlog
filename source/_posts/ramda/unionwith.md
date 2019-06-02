@@ -1,4 +1,4 @@
-title: Ramda 之 unionWith()
+title: 使用 unionＷith() 提供特殊比較方式合併兩 Array 並且不重複
 tags:
   - Ramda
   - Ramda/unionWith
