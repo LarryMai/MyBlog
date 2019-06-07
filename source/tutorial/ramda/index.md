@@ -24,7 +24,6 @@ title: Ramda Tutorial
 * [使用 uniqWith() 提供特殊比較方式取得不重複資料](/ramda/uniqwith/)
 * [使用 apply() 將多參數 Function 變成單一參數](/ramda/apply/)
 * [使用 unapply() 將單一參數 Function 變成多參數](/ramda/unapply/)
-* [使用 call() 動態產生 Converging Function](/ramda/call/)
 * [使用 ap() 將 Array 中所有 Function 都執行一次](/ramda/ap/)
 * [使用 all() 找出 Array 中符合所有條件的 Element](/ramda/all/)
 * [使用 any() 找出 Array 中符合部分條件的 Element](/ramda/any/)
@@ -36,13 +35,6 @@ title: Ramda Tutorial
 * [使用 unionＷith() 提供特殊比較方式合併兩 Array 並且不重複](/ramda/unionwith/)
 * [使用 reverse() 將 Array 顛倒](/ramda/reverse/)
 * [使用 take() 取得 Array 前幾筆資料](/ramda/take/)
-* [自行組合 zipFunc() 將 Array 所有 Function 都執行令一 Array 一次](/ramda/zipfunc/)
-* [如何讀取 Cookie ?](/ramda/getcookie/)
-
-
-
-
-
-
-
-
+* [自行組合 zipFunc() 將 Array 所有 Function 都執行 Array 一次](/ramda/zipfunc/)
+* [Ramda 之你所不知道的 map()](/ramda/map/)
+* [使用 chain() 改變 Chain 內的值](/ramda/chain/)
