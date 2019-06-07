@@ -25,7 +25,7 @@ Typora 0.9.9.24.6
 ![dark001](/images/typora/dark-theme/dark001.png)
 
 * Code 字型使用 Fira Code
-* Code 配色使用 WebStorm Darcula
+* Code 配色使用 JetBrains Darcula
 
 ## Source Mode
 
@@ -58,3 +58,4 @@ Typora 0.9.9.24.6
 ## Reference
 
 [Sayrus](https://github.com/Sayrus/typora-github-dark), [Github Dark Theme for Typora](https://github.com/Sayrus/typora-github-dark)
+[Oomusou](https://github.com/oomusou), [GitHub Dark Theme for Typora](https://github.com/oomusou/typora-github-dark)
