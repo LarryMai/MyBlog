@@ -87,7 +87,7 @@ let fn = pipe(
 fn(data); // ?
 ```
 
-Ramda 另提供 `flatten()`，專門將多層 array 攤平成一層 array，這就是我們所要的結果了。
+Ramda 另提供 `flatten()`，專門將多層 array 攤平成一層 array，這就是我們所要的結果。
 
 > **flatten()**
 > `[a] -> [b]`
@@ -230,7 +230,7 @@ let addPrice = chain(
 ## Conclusion
 
 * 當 `chain()` 搭配 array 時，可視為 `flatMap()`，用來將 nested array 攤平
-* 當 `chain()` 搭配 function 時，可將 data 先透過 application function，再連同 data 傳入main function
+* 當 `chain()` 搭配 function 時，可將 data 先透過 application function，再連同 data 傳入 main function
 
 ## Reference
 

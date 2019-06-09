@@ -5,7 +5,7 @@ tags:
 feature: images/feature/webstorm.png
 date: 2019-06-06 20:32:25
 ---
-WebStorm 已經提供 Vue 的 plugin，支援 Vue 完整，唯一只有 `.vue` 格式縮排部分，Webstorm 與 Vue 的看法迥異，在 Reformat  Code 之後，縮排會完全跑掉，需要特別設定。此外，在 Unit Test 與 Jest 部分，WebStorm 支援度還不夠，但目前仍然可以做一些調整。
+WebStorm 已經提供 Vue 的 plugin 完整支援 Vue，唯一只有 `.vue` 格式縮排部分，Webstorm 與 Vue 的看法迥異，在 Reformat  Code 之後，縮排會完全跑掉，需要特別設定。此外，在 Unit Test 與 Jest 部分，WebStorm 支援度還不夠，但仍可做些調整支援 Vue。
 
 <!-- more -->
 
@@ -28,7 +28,7 @@ WebStorm 2018.2.4
 
 ![vue001](/images/webstorm/vue/vue001.png)
 
-經過 WebStorm 的 Reformat Code，縮排就跑掉了。
+經過 WebStorm 的 reformat code，縮排就會跑掉。
 
 ## Tabs and Indents
 
@@ -80,7 +80,7 @@ WebStorm 2018.2.4
 
 ## CDN
 
-若是搭配 MVC 採用 CDN 方式時，則要另外設定。
+若採用 CDN 方式，則需另外設定。
 
 ![vue007](/images/webstorm/vue/vue007.png)
 
@@ -167,7 +167,7 @@ $ yarn add --dev jest
 
 ## Conclusion
 
-* 此設定在 JetBrains 其他工具也適用
+* 在 JetBrains 其他工具也適用此設定
 * WebStorm 目前支援 Vue 良好，除了少部分要調整外，就可完美在 WebStorm 開發 Vue，不用再安裝任何 plugin
 * WebStorm 對於 Vue 的 Unit Test 與 Jest 支援還不夠，目前執行 Unit Test 比較適合使用 Vue CLI
 

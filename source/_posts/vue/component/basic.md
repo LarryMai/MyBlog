@@ -78,13 +78,13 @@ Vue.component('hello-world', {
 Vue Component 的使用，有幾點要注意：
 
 * Vue 規定 Vue component 一定要定義在 Vue instance `之前`，否則 Life Cycle 在 `compile HTML` 階段，會不知道 Vue component 所自訂的 HTML tag
-* 自訂的 HTML tag 名稱，無論使用 camelCase，CamelCase，最後 Vue 都會改用 Kebab-case (全小寫，單字間以 `-` 隔開)，這是 W3C 所建議，且必須是 2 個單字，避免用一個單字與 HTML 預設 tag 重複
-* 關於 component (HTML tag) 與 JavaScript 檔案命名方式，Vue 官方的 [Style Guide](https://vuejs.org/v2/style-guide/#Single-file-component-filename-casing-strongly-recommended) :
+* 自訂的 HTML tag 名稱，無論使用 camelCase，CamelCase，最後 Vue 都會改用 kebab-case (全小寫，單字間以 `-` 隔開)，這是 W3C 所建議，且必須是 2 個單字，避免用一個單字與 HTML 預設 tag 重複
+* 關於 component (HTML tag) 與 JavaScript 檔案命名方式，Vue 官方的 [Style Guide](https://vuejs.org/v2/style-guide/#Single-file-component-filename-casing-strongly-recommended) 建議:
    * **CamelCase**：`HelloWorld`、`HelloWorld.js`、`HelloWorld.vue`
    * **kebab-case**：`hello-world`、`hello-world.js`、`hello-world.vue`
    * Vue CLI 使用 **CamelCase**
 
-> 建議 component 與 JavaScript 檔案名稱，建議使用 kebab-case，可避免 Git 不分大而誤判
+> 建議 component 與 JavaScript 檔案名稱使用 kebab-case，可避免 Git 不分大小寫而誤判
 >
 > 建議 component 命名也使用 kebab-case，如此與 W3C 一致
 
@@ -181,7 +181,7 @@ let template = '<span>Hello World</span>';
 
 ## MVVM vs. Component
 
-目前 Vue Component 的 data 顯示都是寫死的，我們知道 MVVM 的精髓就是 data binding，要如何將 MVVM 與 component 兩種架構合而為一呢 ?
+目前 Vue Component 的 data 都是寫死的，我們知道 MVVM 的精髓就是 data binding，要如何將 MVVM 與 component 兩種架構合而為一呢 ?
 
 **index.html**
 
@@ -366,7 +366,7 @@ let add = function() {
 
 如之前的 data function 為 pure function，因此可用 arrow function。
 
-> 使用 Vue Component 時，還有一點值得注意 !
+> 使用 Vue component 時，還有一點值得注意 !
 
 * 不可使用 self closing 語法
 
@@ -542,7 +542,7 @@ Vue.component('my-select', {
 
 使用 Vue 擴充的 `<component></component>`，綁定其 `is`，當 `content` 指定什麼 component 時，`<component></component>` 就會動態切換該 component。
 
-> 並沒有在 HTML 內事先使用特定 component tag，只使用 `<component></component>` 的 place holder 保留其動態彈性
+> 並沒有在 HTML 內事先使用特定 component tag，只使用 `<component></component>`做為 place holder 保留其動態彈性
 
 **index.js**
 
@@ -675,6 +675,7 @@ JavaScript 的寫法不用改變。
 
 * Vue 提供了 Vue component，讓我們將 HTML、CSS 與 JavaScript 使用 component 包起來，方便閱讀，也更容易維護
 * MVVM 可以與 component 完美結合，但 `data` property 必須改用 `data` function
+* Vue 並非不能使用 arrow function，只要能分辨何時可用即可
 * Vue component 有時候會違背 browser 的 DOM Parser，此時必須改變寫法繞過 browser
 * Dynamic component 讓我們可以根據商業邏輯自行切換 component
 * 透過神奇的 `<keep-alive></keep-alive>`，user 原本的輸入將保留在 component 內

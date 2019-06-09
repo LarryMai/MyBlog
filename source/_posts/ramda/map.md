@@ -28,7 +28,7 @@ let fn = discount => price => price - discount - 10;
 fn(20)(100); // ?
 ```
 
-`calPrice()`，第一個參數為 `discount`，第二個參數為 `price`，除此之外，還在 function body 內多扣了 `10` 元。
+`fn()` 第一個參數為 `discount`，第二個參數為 `price`，除此之外，還在 function body 內多扣了 `10` 元。
 
 這個 function 就功能而言 100% 沒問題，但能否更進一步 point-free 呢 ?
 

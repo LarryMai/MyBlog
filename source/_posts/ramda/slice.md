@@ -91,7 +91,7 @@ slice(1)(Infinity)(data); // ?
 
 若要回傳到 array 最後一個 element，直接傳入 `Infinity` 即可。
 
-> 若要回傳到 array 最後一個 element，在 `Array.prototype.slice()` 只要省略不傳即可，因為 ECMAScript 支援 optional parameter，預設就是最後一個 element；但 Ramda 不支援 optional parameter，而支援 partial application，因此一定要明確傳入 `Infinity`
+> 在 `Array.prototype.slice()` 只要省略不傳即可，因為 ECMAScript 支援 optional parameter，預設就是最後一個 element；但 Ramda 不支援 optional parameter，而支援 partial application，因此一定要明確傳入 `Infinity`
 
 ![slice001](/images/ramda/slice/slice001.png)
 
@@ -186,7 +186,7 @@ let data = 'Hello';
 slice(1)(-2)(data); // ?
 ```
 
-與 array 一樣，index 也可以傳入負數。
+與 array 一樣，index 也可傳入負數。
 
 ![slice006](/images/ramda/slice/slice006.png)
 

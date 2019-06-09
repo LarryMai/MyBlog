@@ -100,7 +100,7 @@ let fn = arr => {
 result.push(elem);
 ```
 
-Imperative 會先建立欲回傳的 `result` array，由於原來資料都要保留，所以使用了 `result.push(elem)` 保存。
+Imperative 會先建立欲回傳的 `result` array，由於原來資料都要保留，所以使用了 `result.push(elem)`。
 
 15 行
 
@@ -185,7 +185,7 @@ flatten,
 dropLast(1)
 ```
 
-因為最後一筆不新增  `{ divider: true }`，所以使用了 `dropLast(1)` 刪除之。
+因為最後一筆不必新增  `{ divider: true }`，所以使用 `dropLast(1)` 刪除之。
 
 > **dropLast()**
 > `Number -> [a] -> [a]`
@@ -216,7 +216,7 @@ let fn = pipe(
 console.dir(fn(data));
 ```
 
-其實以上的寫法已經非常清楚，可再稍微重構簡化。
+其實以上寫法已相當清楚，可再稍微重構簡化。
 
 11 行
 
@@ -236,7 +236,7 @@ chain(x => [x, { divider: true }]),
 init
 ```
 
-目標是不要最後一筆，`init()` 則是傳回不包含最後一筆的所有資料，因此也可簡化成 `init()`。
+目標是不要最後一筆，`init()` 則是回傳不包含最後一筆的所有資料，因此也可簡化成 `init()`。
 
 > **init()**
 > `[a] -> [a]`
@@ -271,7 +271,7 @@ let fn = pipe(
 console.dir(fn(data));
 ```
 
-若想連 callback 部分也想 point-free，可再進一步重構。
+若想連 callback 部分也 point-free，可再進一步重構。
 
 21 行
 
@@ -331,7 +331,7 @@ append({ divider: true }),
 
 * `map()` + `flatten()` 組合在實務上常常見到，可使用 `chain()` 加以重構
 * 實務上最後一筆常有特殊需求，可使用 `dropLast()` 刪除之
-* 是否要連 callback 也要 point-free 屬於品味問題，可自行決定是否使用
+* 是否要連 callback 也 point-free 屬於品味問題，可自行依可讀性決定
 
 ## Reference
 
