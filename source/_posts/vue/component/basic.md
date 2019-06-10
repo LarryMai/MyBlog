@@ -34,9 +34,7 @@ import helloWorld from './components/hello-world.vue';
 
 export default {
   name: 'app',
-  components: {
-    helloWorld
-  }
+  components: { helloWorld }
 };
 </script>
 ```
@@ -66,9 +64,7 @@ import helloWorld from './components/hello-world.vue';
 10 行
 
 ```javascript
-components: {
-  helloWorld
-}
+components: { helloWorld }
 ```
 
 將剛剛 import 進的 `helloWorld` 宣告在 `components` property 下。
