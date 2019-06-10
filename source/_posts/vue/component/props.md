@@ -4,7 +4,7 @@ tags:
 feature: images/feature/vue.png
 date: 2019-06-09 22:16:37
 ---
-Component 若只有一層，那問題不大，若牽涉到 Component 包含 Component，就會牽涉到一個基本問題：該如何將 Data 由外層 Component 傳給內層 Component ? 這時候就要使用 Vue Component 的 Props，這也是 Vue 從 React 學來的部分。
+Component 若只有一層，那問題不大，若牽涉到 Component 包含 Component，就會牽涉到一個基本問題：該如何將 Data 由外層 Component 傳給內層 Component ? 此時就要使用 Vue Component 的 Props，這也是 Vue 從 React 學來的。
 
 <!-- more -->
 
